@@ -1,0 +1,130 @@
+footer 
+{
+	text-align:center;
+}
+
+
+.barra .navbar-brand {
+  height: 80px;
+}
+
+.barra .nav >li >a {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.barra .navbar-toggle {
+  padding: 10px;
+  margin: 25px 15px 25px 0;
+}
+
+.hidden { display: none; }
+
+/*flash*/
+
+.contentForm
+{
+	margin-left: 25%;
+	margin-right: 25%;
+}
+
+.alert-error {
+background-color: #f2dede;
+border-color: #eed3d7;
+color: #b94a48;
+text-align: left;
+}
+
+.alert-alert {
+background-color: #f2dede;
+border-color: #eed3d7;
+color: #b94a48;
+text-align: left;
+}
+
+.alert-success {
+background-color: #dff0d8;
+border-color: #d6e9c6;
+color: #468847;
+text-align: left;
+}
+
+.alert-notice {
+background-color: #dff0d8;
+border-color: #d6e9c6;
+color: #468847;
+text-align: left;
+}
+
+.content-table
+{
+	margin-right:5%;
+	margin-left:5%;
+}
+
+.legenda
+{
+	border-color:#000;
+	border-radius:.5em;
+	border:2px;
+	width: 35%;
+	padding:1%;
+}
+
+
+
+
+.simple-calendar
+{
+	.prev-month // Dias del mes anterior
+	{
+	}
+	.past	// dias anterior a hoy
+	{
+
+	}
+
+	.today	//Hoy
+	{
+	}
+
+	.day 	// Dias
+	{
+		font-weight: bold;
+	}
+
+	.has-events
+	{
+		background-color:#cccc00
+	}
+
+	.calendar-title
+	{
+
+	font-size: 3em;
+	font-weight: bold;
+
+	}
+
+	.calendar-heading
+	{
+		a
+		{
+
+			background-color: transparent;
+			font-size: 2em;
+			font-weight: bold;
+			margin-right: 1.5em;
+			margin-left:1.5em;
+			text-decoration: none;
+			.prev-month
+			{
+				content: "a";
+			}
+
+		}
+		
+	}
+	
+	
+
+}

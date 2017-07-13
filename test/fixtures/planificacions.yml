@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha_planificacion: 2016-06-14 22:33:26
+  descripcion: MyText
+  estado: MyString
+  tipo: MyString
+  horometro: 1
+  kilometraje: 1
+  total_planificacion: 1
+  total_hh: 1
+  taller_externo: MyString
+  factura_pendiente: MyString
+  fecha: 2016-06-14
+  fecha_modificacion: 2016-06-14
+
+two:
+  fecha_planificacion: 2016-06-14 22:33:26
+  descripcion: MyText
+  estado: MyString
+  tipo: MyString
+  horometro: 1
+  kilometraje: 1
+  total_planificacion: 1
+  total_hh: 1
+  taller_externo: MyString
+  factura_pendiente: MyString
+  fecha: 2016-06-14
+  fecha_modificacion: 2016-06-14

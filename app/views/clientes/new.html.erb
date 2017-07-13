@@ -1,0 +1,21 @@
+<div class="contentForm">
+<legend>Ingresar Cliente</legend>
+
+	<%= bootstrap_form_for (@cliente)  do |f| %>
+	<div class="form-group">	
+		<%= f.number_field :rut_cliente, :maxlength => 8, label: "Rut" %>
+		<%= f.text_field :dv %>
+		<%= f.text_field :nombre, label: "Cliente" %>
+		<%= f.text_field :direccion %>
+		<%= f.text_field :nombre_contacto, label: "Nombre Contacto" %>
+		<%= f.text_field :telefono %>
+		<%= f.email_field :mail, label: "Email" %>
+		<%= f.text_field :giro %>
+		
+		<%= f.primary 'Guardar' %>
+	
+	</div>
+	
+	<% end %>
+	
+</div>

@@ -1,0 +1,22 @@
+<div class="contentForm">
+  <legend>Contacto</legend>
+
+   <% if !flash[:notice].blank? %>
+     <div class = "alert alert-info">
+        <%= flash[:notice] %>
+     </div>
+  <% end %>
+
+  <%= bootstrap_form_for (@contacto)  do |f| %>
+  <div class="form-group">
+    <%= f.text_field :nombre %>
+    <%= f.email_field :email %>
+    <%= f.text_area :mensaje %>
+    <div class= "hidden">
+      <%= f.text_field :nickname %>
+    </div>
+    
+      <%= f.primary 'Enviar' %>
+   </div>
+  <% end %>
+</div>

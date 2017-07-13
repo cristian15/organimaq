@@ -1,0 +1,1 @@
+rut:integer dv:string nombre:string apellido_paterno:string apellido_materno:string foto:string jornada:integer valor_hora:integer tipo_mecanico_id:integer

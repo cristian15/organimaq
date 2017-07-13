@@ -1,0 +1,43 @@
+<div class="content-table">
+  <%= link_to 'Agregar +', mecanicos_new_path, class: "btn btn-primary" %>
+  <br><br>
+
+  <% if !flash[:notice].blank? %>
+     <div class = "alert alert-info">
+        <%= flash[:notice] %>
+     </div>
+  <% end %>
+
+  <div class="table-responsive">
+    <table class="table table-striped table-hover table-bordered">
+      <thead>
+        <th>Rut</th>
+        <th>Nombre</th>
+        <th>Apellido Paterno</th>
+        <th>Apellido Materno</th>
+        <th>Especialidad</th>
+        <th>Jornada</th>
+        <th>Valor Hora</th>
+
+      </thead>
+      <tbody>
+      <% @mecanico.each do |mecanico| %>
+        <tr>
+          <td><%= mecanico.rut.to_s + "-" + mecanico.dv%></td>
+          <td><%= mecanico.nombre %></td>
+          <td><%= mecanico.apellido_paterno %></td>
+          <td><%= mecanico.apellido_materno %></td>
+          <td><%= TipoMecanico.find(mecanico.tipo_mecanico_id).nombre %></td>
+	  <td><%= mecanico.jornada  %></td>
+	  <td><%= mecanico.valor_hora  %></td>
+          <td><%= link_to "Mostrar", mecanico_path(mecanico), class: "btn btn-info" %></td>
+          <td><%= button_to "Eliminar", mecanico, data: {confirm: "Desea Eliminar '#{mecanico.nombre}'?"}, method: :delete, class: "btn btn-danger" %></td>
+          <td><%= link_to "Editar", edit_mecanico_path(mecanico), class: "btn btn-success" %></td>
+
+        </tr>
+        <% end %>
+      </tbody>
+      
+    </table>
+  </div>
+</div>

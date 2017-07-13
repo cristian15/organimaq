@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mecanico_id: 1
+  planicicacion_id: 1
+  horas_mecanico: 1
+
+two:
+  mecanico_id: 1
+  planicicacion_id: 1
+  horas_mecanico: 1

@@ -1,0 +1,1 @@
+fecha_planificacion:datetime descripcion:text estado:string tipo:string horometro:integer kilometraje:integer total_planificacion:integer total_hh:integer taller_externo:string factura_pendiente:string fecha:date fecha_modificacion:date

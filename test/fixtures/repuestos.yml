@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  codigo: MyString
+  stock: 1
+  descripcion: MyText
+  tipo_repuesto_id: 
+
+two:
+  nombre: MyString
+  codigo: MyString
+  stock: 1
+  descripcion: MyText
+  tipo_repuesto_id: 
