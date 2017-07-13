@@ -1,0 +1,20 @@
+<div class="contentForm">
+<legend>Editar Reporte</legend>
+
+	<%= bootstrap_form_for (@report)  do |f| %>
+	<div class="form-group">	
+		<%= f.text_field :nombre, label: "Nombre de Reporte" %>
+		<%= f.date_select :fecha %>
+		<%= f.number_field :horas %>
+		<%= f.number_field :numero %>
+		<%= f.text_field :detalle %>
+		<%= f.number_field :horometro_inicial, label: "Horómetro Inicial" %>
+		<%= f.number_field :horometro_inicial, label: "Horómetro Final" %>
+		
+		<%= f.primary 'Editar' %>
+	
+	</div>
+	
+	<% end %>
+	
+</div>

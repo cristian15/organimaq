@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170712224343) do
+ActiveRecord::Schema.define(version: 20170713193122) do
 
   create_table "clientes", force: :cascade do |t|
     t.integer  "rut_cliente",     limit: 4
@@ -113,6 +113,19 @@ ActiveRecord::Schema.define(version: 20170712224343) do
 
   add_index "planificacions", ["estado_maquina_id"], name: "fk_rails_da3861be35", using: :btree
   add_index "planificacions", ["maquina_id"], name: "fk_rails_35ee35873a", using: :btree
+
+  create_table "reports", force: :cascade do |t|
+    t.string   "nombre",            limit: 255
+    t.date     "fecha"
+    t.integer  "horas",             limit: 4
+    t.integer  "numero",            limit: 4
+    t.integer  "arriendo_id",       limit: 4
+    t.text     "detalle",           limit: 65535
+    t.integer  "horometro_inicial", limit: 4
+    t.integer  "horometro_final",   limit: 4
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+  end
 
   create_table "repuestos", force: :cascade do |t|
     t.string   "nombre",           limit: 255

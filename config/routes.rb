@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
  
 
+  get 'reports/new'
+
+  get 'reports/index'
+
+  get 'reports/show'
+
+  get 'reports/edit'
+
   get 'clientes/new'
 
   get 'clientes/index'
@@ -95,6 +103,8 @@ Rails.application.routes.draw do
   resources :mecanicos_planificacions
   
   resources :clientes
+  
+  resources :reports
   
 
 
