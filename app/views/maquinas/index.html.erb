@@ -6,25 +6,27 @@
      </div>
   <% end %>
   <br><br>
-	
-	<%= form_tag('/seach', remote: true) do %>
-	<%= text_field_tag :seach, params[:search] %>
-	<%= submit_tag "Buscar", :name=> nil %>
+	<%= bootstrap_form_tag :method => 'get' do %>
+		<%= hidden_field_tag :direction, value: params[:direction] %>
+		<%= hidden_field_tag :sort, value: params[:sort] %>
+		<%= text_field_tag :search, params[:search] %>
+		 <%= submit_tag 'Buscar' %>
 	<% end %>
+	
   <br><br>
 
   <div class="table-responsive">
     <table class="table table-striped table-hover table-bordered">
       <thead>
         <th>Codigo</th>
-        <th><%= link_to "Maquina", :sort => "nombre" %> </th>
+        <th><%= sortable "nombre", "Maquina" %> </th>
         <th>Tipo de Maquinaria</th>
         <th>Estado Maquinaria</th>
         <th>Patente</th>
         <th>Chasis</th>
         <th>Marca</th>
         <th>Modelo</th>
-        <th>Año</th>
+        <th><%= sortable "anio",  "Año" %></th>
         <th>Valor Hora</th>
         <th>Valor Dia</th>
         <th>Kilometraje Actual</th>

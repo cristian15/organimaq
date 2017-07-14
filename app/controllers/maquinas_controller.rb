@@ -1,8 +1,11 @@
 class MaquinasController < ApplicationController
-
+	helper_method :sort_column, :sort_direction
+	
+	
+	
 	def index
 		#@maquina = Maquina.all.paginate(:per_page =>2, :page =>params[:page])
-		@maquina = Maquina.order(params[:sort]).paginate(:per_page =>2, :page =>params[:page])
+		@maquina = Maquina.search(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:per_page =>2, :page =>params[:page])
 	end
 	def show
 		@maquina = Maquina.find(params[:id])
@@ -41,6 +44,9 @@ class MaquinasController < ApplicationController
 			render 'edit'
 		end
 	end
+	
+	
+	
 
 	private
 		def maquina_params
@@ -48,7 +54,7 @@ class MaquinasController < ApplicationController
 		end
 		
 		def sort_column
-			Maquina.columns_names.include?(params[:sort]) ? params[:sort] : "name"
+			Maquina.column_names.include?(params[:sort]) ? params[:sort] : "nombre"
 		end
 		
 		def sort_direction
