@@ -1,6 +1,5 @@
 <div class="content-table">
 
-	<%= link_to 'Agregar +', reports_new_path, class: 'btn btn-primary' %>
 	<br><br>
 	<% if !flash[:notice].blank? %>
      <div class = "alert alert-info">
@@ -34,7 +33,7 @@
 					<td><%= report.horometro_final %></td>
 					<td><%= link_to "Mostrar", report_path(report), class: "btn btn-info" %></td>
 					<td><%= button_to "Eliminar", report, data: {confirm: "Desea Eliminar '#{report.nombre}'?"}, method: :delete, class: "btn btn-danger" %></td>
-					<td><%= link_to "Editar", edit_cliente_path(report), class: "btn btn-success" %></td>
+					<td><%= link_to "Editar", edit_report_path(report), class: "btn btn-success" %></td>
 					
 				</tr>
 				<% end %>

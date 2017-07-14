@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170713193122) do
+ActiveRecord::Schema.define(version: 20170714001715) do
+
+  create_table "arriendos", force: :cascade do |t|
+    t.date     "fecha_arriendo"
+    t.date     "fecha_entrega"
+    t.text     "comentario",     limit: 65535
+    t.float    "descuento",      limit: 24
+    t.integer  "total_arriendo", limit: 4
+    t.string   "nombre_faena",   limit: 255
+    t.integer  "comuna_id",      limit: 4
+    t.integer  "cliente_id",     limit: 4
+    t.integer  "maquina_id",     limit: 4
+    t.string   "estado",         limit: 255
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
 
   create_table "clientes", force: :cascade do |t|
     t.integer  "rut_cliente",     limit: 4
@@ -125,6 +140,8 @@ ActiveRecord::Schema.define(version: 20170713193122) do
     t.integer  "horometro_final",   limit: 4
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
+    t.integer  "km_inicio",         limit: 4
+    t.integer  "km_final",          limit: 4
   end
 
   create_table "repuestos", force: :cascade do |t|
@@ -170,6 +187,12 @@ ActiveRecord::Schema.define(version: 20170713193122) do
       on("planificacions").
       after(:insert) do
     "UPDATE maquinas SET horometro_actual = NEW.horometro, km_actual=NEW.kilometraje, estado_maquina_id = NEW.estado_maquina_id WHERE id = NEW.maquina_id;"
+  end
+
+  create_trigger("reports_after_insert_row_tr", :generated => true, :compatibility => 1).
+      on("reports").
+      after(:insert) do
+    "UPDATE maquinas SET horometro_actual = NEW.horometro_final, km_actual=NEW.km_final WHERE id = (SELECT a.maquina_id FROM arriendos WHERE a.id = NEW.arriendo_id);"
   end
 
 end

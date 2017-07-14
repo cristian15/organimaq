@@ -1,0 +1,62 @@
+<div class="contentForm">
+<%= link_to 'Volver', arriendos_path, class: "btn btn-warning" %><br>
+
+	<legend>Editar Arriendo</legend>
+	<div class="table-responsive">
+		<legend>Reportes</legend>
+	
+		<table class="table table-striped table-hover table-bordered">
+		  <thead>
+			<th>Nombre</th>
+			<th>Fecha</th>
+			<th>Horas</th>
+			<th>Numero</th>
+			<th>Detalle</th>			
+			<th>Horometro Inicial</th>
+			<th>Horometro Final</th>			
+
+		  </thead>
+		  <tbody>
+		  <% i = 0 %>
+		  <% @report.each do |report| %>
+			<tr>
+			  <td><%= report.nombre %></td>
+			  <td><%= report.fecha %></td>
+			  <td><%= report.horas %></td>
+			  <td><%= report.numero %></td>
+			  <td><%= report.detalle  %></td>
+			  <td><%= report.horometro_inicial %></td>
+			  <td><%= report.horometro_final %></td>
+			  <td><%= button_to "Eliminar", report, data: {confirm: "Desea Eliminar '#{report.nombre}'?"}, method: :delete, class: "btn btn-danger" %></td>
+					<td><%= link_to "Editar", edit_report_path(report), class: "btn btn-success" %></td>
+			 
+			</tr>
+			<% 
+			i = i+1
+			end %>
+		  </tbody>
+		  
+		</table>
+		
+		<%= link_to 'Nuevo Reporte', reports_new_path(id: @arriendo.id), class: "btn btn-primary" %><br>
+
+	<%= bootstrap_form_for (@arriendo)  do |f| %>
+	<div class="form-group">	
+		<%= f.date_select :fecha_arriendo %>
+		<%= f.date_select :fecha_entrega %>
+		<%= f.text_field :comentario %>
+		<%= f.number_field :descuento, value: 0 %>
+		<%= f.number_field :total_arriendo, label: "Valor Arriendo", :disabled=>true , value: 0 %>
+		<%= f.text_field :nombre_faena, label: "Faena" %>
+		<%= f.select :estado, [["Facturado"], ["Abierta"], ["No Facturado"]], { label: "Estado" }, { class: "selectpicker" } %>
+		<%= f.collection_select :maquina_id, Maquina.all, :id, :nombre %>
+		<%= f.collection_select :cliente_id, Cliente.all, :id, :nombre %>
+
+		
+		<%= f.primary 'Editar' %>
+	
+	</div>
+	
+	<% end %>
+	
+</div>

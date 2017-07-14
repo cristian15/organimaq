@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
  
 
+  get 'arriendos/new'
+
+  get 'arriendos/index'
+
+  get 'arriendos/show'
+
+  get 'arriendos/edit'
+
   get 'reports/new'
 
   get 'reports/index'
@@ -105,6 +113,8 @@ Rails.application.routes.draw do
   resources :clientes
   
   resources :reports
+  
+  resources :arriendos
   
 
 

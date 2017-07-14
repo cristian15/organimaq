@@ -1,6 +1,8 @@
 class ReportsController < ApplicationController
   def new
 	@report = Report.new
+	@arriendo = Arriendo.find(params[:id])
+	@maquina = Maquina.find(@arriendo.maquina_id)
   end
 
   def index
@@ -18,10 +20,19 @@ class ReportsController < ApplicationController
   def create
   	@report = Report.new(report_params)
   	if @report.save
-  		redirect_to @report
+  		redirect_to edit_arriendo_path(@report.arriendo_id)
   	else
   		render 'new'
   	end
+  end
+  
+  def update
+	@report = Report.find(params[:id])
+	if @report.update(report_params)
+		redirect_to report_path, notice: "Report Actualizada."
+	else
+		render 'edit'
+	end
   end
   
   def destroy

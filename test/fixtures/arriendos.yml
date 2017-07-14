@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha_arriendo: 2017-07-13
+  fecha_entrega: 2017-07-13
+  comentario: MyText
+  descuento: 1.5
+  total_arriendo: 1
+  nombre_faena: MyString
+  id_comuna: 1
+  rut_cliente: 1
+  id_maquina: 1
+  estado: MyString
+
+two:
+  fecha_arriendo: 2017-07-13
+  fecha_entrega: 2017-07-13
+  comentario: MyText
+  descuento: 1.5
+  total_arriendo: 1
+  nombre_faena: MyString
+  id_comuna: 1
+  rut_cliente: 1
+  id_maquina: 1
+  estado: MyString

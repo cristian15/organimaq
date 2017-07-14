@@ -2,14 +2,19 @@
 <legend>Ingresar Reporte</legend>
 
 	<%= bootstrap_form_for (@report)  do |f| %>
-	<div class="form-group">	
+	<div class="form-group">
+	
+		<%= f.hidden_field :arriendo_id, value: params[:id] %>
+	
 		<%= f.text_field :nombre, label: "Nombre de Reporte" %>
 		<%= f.date_select :fecha %>
 		<%= f.number_field :horas %>
 		<%= f.number_field :numero %>
 		<%= f.text_field :detalle %>
-		<%= f.number_field :horometro_inicial, label: "Horómetro Inicial" %>
+		<%= f.number_field :horometro_inicial, label: "Horómetro Inicial", value: @maquina.horometro_actual %>
 		<%= f.number_field :horometro_final, label: "Horómetro Final" %>
+		<%= f.number_field :km_inicio, label: "Kilometraje Inicial", value: @maquina.km_actual %>
+		<%= f.number_field :km_final, label: "Kilometraje Final", value: @maquina.km_actual %>
 		
 		<%= f.primary 'Guardar' %>
 	
