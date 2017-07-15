@@ -34,6 +34,16 @@ class ClientesController < ApplicationController
     end
   end
   
+  def update
+		@cliente = Cliente.find(params[:id])
+
+		if @cliente.update(cliente_params)
+			redirect_to clientes_path(), notice: "Cliente #{@cliente.nombre} ha sido Actualizada."
+		else
+			render 'edit'
+		end
+	end
+  
     private
   	def cliente_params
   		params.require(:cliente).permit(:rut_cliente, :dv, :nombre, :direccion, :nombre_contacto, :telefono, :mail, :giro)

@@ -1,0 +1,15 @@
+<div class="contentForm">
+<%= link_to 'Volver', operadors_path, class: "btn btn-warning" %><br>
+<legend>Ingresar Multa</legend>
+	<%= bootstrap_form_for (@multas), :url => multas_path do |f| %>
+	<div class="form-group">
+		<%= f.hidden_field :operador_id, value: params[:id] %>
+		<%= f.date_field :fecha, label: "Fecha Infracción" %>
+		<%= f.text_field :lugar, label: "Lugar" %>
+		<%= f.text_field :descripcion, label: "Descripción" %>
+		<%= f.number_field :total_multa, label:"Valor Multa" %>		
+		<%= f.primary 'Guardar' %>	
+	</div>	
+	<% end %>
+	
+</div>

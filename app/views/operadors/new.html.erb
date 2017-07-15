@@ -1,0 +1,27 @@
+<div class="contentForm">
+<%= link_to 'Volver', operadors_path, class: "btn btn-warning" %><br>
+<legend>Ingresar Operador</legend>
+
+	<%= bootstrap_form_for (@operador)  do |f| %>
+	<div class="form-group">
+		<div class="form-inline"><div class="form-group">	
+		<%= f.number_field :rut, :maxlength => 8, label: "Rut  :" %>
+		<%= f.text_field :dv, label: "- " %>
+		</div></div>
+		<%= f.text_field :nombre, label: "Operador" %>
+		<%= f.text_field :apellido_p, label: "Apellido Paterno" %>
+		<%= f.text_field :apellido_m, label: "Apellido Materno" %>
+		<%= f.text_field :direccion %>
+		<%= f.text_field :telefono %>
+		<%= f.file_field :foto, label: "Foto Operador" %>
+		<%= f.number_field :calzado %>
+		<%= f.text_field :oberol %>
+		<%= f.text_field :chaleco %>
+		
+		<%= f.primary 'Guardar' %>
+	
+	</div>
+	
+	<% end %>
+	
+</div>

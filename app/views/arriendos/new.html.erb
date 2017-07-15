@@ -3,8 +3,8 @@
 
 	<%= bootstrap_form_for (@arriendo)  do |f| %>
 	<div class="form-group">	
-		<%= f.date_select :fecha_arriendo %>
-		<%= f.date_select :fecha_entrega %>
+		<%= f.date_field :fecha_arriendo %>
+		<%= f.date_field :fecha_entrega %>
 		<%= f.text_field :comentario %>
 		<%= f.number_field :descuento, value: 0 %>
 		<%= f.number_field :total_arriendo, label: "Valor Arriendo", :disabled=>true , value: 0 %>

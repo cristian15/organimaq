@@ -9,6 +9,7 @@ class ArriendosController < ApplicationController
 
   def show
 	@arriendo = Arriendo.find(params[:id])
+	@report = Report.joins('INNER JOIN arriendos ON arriendo_id = arriendos.id AND arriendos.id =', params[:id])
   end
 
   def edit
@@ -23,6 +24,15 @@ class ArriendosController < ApplicationController
   	@arriendo = Arriendo.new(arriendo_params)
   	if @arriendo.save
   		redirect_to @arriendo
+  	else
+  		render 'new'
+  	end
+  end
+  
+  def update
+  	@arriendo = Arriendo.find(params[:id])
+  	if @arriendo.update(arriendo_params)
+  		redirect_to arriendos_path(), notice: "Arriendo #{@arriendo.nombre} ha sido Actualizada."
   	else
   		render 'new'
   	end

@@ -1,6 +1,22 @@
 Rails.application.routes.draw do
  
 
+  get 'multas/index'
+
+  get 'multas/new'
+
+  get 'multas/show'
+
+  get 'multas/edit'
+
+  get 'operadors/index'
+
+  get 'operadors/new'
+
+  get 'operadors/show'
+
+  get 'operadors/edit'
+
   get 'arriendos/new'
 
   get 'arriendos/index'
@@ -115,6 +131,12 @@ Rails.application.routes.draw do
   resources :reports
   
   resources :arriendos
+  
+  resources :operadors
+  
+  resources :multas
+  
+  
   
 
 

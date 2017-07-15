@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170714001715) do
+ActiveRecord::Schema.define(version: 20170714203435) do
 
   create_table "arriendos", force: :cascade do |t|
     t.date     "fecha_arriendo"
@@ -107,6 +107,32 @@ ActiveRecord::Schema.define(version: 20170714001715) do
   add_index "mecanicos_planificacions", ["mecanico_id"], name: "fk_rails_e67815e418", using: :btree
   add_index "mecanicos_planificacions", ["planificacion_id"], name: "fk_rails_0d41556240", using: :btree
 
+  create_table "multa", force: :cascade do |t|
+    t.date     "fecha"
+    t.string   "lugar",       limit: 255
+    t.text     "descripcion", limit: 65535
+    t.integer  "total_multa", limit: 4
+    t.integer  "operador_id", limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  create_table "operadors", force: :cascade do |t|
+    t.integer  "rut",        limit: 4
+    t.string   "dv",         limit: 255
+    t.string   "nombre",     limit: 255
+    t.string   "apellido_p", limit: 255
+    t.string   "apellido_m", limit: 255
+    t.string   "direccion",  limit: 255
+    t.string   "telefono",   limit: 255
+    t.string   "foto",       limit: 255
+    t.integer  "calzado",    limit: 4
+    t.string   "oberol",     limit: 255
+    t.string   "chaleco",    limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
   create_table "planificacions", force: :cascade do |t|
     t.datetime "fecha_planificacion"
     t.text     "descripcion",         limit: 65535
@@ -183,16 +209,20 @@ ActiveRecord::Schema.define(version: 20170714001715) do
   add_foreign_key "planificacions", "estado_maquinas"
   add_foreign_key "planificacions", "maquinas"
   add_foreign_key "repuestos", "tipo_repuestos"
+  # WARNING: generating adapter-specific definition for reports_after_insert_row_tr due to a mismatch.
+  # either there's a bug in hairtrigger or you've messed up your migrations and/or db :-/
+  execute(<<-TRIGGERSQL)
+CREATE TRIGGER reports_after_insert_row_tr AFTER INSERT ON `reports`
+FOR EACH ROW
+BEGIN
+    UPDATE maquinas SET horometro_actual = NEW.horometro_final, km_actual=NEW.km_final WHERE id = (SELECT a.maquina_id FROM arriendos a WHERE a.id = NEW.arriendo_id);
+END
+  TRIGGERSQL
+
   create_trigger("planificacions_after_insert_row_tr", :generated => true, :compatibility => 1).
       on("planificacions").
       after(:insert) do
     "UPDATE maquinas SET horometro_actual = NEW.horometro, km_actual=NEW.kilometraje, estado_maquina_id = NEW.estado_maquina_id WHERE id = NEW.maquina_id;"
-  end
-
-  create_trigger("reports_after_insert_row_tr", :generated => true, :compatibility => 1).
-      on("reports").
-      after(:insert) do
-    "UPDATE maquinas SET horometro_actual = NEW.horometro_final, km_actual=NEW.km_final WHERE id = (SELECT a.maquina_id FROM arriendos WHERE a.id = NEW.arriendo_id);"
   end
 
 end

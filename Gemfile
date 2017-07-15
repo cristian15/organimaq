@@ -47,6 +47,12 @@ gem 'simple_calendar', :git => 'https://github.com/cristian15/simple_calendar.gi
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 
+# search
+gem 'scoped_search'
+
+#paginacio, busqueda y listado
+gem 'smart_listing'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

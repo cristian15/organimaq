@@ -1,11 +1,14 @@
+
 <div class="contentForm">
 <%= link_to 'Volver', clientes_path, class: "btn btn-warning" %><br>
 <legend>Ingresar Cliente</legend>
 
 	<%= bootstrap_form_for (@cliente)  do |f| %>
-	<div class="form-group">	
-		<%= f.number_field :rut_cliente, :maxlength => 8, label: "Rut" %>
-		<%= f.text_field :dv %>
+	<div class="form-group">
+		<div class="form-inline"><div class="form-group">	
+		<%= f.number_field :rut_cliente, :maxlength => 8, label: "Rut  :" %>
+		<%= f.text_field :dv, label: "- " %>
+		</div></div>
 		<%= f.text_field :nombre, label: "Cliente" %>
 		<%= f.text_field :direccion %>
 		<%= f.text_field :nombre_contacto, label: "Nombre Contacto" %>
