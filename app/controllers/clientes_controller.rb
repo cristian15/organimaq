@@ -1,10 +1,16 @@
 class ClientesController < ApplicationController
+
+	helper_method :sort_column, :sort_direction
+	
+	before_action :clear_search_index, :only => [:index]
+	
   def new
 	@cliente = Cliente.new
   end
 
   def index
-	@cliente = Cliente.all
+	@search = Cliente.ransack(params[:q])
+	@cliente = @search.result.paginate(page: params[:page], per_page:2)
   end
 
   def edit
@@ -47,7 +53,14 @@ class ClientesController < ApplicationController
     private
   	def cliente_params
   		params.require(:cliente).permit(:rut_cliente, :dv, :nombre, :direccion, :nombre_contacto, :telefono, :mail, :giro)
-
   	end
+	
+	def sort_column
+		Cliente.column_names.include?(params[:sort]) ? params[:sort] : "nombre"
+	end
+	
+	def sort_direction
+		%w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+	end
 	
 end

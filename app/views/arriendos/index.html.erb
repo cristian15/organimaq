@@ -7,40 +7,15 @@
         <%= flash[:notice] %>
      </div>
   <% end %>
-	<div class="table-responsive">
-		<table class="table table-striped table-hover table-bordered">
-			<thead>
-				<th>Fecha Arriendo</th>
-				<th>Fecha Entrega</th>
-				<th>Comentario</th>
-				<th>Descuento</th>
-				<th>Total Arriendo</th>
-				<th>Nombre Faena</th>
-				<th>Comuna</th>
-				<th>Cliente</th>
-				<th>Máquina</th>
-				<th>Estado</th>
-			</thead>
-			
-			<tbody>
-			<% @arriendo.each do |arriendo| %>
-				<tr>
-				
-					<td><%= arriendo.fecha_arriendo %></td>
-					<td><%= arriendo.fecha_entrega %></td>
-					<td><%= arriendo.comentario %></td>
-					<td><%= arriendo.descuento %></td>
-					<td><%= arriendo.total_arriendo %></td>
-					<td><%= arriendo.nombre_faena %></td>
-					<td><%= arriendo.comuna_id %></td>
-					<td><%= arriendo.cliente_id %></td>
-					<td><%= arriendo.maquina_id %></td>
-					<td><%= arriendo.estado %></td>
-					<td><%= link_to "Mostrar", arriendo_path(arriendo), class: "btn btn-info" %></td>
-					<td><%= link_to "Editar", edit_arriendo_path(arriendo), class: "btn btn-success" %></td>
-					
-				</tr>
-				<% end %>
-			</tbody>
-		</table>
+	
+	<br>
+	<%= search_form_for @search, :remote=>"true", url: arriendos_path, :method => :get do |f| %>
+		<%= f.text_field :nombre_faena_cont %>
+		<%= f.submit %>
+	<% end %>
+	<br><br>
+	<div id="arriendos">
+	<%= render "arriendos" %> 
+	</div>
+	
 	</div>

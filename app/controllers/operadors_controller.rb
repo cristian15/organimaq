@@ -1,6 +1,12 @@
 class OperadorsController < ApplicationController
+
+	helper_method :sort_column, :sort_direction
+	
+	before_action :clear_search_index, :only => [:index]
+
   def index
-	@operador = Operador.all
+	@search = Operador.ransack(params[:q])
+	@operador = @search.result.paginate(page: params[:page], per_page:2)
   end
 
   def new
@@ -44,5 +50,13 @@ class OperadorsController < ApplicationController
 	def operador_params
 		params.require(:operador).permit(:rut,:dv,:nombre,:apellido_p,:apellido_m,:direccion,:telefono,:foto,:calzado,:oberol,:chaleco)
 	end	
+	
+	def sort_column
+		Operador.column_names.include?(params[:sort]) ? params[:sort] : "nombre"
+	end
+	
+	def sort_direction
+		%w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+	end
 	
 end
