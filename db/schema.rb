@@ -226,6 +226,7 @@ CREATE TRIGGER reports_after_insert_row_tr AFTER INSERT ON `reports`
 FOR EACH ROW
 BEGIN
     UPDATE maquinas SET horometro_actual = NEW.horometro_final, km_actual=NEW.km_final WHERE id = (SELECT a.maquina_id FROM arriendos a WHERE a.id = NEW.arriendo_id);
+    UPDATE arriendos a SET a.total_arriendo = total_arriendo + NEW.horas*(SELECT valor_hora FROM maquinas WHERE id = a.maquina_id) WHERE a.id = NEW.arriendo_id;
 END
   TRIGGERSQL
 

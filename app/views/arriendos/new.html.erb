@@ -7,7 +7,7 @@
 		<%= f.date_field :fecha_entrega, :required => true %>
 		<%= f.text_field :comentario %>
 		<%= f.number_field :descuento, value: 0 %>
-		<%= f.number_field :total_arriendo, label: "Valor Arriendo", :disabled=>true , value: 0 %>
+		<%= f.number_field :total_arriendo, label: "Valor Arriendo", value: 0 %>
 		<%= f.text_field :nombre_faena, label: "Faena" %>
 		<%= f.select :estado, [["Facturado"], ["Abierta"], ["No Facturado"]], { label: "Estado" }, { class: "selectpicker" } %>
 		<%= f.collection_select :maquina_id, Maquina.all, :id, :nombre, :required => true %>

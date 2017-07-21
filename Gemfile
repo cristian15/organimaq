@@ -43,12 +43,17 @@ gem 'hairtrigger'
 # Calendario
 gem 'simple_calendar', :git => 'https://github.com/cristian15/simple_calendar.git'
 
+
 # Paginacion
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 
 # search
 gem 'scoped_search'
+
+# busqueda
+gem 'ransack', github: 'activerecord-hackery/ransack'
+
 
 #paginacio, busqueda y listado
 gem 'smart_listing'

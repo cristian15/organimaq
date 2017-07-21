@@ -2,7 +2,7 @@
     <table class="table table-striped table-hover table-bordered">
       <thead>
         <th>Codigo</th>
-        <th>Maquina</th>
+        <th><%= sort_link @search, :nombre, "Maquina" %></th>
         <th>Tipo de Maquinaria</th>
         <th>Estado Maquinaria</th>
         <th>Patente</th>
@@ -39,7 +39,12 @@
         <% end %>
       </tbody>
      
-	 </table> 
-<%= will_paginate @maquina, renderer: BootstrapPagination::Rails %>	 
+	 </table>
+<% # paginate @maquina %>	
+<div id="page_links"> 
+<div id="pagination">
+<%= paginate @maquina, renderer: BootstrapPagination::Rails %>	
+</div>
+</div> 
   </div> 
   

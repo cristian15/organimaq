@@ -4,9 +4,9 @@
 	<%= bootstrap_form_for (@report)  do |f| %>
 	<div class="form-group">
 	
-		<%= f.text_field :nombre, label: "Nombre de Reporte" %>
-		<%= f.date_field :fecha %>
-		<%= f.number_field :horas %>
+		<%= f.text_field :nombre, label: "Nombre de Reporte", :required => true %>
+		<%= f.date_field :fecha, :required => true %>
+		<%= f.number_field :horas, :required => true %>
 		<%= f.number_field :numero %>
 		<%= f.text_field :detalle %>
 		<%= f.number_field :horometro_inicial, label: "Horómetro Inicial" %>

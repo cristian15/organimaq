@@ -6,11 +6,14 @@
      </div>
   <% end %>
   <br><br>
-	<%= bootstrap_form_tag :method => "get", html:{id: "maquina_search"} do %>
-		<%= text_field_tag :search, params[:search] %>
-		 <%= submit_tag 'Buscar' %>
+	
+	<%= search_form_for @search, :remote=>"true", url: maquinas_path, :method => :get do |f| %>
+		<%= f.text_field :nombre_cont %>
+		<%= f.submit %>
 	<% end %>
 	
+	
+</div>
   <br><br>
 	
   <br>  
@@ -19,7 +22,8 @@
 
       </thead>
   <div id="maquinas">
-  <%= render "maquinas" %> </div>
+  <%= render "maquinas" %> 
+  </div>
    
     
 </div>
