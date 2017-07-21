@@ -20,7 +20,7 @@ class ReportsController < ApplicationController
   def create
   	@report = Report.new(report_params)
   	if @report.save
-  		redirect_to edit_arriendo_path(@report.arriendo_id)
+  		redirect_to arriendo_path(@report.arriendo_id)
   	else
   		render 'new'
   	end
@@ -29,7 +29,7 @@ class ReportsController < ApplicationController
   def update
 	@report = Report.find(params[:id])
 	if @report.update(report_params)
-		redirect_to edit_arriendo_path(@report.arriendo_id), notice: "Reporte #{@report.nombre} ha sido Actualizada."
+		redirect_to arriendo_path(@report.arriendo_id), notice: "Reporte #{@report.nombre} ha sido Actualizada."
 	else
 		render 'edit'
 	end
@@ -39,9 +39,9 @@ class ReportsController < ApplicationController
     @report = Report.find(params[:id])
 
     if @report.destroy
-     redirect_to arriendo_path(), notice: " '#{@report.nombre}' ha sido elminado."
+     redirect_to arriendo_path(@report.arriendo_id), notice: " '#{@report.nombre}' ha sido elminado."
     else
-      redirect_to arriendo_path(), notice: "Error al eliminar '#{@report.nombre}'."
+      redirect_to arriendo_path(@report.arriendo_id), notice: "Error al eliminar '#{@report.nombre}'."
     end
   end
   

@@ -27,7 +27,7 @@
 			
 			<tbody>
 			<% i = 0 %>
-			<% @multa.each do |mul| %>
+			<% @infraction.each do |mul| %>
 				<tr>
 				
 					<td><%= mul.fecha %></td>
@@ -35,7 +35,8 @@
 					<td><%= mul.descripcion %></td>
 					<td><%= mul.total_multa %></td>
 					
-					<td><%= link_to "Editar", edit_multa_path(mul), class: "btn btn-success" %></td>
+					<td><%= link_to "Editar", edit_infraction_path(mul), class: "btn btn-success" %></td>
+					<td><%= button_to "Eliminar", mul, data: {confirm: "Desea Eliminar la Multa fecha: '#{mul.fecha}'?"}, method: :delete, class: "btn btn-danger" %></td>
 					
 				</tr>
 				<%
@@ -44,7 +45,7 @@
 			</tbody>
 		</table>
 		
-		<%= link_to 'Añadir Multa', multas_new_path(id: @operador.id), class: "btn btn-primary" %><br><br>
+		<%= link_to 'Añadir Multa', infractions_new_path(id: @operador.id), class: "btn btn-primary" %><br><br>
 	
 		<table class="table table-striped table-hover table-bordered">
 			<thead>

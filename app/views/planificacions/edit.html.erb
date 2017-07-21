@@ -53,7 +53,7 @@
 		   
             <%= f.select :maquina_id, [["#{Maquina.find(@planificacion.maquina_id).nombre}", @planificacion.maquina_id]], {label: "Maquina"}, {class: "selectpicker"} %>
 
-            <%= f.date_select :fecha %>
+            <%= f.date_field :fecha %>
 
             <%= f.text_area :descripcion %>
             

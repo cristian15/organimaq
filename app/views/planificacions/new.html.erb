@@ -12,7 +12,7 @@
     <%= f.collection_select :estado_maquina_id, EstadoMaquina.all, :id, :nombre %>
 
 
-    <%= f.date_select :fecha %>
+    <%= f.date_field :fecha %>
 
     <%= f.text_area :descripcion %>
     

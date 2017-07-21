@@ -1,19 +1,48 @@
 
 <div class="contentForm">
 <%= link_to 'Volver', operadors_path, class: "btn btn-warning" %><br>
-<legend>Ingresar Operador</legend>
+
+<legend>Multas Operador</legend>
+	<div class="table-responsive">
+		<table class="table table-striped table-hover table-bordered">
+			<thead>
+				<th>Fecha</th>
+				<th>Lugar</th>
+				<th>Descripción</th>
+				<th>Valor Multa</th>
+			</thead>
+			
+			<tbody>
+			<% i = 0 %>
+			<% @infraction.each do |mul| %>
+				<tr>
+				
+					<td><%= mul.fecha %></td>
+					<td><%= mul.lugar %></td>
+					<td><%= mul.descripcion %></td>
+					<td><%= mul.total_multa %></td>
+					
+					
+				</tr>
+				<%
+				i = i+1
+				end %>
+			</tbody>
+		</table>
+		
+<legend>Editar Operador</legend>
 
 	<%= bootstrap_form_for (@operador)  do |f| %>
 	<div class="form-group">
 		<div class="form-inline"><div class="form-group">	
-		<%= f.number_field :rut, :maxlength => 8, label: "Rut  :" %>
+		<%= f.number_field :rut, :maxlength => 8, label: "Rut  :", :required => true %>
 		<%= f.text_field :dv, label: "- " %>
 		</div></div>
-		<%= f.text_field :nombre, label: "Operador" %>
-		<%= f.text_field :apellido_p, label: "Apellido Paterno" %>
+		<%= f.text_field :nombre, label: "Operador", :required => true %>
+		<%= f.text_field :apellido_p, label: "Apellido Paterno", :required => true %>
 		<%= f.text_field :apellido_m, label: "Apellido Materno" %>
-		<%= f.text_field :direccion %>
-		<%= f.text_field :telefono %>
+		<%= f.text_field :direccion, :required => true %>
+		<%= f.text_field :telefono, :required => true %>
 		<%= f.file_field :foto, label: "Foto Operador" %>
 		<%= f.number_field :calzado %>
 		<%= f.text_field :oberol %>

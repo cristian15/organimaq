@@ -2,7 +2,7 @@
 <%= link_to 'Volver', operadors_path, class: "btn btn-warning" %><br>
 <legend>Editar Multa</legend>
 
-	<%= bootstrap_form_for (@multa)  do |f| %>
+	<%= bootstrap_form_for (@infraction)  do |f| %>
 	<div class="form-group">
 
 		<%= f.date_field :fecha, label: "Fecha Infracción", :required => true %>
@@ -16,4 +16,3 @@
 	
 	<% end %>
 	
-</div>

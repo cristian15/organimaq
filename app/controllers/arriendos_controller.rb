@@ -32,7 +32,7 @@ class ArriendosController < ApplicationController
   def update
   	@arriendo = Arriendo.find(params[:id])
   	if @arriendo.update(arriendo_params)
-  		redirect_to arriendos_path(), notice: "Arriendo #{@arriendo.nombre} ha sido Actualizada."
+  		redirect_to arriendos_path(), notice: "Arriendo #{@arriendo.fecha_arriendo} ha sido Actualizada."
   	else
   		render 'new'
   	end

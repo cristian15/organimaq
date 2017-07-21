@@ -9,12 +9,12 @@ class OperadorsController < ApplicationController
 
   def show
 	@operador = Operador.find(params[:id])
-	@multa = Multa.joins('INNER JOIN operadors ON operador_id = operadors.id AND operadors.id =', params[:id])
+	@infraction = Infraction.joins('INNER JOIN operadors ON operador_id = operadors.id AND operadors.id =', params[:id])
   end
 
   def edit
 	@operador = Operador.find(params[:id])
-	@multa = Multa.joins('INNER JOIN operadors ON operador_id = operadors.id AND operadors.id =', params[:id])
+	@infraction = Infraction.joins('INNER JOIN operadors ON operador_id = operadors.id AND operadors.id =', params[:id])
   end
   
 	def create
