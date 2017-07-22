@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170720052105) do
+ActiveRecord::Schema.define(version: 20170722011509) do
 
   create_table "arriendos", force: :cascade do |t|
     t.date     "fecha_arriendo"
@@ -178,7 +178,10 @@ ActiveRecord::Schema.define(version: 20170720052105) do
     t.datetime "updated_at",                      null: false
     t.integer  "km_inicio",         limit: 4
     t.integer  "km_final",          limit: 4
+    t.integer  "operador_id",       limit: 4
   end
+
+  add_index "reports", ["operador_id"], name: "fk_rails_18e3f61899", using: :btree
 
   create_table "repuestos", force: :cascade do |t|
     t.string   "nombre",           limit: 255
@@ -192,6 +195,17 @@ ActiveRecord::Schema.define(version: 20170720052105) do
   end
 
   add_index "repuestos", ["tipo_repuesto_id"], name: "fk_rails_d44f2fdb2e", using: :btree
+
+  create_table "repuestos_planificacions", force: :cascade do |t|
+    t.integer  "repuesto_id",      limit: 4
+    t.integer  "planificacion_id", limit: 4
+    t.integer  "cantidad",         limit: 4
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "repuestos_planificacions", ["planificacion_id"], name: "fk_rails_471300c48a", using: :btree
+  add_index "repuestos_planificacions", ["repuesto_id"], name: "fk_rails_f55222dba1", using: :btree
 
   create_table "tipo_maquinas", force: :cascade do |t|
     t.string   "nombre",     limit: 255
@@ -218,7 +232,10 @@ ActiveRecord::Schema.define(version: 20170720052105) do
   add_foreign_key "mecanicos_planificacions", "planificacions"
   add_foreign_key "planificacions", "estado_maquinas"
   add_foreign_key "planificacions", "maquinas"
+  add_foreign_key "reports", "operadors"
   add_foreign_key "repuestos", "tipo_repuestos"
+  add_foreign_key "repuestos_planificacions", "planificacions"
+  add_foreign_key "repuestos_planificacions", "repuestos"
   # WARNING: generating adapter-specific definition for reports_after_insert_row_tr due to a mismatch.
   # either there's a bug in hairtrigger or you've messed up your migrations and/or db :-/
   execute(<<-TRIGGERSQL)
@@ -234,6 +251,12 @@ END
       on("planificacions").
       after(:insert) do
     "UPDATE maquinas SET horometro_actual = NEW.horometro, km_actual=NEW.kilometraje, estado_maquina_id = NEW.estado_maquina_id WHERE id = NEW.maquina_id;"
+  end
+
+  create_trigger("repuestos_planificaicon_after_insert_row_tr", :generated => true, :compatibility => 1).
+      on("repuestos_planificacions").
+      after(:insert) do
+    "UPDATE repuestos SET stock = stock - NEW.cantidad WHERE repuestos.id = NEW.repuesto_id;"
   end
 
 end

@@ -1,6 +1,12 @@
 class MecanicosController < ApplicationController
+
+	helper_method :sort_column, :sort_direction
+	
+	before_action :clear_search_index, :only => [:index]
+
   def index
-  	@mecanico = Mecanico.all
+	@search = Mecanico.ransack(params[:q])
+	@mecanico = @search.result.paginate(page: params[:page], per_page:2)
   end
 
   def show
@@ -51,4 +57,13 @@ class MecanicosController < ApplicationController
   		params.require(:mecanico).permit(:rut, :nombre, :dv, :tipo_mecanico_id, :apellido_paterno, :foto, :apellido_materno,:jornada, :valor_hora)
 
   	end
+	
+	def sort_column
+		Mecanico.column_names.include?(params[:sort]) ? params[:sort] : "nombre"
+	end
+	
+	def sort_direction
+		%w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+	end
+	
 end

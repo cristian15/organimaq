@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
  
 
+  get 'repuestos_planificacions/index'
+
+  get 'repuestos_planificacions/new'
+
   get 'infractions/new'
 
   get 'infractions/index'
@@ -145,6 +149,8 @@ Rails.application.routes.draw do
   resources :multas
   
   resources :infractions
+  
+  resources :repuestos_planificacions
   
   
   

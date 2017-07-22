@@ -1,0 +1,20 @@
+
+<div class="contentForm">
+<legend>Repuestos-Planificacion</legend>
+
+  <%= bootstrap_form_for (@repuestos_planificacions)  do |f| %>
+  <div class="form-group">
+    
+	<%= f.hidden_field :planificacion_id, value: params[:id] %>
+
+    <%= f.collection_select :repuesto_id, Repuesto.all, :id, :nombre %>
+
+	
+    <%= f.number_field :cantidad%>
+    
+      <%= f.primary 'Guardar' %>
+   </div>
+
+  <% end %>
+
+</div>

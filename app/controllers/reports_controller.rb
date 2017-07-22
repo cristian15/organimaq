@@ -47,7 +47,7 @@ class ReportsController < ApplicationController
   
    private
   	def report_params
-  		params.require(:report).permit(:nombre, :fecha, :horas, :numero, :arriendo_id, :detalle, :horometro_inicial, :horometro_final)
+  		params.require(:report).permit(:nombre, :fecha, :horas, :numero, :arriendo_id, :detalle, :horometro_inicial, :horometro_final, :operador_id)
   	end
 	
   

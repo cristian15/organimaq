@@ -1,9 +1,6 @@
 class ArriendosController < ApplicationController
 
-	helper_method :sort_column, :sort_direction
 	
-	before_action :clear_search_index, :only => [:index]
-
   def new
 	@arriendo = Arriendo.new
   end
@@ -49,12 +46,5 @@ class ArriendosController < ApplicationController
   		params.require(:arriendo).permit(:fecha_arriendo, :fecha_entrega, :comentario, :descuento, :total_arriendo, :nombre_faena, :comuna_id, :cliente_id, :maquina_id, :estado)
   	end
 	
-	def sort_column
-		Arriendo.column_names.include?(params[:sort]) ? params[:sort] : "nombre"
-	end
 	
-	def sort_direction
-		%w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-	end
-  
 end

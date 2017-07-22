@@ -1,17 +1,10 @@
 class MaquinasController < ApplicationController
-	helper_method :sort_column, :sort_direction
-	
-	
-	before_action :clear_search_index, :only => [:index]
+
 	
 	def index
 		@search = Maquina.ransack(params[:q])
-		# make name the default sort column
-		#@search.sorts = 'nombre' if @search.sorts.empty?
 		@maquina = @search.result.paginate(page: params[:page], per_page:2)
-		
-		#@maquina = Maquina.all.paginate(:per_page =>2, :page =>params[:page])
-		#@maquina = Maquina.search(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:per_page =>2, :page =>params[:page])
+	
 	end
 	def show
 		@maquina = Maquina.find(params[:id])
@@ -59,11 +52,5 @@ class MaquinasController < ApplicationController
 			params.require(:maquina).permit(:nombre,:codigo,:chasis,:motor,:patente,:marca,:valor_hora,:valor_dia,:anio,:foto,:km_actual,:neumaticos,:fecha_permiso,:fecha_seguro,:fecha_revision,:ejes,:horometro_actual,:anio_compra,:valor_compra,:modelo,:hora_minima,:rendimiento_hora,:rendimiento_km, :tipo_maquina_id, :estado_maquina_id)
 		end
 		
-		def sort_column
-			Maquina.column_names.include?(params[:sort]) ? params[:sort] : "nombre"
-		end
-		
-		def sort_direction
-			%w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-		end
+	
 end

@@ -13,6 +13,10 @@ class PlanificacionsController < ApplicationController
 	# lista de mecanicos agregados a la planificacion
 	@mecanico = Mecanico.joins("INNER JOIN mecanicos_planificacions on mecanico_id = mecanicos.id AND planificacion_id = ", params[:id])
 	@pla = MecanicosPlanificacion.joins("INNER JOIN mecanicos on mecanico_id = mecanicos.id AND planificacion_id = ", params[:id])
+	
+	@repuesto = Repuesto.joins("INNER JOIN repuestos_planificacions on repuesto_id = repuestos.id AND planificacion_id = ", params[:id])
+	@RepuestoPla = RepuestosPlanificacion.joins("INNER JOIN repuestos on repuesto_id = repuestos.id AND planificacion_id = ", params[:id])
+	
   end
 
   def new

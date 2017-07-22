@@ -6,6 +6,7 @@
 	
 		<%= f.hidden_field :arriendo_id, value: params[:id] %>
 	
+		<%= f.collection_select :operador_id, Operador.all, :id, :nombre %>
 		<%= f.text_field :nombre, label: "Nombre de Reporte", :required => true %>
 		<%= f.date_field :fecha, :required => true %>
 		<%= f.number_field :horas, :required => true %>

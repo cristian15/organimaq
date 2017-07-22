@@ -1,0 +1,32 @@
+<div class="table-responsive">
+		<legend>Repuestos</legend>
+	
+		<table class="table table-striped table-hover table-bordered">
+		  <thead>
+			<th>Codigo</th>
+			<th>Nombre</th>
+			<th>Descripcion</th>
+			<th>Tipo Repuesto</th>			
+			<th>Cantidad</th>
+
+		  </thead>
+		  <tbody>
+		  <% i = 0 %>
+		  <% @repuesto.each do |repuesto| %>
+			<tr>
+			  <td><%= repuesto.codigo%></td>
+			  <td><%= repuesto.nombre %></td>
+			  <td><%= repuesto.descripcion %></td>
+			  <td><%= TipoRepuesto.find(repuesto.tipo_repuesto_id).nombre %></td>
+			  <td><%= @RepuestoPla[i].cantidad  %></td>			 
+			</tr>
+			<% 
+			i = i+1
+			end %>
+		  </tbody>
+		  
+		</table>
+	</div>
+			
+			<%= link_to 'Agregar Repuesto +', repuestos_planificacions_new_path(id: @planificacion.id), class: "btn btn-primary" %>
+           <br><br>
