@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170722011509) do
+ActiveRecord::Schema.define(version: 20170722031559) do
 
   create_table "arriendos", force: :cascade do |t|
     t.date     "fecha_arriendo"
@@ -192,6 +192,7 @@ ActiveRecord::Schema.define(version: 20170722011509) do
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.text     "foto",             limit: 65535
+    t.integer  "costo_unidad",     limit: 4
   end
 
   add_index "repuestos", ["tipo_repuesto_id"], name: "fk_rails_d44f2fdb2e", using: :btree

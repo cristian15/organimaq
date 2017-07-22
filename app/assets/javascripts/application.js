@@ -16,24 +16,9 @@
 
 //= require bootstrap
 
-//= require smart_listing
-
 //= require_tree 
 //= javascript_include_tag :application
 
-/* busqueda, paginacion y ordenamiento tabla */
 
 
-$(function () {
-  $('#maquinas .pagination a').on('click', function () {
-   $.getScript(this.href);
-	console.log("Hola");
-    return false;
-  });
-  
-  // Search form.
-  $('#maquina_search').submit(function () {
-    $.get(this.action, $(this).serialize(), null, 'script');
-    return false;
-  });
-})
+ 

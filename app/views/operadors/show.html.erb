@@ -15,42 +15,17 @@
       <img class="img-thumbnail" alt="Foto" width="20%" src="<%= @operador.foto_url %>">
       
   <% end %>
-  <legend>Multas Operador</legend>
-  <h5>Cantidad de Infracciones:<%= @infraction.count %></h5>
+  
 	<div class="table-responsive">
-		<table class="table table-striped table-hover table-bordered">
-			<thead>
-				<th>Fecha</th>
-				<th>Lugar</th>
-				<th>Descripción</th>
-				<th>Valor Multa</th>
-			</thead>
-			
-			<tbody>
-			<% i = 0 %>
-			
-			
-			
-			<% @infraction.each do |mul| %>
-				<tr>
-				
-					<td><%= mul.fecha %></td>
-					<td><%= mul.lugar %></td>
-					<td><%= mul.descripcion %></td>
-					<td><%= mul.total_multa %></td>
-					
-					<td><%= link_to "Editar", edit_infraction_path(mul), class: "btn btn-success" %></td>
-					<td><%= button_to "Eliminar", mul, data: {confirm: "Desea Eliminar la Multa fecha: '#{mul.fecha}'?"}, method: :delete, class: "btn btn-danger" %></td>
-					
-				</tr>
-				<%
-				i = i+1
-				end %>
-			</tbody>
-		</table>
+		<%= render "multas" %>
 		
-		<%= link_to 'Añadir Multa', infractions_new_path(id: @operador.id), class: "btn btn-primary" %><br><br>
-	
+		<br>
+		<%= search_form_for @search, :remote=>"true", url: operadors_path, :method => :get do |f| %>
+			<%= f.text_field :nombre_cont %>
+			<%= f.submit %>
+		<% end %>
+		<div id="reports"><%= render "reports" %></div>
+		
 		<table class="table table-striped table-hover table-bordered">
 			<thead>
 				<th>Rut</th>

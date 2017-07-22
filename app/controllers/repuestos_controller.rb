@@ -46,6 +46,6 @@ class RepuestosController < ApplicationController
 
   private
   	def repuesto_params
-  		params.require(:repuesto).permit(:codigo, :nombre, :descripcion, :tipo_repuesto_id, :stock, :foto)
+  		params.require(:repuesto).permit(:codigo, :nombre, :descripcion, :tipo_repuesto_id, :stock, :foto, :costo_unidad)
   	end
 end

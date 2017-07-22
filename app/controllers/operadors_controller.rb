@@ -16,6 +16,10 @@ class OperadorsController < ApplicationController
   def show
 	@operador = Operador.find(params[:id])
 	@infraction = Infraction.joins('INNER JOIN operadors ON operador_id = operadors.id AND operadors.id =', params[:id])
+	
+	# Busqueda y paginacion
+	@search = Report.ransack(params[:q])
+	@reports = @search.result.includes(:operadors).paginate(page: params[:page], per_page:2)
   end
 
   def edit
