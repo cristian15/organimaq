@@ -12,7 +12,9 @@ class ArriendosController < ApplicationController
 
   def show
 	@arriendo = Arriendo.find(params[:id])
-	@report = Report.joins('INNER JOIN arriendos ON arriendo_id = arriendos.id AND arriendos.id =', params[:id])
+	
+	@search = Report.joins('INNER JOIN arriendos ON arriendo_id = arriendos.id AND arriendos.id =', params[:id]).ransack(params[:q])
+	@report = @search.result.paginate(page: params[:page], per_page:2)
   end
 
   def edit

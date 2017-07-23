@@ -1,5 +1,5 @@
 class Operador < ActiveRecord::Base
-	belongs_to :reports
+	belongs_to :report
 
 	mount_uploader :foto, FotoUploader
 	

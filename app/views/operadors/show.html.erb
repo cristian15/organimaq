@@ -20,8 +20,11 @@
 		<%= render "multas" %>
 		
 		<br>
-		<%= search_form_for @search, :remote=>"true", url: operadors_path, :method => :get do |f| %>
+		<%= search_form_for @search, :remote=>"true", url: operador_path(@operador.id), :method => :get do |f| %>
+			<%= f.label :nombre %>
 			<%= f.text_field :nombre_cont %>
+			<%= f.date_field :fecha_gteq %>
+			<%= f.date_field :fecha_lteq %>
 			<%= f.submit %>
 		<% end %>
 		<div id="reports"><%= render "reports" %></div>

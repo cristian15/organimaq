@@ -4,17 +4,14 @@
 			<thead>
 				<th>Numero</th>
 				<th>Fecha</th>
-				<th>Numero</th>
 				<th>Maquina</th>
 				<th>Nombre</th>
-			</thead>
-			
+			</thead>			
 			<tbody>
 			<% @reports.each do |rep| %>
 				<tr>				
 					<td><%= rep.numero %></td>
 					<td><%= rep.fecha %></td>
-					<td><%= rep.numero %></td>
 					<td><%= Maquina.find(Arriendo.find(rep.arriendo_id).maquina_id).nombre + " ( " +
 					Maquina.find(Arriendo.find(rep.arriendo_id).maquina_id).patente+ " )"  %></td>
 					<td><%= rep.nombre %></td>						
