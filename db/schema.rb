@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170722031559) do
+ActiveRecord::Schema.define(version: 20170728024233) do
 
   create_table "arriendos", force: :cascade do |t|
     t.date     "fecha_arriendo"
@@ -137,11 +137,21 @@ ActiveRecord::Schema.define(version: 20170722031559) do
     t.string   "telefono",   limit: 255
     t.string   "foto",       limit: 255
     t.integer  "calzado",    limit: 4
-    t.string   "oberol",     limit: 255
+    t.string   "overol",     limit: 255
     t.string   "chaleco",    limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
+
+  create_table "orden_trabajos", force: :cascade do |t|
+    t.text     "detalle",          limit: 65535
+    t.date     "fecha"
+    t.integer  "planificacion_id", limit: 4
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
+
+  add_index "orden_trabajos", ["planificacion_id"], name: "fk_rails_2deefec68e", using: :btree
 
   create_table "planificacions", force: :cascade do |t|
     t.datetime "fecha_planificacion"
@@ -164,6 +174,18 @@ ActiveRecord::Schema.define(version: 20170722031559) do
 
   add_index "planificacions", ["estado_maquina_id"], name: "fk_rails_da3861be35", using: :btree
   add_index "planificacions", ["maquina_id"], name: "fk_rails_35ee35873a", using: :btree
+
+  create_table "proveedors", force: :cascade do |t|
+    t.integer  "rut",        limit: 4
+    t.string   "dv",         limit: 255
+    t.string   "nombre",     limit: 255
+    t.string   "telefono",   limit: 255
+    t.string   "email",      limit: 255
+    t.text     "direccion",  limit: 65535
+    t.text     "giro",       limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
 
   create_table "reports", force: :cascade do |t|
     t.string   "nombre",            limit: 255
@@ -231,12 +253,22 @@ ActiveRecord::Schema.define(version: 20170722031559) do
   add_foreign_key "mecanicos", "tipo_mecanicos"
   add_foreign_key "mecanicos_planificacions", "mecanicos"
   add_foreign_key "mecanicos_planificacions", "planificacions"
+  add_foreign_key "orden_trabajos", "planificacions"
   add_foreign_key "planificacions", "estado_maquinas"
   add_foreign_key "planificacions", "maquinas"
   add_foreign_key "reports", "operadors"
   add_foreign_key "repuestos", "tipo_repuestos"
   add_foreign_key "repuestos_planificacions", "planificacions"
   add_foreign_key "repuestos_planificacions", "repuestos"
+  # no candidate create_trigger statement could be found, creating an adapter-specific one
+  execute(<<-TRIGGERSQL)
+CREATE TRIGGER horas_mecanico_planificacion_after_insert_row_tr AFTER INSERT ON `mecanicos_planificacions`
+FOR EACH ROW
+BEGIN
+    UPDATE planificacions SET total_hh = total_hh + NEW.horas_mecanico WHERE planificacions.id = NEW.planificacion_id;
+END
+  TRIGGERSQL
+
   # WARNING: generating adapter-specific definition for reports_after_insert_row_tr due to a mismatch.
   # either there's a bug in hairtrigger or you've messed up your migrations and/or db :-/
   execute(<<-TRIGGERSQL)

@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require modals
 
 //= require bootstrap
 
@@ -20,5 +21,3 @@
 //= javascript_include_tag :application
 
 
-
- 

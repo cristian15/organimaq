@@ -54,9 +54,8 @@ gem 'scoped_search'
 # busqueda
 gem 'ransack', github: 'activerecord-hackery/ransack'
 
-
-#paginacio, busqueda y listado
-gem 'smart_listing'
+# Modals y ajax
+gem 'responders', '~> 2.0'
 
 
 group :development, :test do

@@ -54,7 +54,7 @@ class OperadorsController < ApplicationController
 	
 	private
 	def operador_params
-		params.require(:operador).permit(:rut,:dv,:nombre,:apellido_p,:apellido_m,:direccion,:telefono,:foto,:calzado,:oberol,:chaleco)
+		params.require(:operador).permit(:rut,:dv,:nombre,:apellido_p,:apellido_m,:direccion,:telefono,:foto,:calzado,:overol,:chaleco)
 	end	
 	
 	def sort_column

@@ -10,7 +10,7 @@ class CreateOperadors < ActiveRecord::Migration
       t.string :telefono
       t.string :foto
       t.integer :calzado
-      t.string :oberol
+      t.string :overol
       t.string :chaleco
 
       t.timestamps null: false

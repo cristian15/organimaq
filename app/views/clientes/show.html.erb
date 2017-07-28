@@ -1,39 +1,31 @@
 <div class="content-table">
 
-	<%= link_to 'Agregar +', clientes_new_path, class: 'btn btn-primary' %>
-	<%= link_to 'Volver', clientes_path, class: "btn btn-warning" %>
-	<br><br>
+	<legend><h2><%= @cliente.nombre %></h2></legend>
+	<%= link_to 'Volver', clientes_path, class: "btn btn-primary" %>
+	<br>
 	<% if !flash[:notice].blank? %>
      <div class = "alert alert-info">
         <%= flash[:notice] %>
-     </div>
+     </div><br>
   <% end %>
 	<div class="table-responsive">
 		<table class="table table-striped table-hover table-bordered">
 			<thead>
-				<th>Rut</th>
-				<th>Cliente</th>
-				<th>Direccion</th>
-				<th>Contacto</th>
-				<th>Telefono</th>
-				<th>Email</th>
-				<th>Giro</th>
+				<th>Datos del Cliente<th>
 			</thead>
 			
 			<tbody>
-				<tr>
 				
-					<td><%= @cliente.rut_cliente.to_s + "-" + @cliente.dv %></td>
-					<td><%= @cliente.nombre %></td>
-					<td><%= @cliente.direccion %></td>
-					<td><%= @cliente.nombre_contacto %></td>
-					<td><%= @cliente.telefono %></td>
-					<td><%= @cliente.mail %></td>
-					<td><%= @cliente.giro %></td>
-					<td><%= button_to "Eliminar", @cliente, data: {confirm: "Desea Eliminar '#{@cliente.nombre}'?"}, method: :delete, class: "btn btn-danger" %></td>
-					<td><%= link_to "Editar", edit_cliente_path(@cliente), class: "btn btn-success" %></td>
+					<tr><td>Rut</td><td><%= @cliente.rut_cliente.to_s + "-" + @cliente.dv %></td></tr>
+					<tr><td>Nombre</td><td><%= @cliente.nombre %></td></tr>
+					<tr><td>Dirección</td><td><%= @cliente.direccion %></td></tr>
+					<tr><td>Contacto</td><td><%= @cliente.nombre_contacto %></td></tr>
+					<tr><td>Telefono</td><td><%= @cliente.telefono %></td></tr>
+					<tr><td>Correo</td><td><%= @cliente.mail %></td></tr>
+					<tr><td>Giro</td><td><%= @cliente.giro %></td></tr>
+					<tr><td><%= link_to "Editar", edit_cliente_path(@cliente), class: "btn btn-success" %></td>
+					<td><%= button_to "Eliminar", @cliente, data: {confirm: "Desea Eliminar '#{@cliente.nombre}'?"}, method: :delete, class: "btn btn-danger" %></td></tr>
 					
-				</tr>
 			</tbody>
 		</table>
 	</div>

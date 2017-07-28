@@ -24,7 +24,7 @@
 					<td><%= arriendo.total_arriendo %></td>
 					<td><%= arriendo.nombre_faena %></td>
 					<td><%= arriendo.comuna_id %></td>
-					<td><%= arriendo.cliente_id %></td>
+					<td><%= Cliente.find(arriendo.cliente_id).nombre %></td>
 					<td><%= arriendo.maquina_id %></td>
 					<td><%= arriendo.estado %></td>
 					<td><%= link_to "Mostrar", arriendo_path(arriendo), class: "btn btn-info" %></td>

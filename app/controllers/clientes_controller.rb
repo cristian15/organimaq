@@ -1,7 +1,5 @@
 class ClientesController < ApplicationController
 
-	helper_method :sort_column, :sort_direction
-	
 	before_action :clear_search_index, :only => [:index]
 	
   def new
@@ -54,13 +52,6 @@ class ClientesController < ApplicationController
   	def cliente_params
   		params.require(:cliente).permit(:rut_cliente, :dv, :nombre, :direccion, :nombre_contacto, :telefono, :mail, :giro)
   	end
-	
-	def sort_column
-		Cliente.column_names.include?(params[:sort]) ? params[:sort] : "nombre"
-	end
-	
-	def sort_direction
-		%w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-	end
+
 	
 end

@@ -1,7 +1,6 @@
 <div class="content-table">
-
-	<%= link_to 'Agregar +', operadors_new_path, class: 'btn btn-primary' %>
-	<%= link_to 'Volver', operadors_path, class: "btn btn-warning" %>
+	<legend><h2><%= @operador.nombre %> <%= @operador.apellido_p %></h2></legend>
+	<%= link_to 'Volver', operadors_path, class: "btn btn-primary" %>
 	<br><br>
 	<% if !flash[:notice].blank? %>
      <div class = "alert alert-info">
@@ -23,37 +22,29 @@
 		<%= search_form_for @search, :remote=>"true", url: operador_path(@operador.id), :method => :get do |f| %>
 			<%= f.label :nombre %>
 			<%= f.text_field :nombre_cont %>
+			<%= f.label :"Intervalo Fecha Reporte" %>
 			<%= f.date_field :fecha_gteq %>
 			<%= f.date_field :fecha_lteq %>
 			<%= f.submit %>
 		<% end %>
 		<div id="reports"><%= render "reports" %></div>
 		
+		<legend>Datos del Operador</legend>
+		
 		<table class="table table-striped table-hover table-bordered">
-			<thead>
-				<th>Rut</th>
-				<th>Nombre</th>
-				<th>Apellido Paterno</th>
-				<th>Apellido Materno</th>
-				<th>Dirección</th>
-				<th>Telefono</th>
-				<th>Calzado</th>
-				<th>Oberol</th>
-				<th>Chaleco</th>
-			</thead>
+
 			
 			<tbody>
 				<tr>
 				
-					<td><%= @operador.rut.to_s + "-" + @operador.dv %></td>
-					<td><%= @operador.nombre %></td>
-					<td><%= @operador.apellido_p %></td>
-					<td><%= @operador.apellido_m %></td>
-					<td><%= @operador.direccion %></td>
-					<td><%= @operador.telefono %></td>
-					<td><%= @operador.calzado %></td>
-					<td><%= @operador.oberol %></td>
-					<td><%= @operador.chaleco %></td>
+					<tr><td>Rut</td><td><%= @operador.rut.to_s + "-" + @operador.dv %></td></tr>
+					<tr><td>Nombre</td><td><%= @operador.nombre %></td></tr>
+					<tr><td>Apellido</td><td><%= @operador.apellido_p %> <%= @operador.apellido_m %></td></tr>
+					<tr><td>Dirección</td><td><%= @operador.direccion %></td></tr>
+					<tr><td>Teléfono</td><td><%= @operador.telefono %></td></tr>
+					<tr><td>Calzado</td><td><%= @operador.calzado %></td></tr>
+					<tr><td>Talla Oberol</td><td><%= @operador.overol %></td></tr>
+					<tr><td>Talla Chaleco</td><td><%= @operador.chaleco %></td></tr>
 					<tr>
 					<td><%= link_to "Editar", edit_operador_path(@operador), class: "btn btn-success" %></td></tr>
 					

@@ -1,0 +1,21 @@
+<div class="table-responsive">
+		<legend>Ordenes de Trabajo</legend>
+	
+		<table class="table table-striped table-hover table-bordered">
+		  <thead>
+			<th>Fecha</th>
+			<th>Detalle</th>
+
+		  </thead>
+		  <tbody>
+		  <% @orden_trabajos.each do |orden| %>
+			<tr>
+			  <td><%= orden.fecha%></td>
+			  <td><%= orden.detalle %></td>		 
+			</tr>
+		  </tbody>
+		  <% end %>
+		</table>
+	</div>
+
+<%= link_to "Agregar Orden de Trabajo +", orden_trabajos_new_path(id: @planificacion.id), data:{ modal: true}, class: "btn btn-primary" %>

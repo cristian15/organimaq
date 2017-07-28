@@ -34,5 +34,5 @@
 		</table>
 	</div>
 			
-			<%= link_to 'Agregar Mecanico +', mecanicos_planificacions_new_path(id: @planificacion.id), class: "btn btn-primary" %>
+			<%= link_to "Agregar Mecanico +", new_mecanicos_planificacion_path(id: @planificacion.id), data: { modal: true, title: "HOLA" },  class: "btn btn-primary" %>
            <br><br>

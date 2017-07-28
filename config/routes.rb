@@ -1,6 +1,22 @@
 Rails.application.routes.draw do
  
 
+  get 'proveedors/index'
+
+  get 'proveedors/show'
+
+  get 'proveedors/edit'
+
+  get 'proveedors/new'
+
+  get 'orden_trabajos/index'
+
+  get 'orden_trabajos/show'
+
+  get 'orden_trabajos/new'
+
+  get 'orden_trabajos/edit'
+
   get 'repuestos_planificacions/index'
 
   get 'repuestos_planificacions/new'
@@ -151,6 +167,10 @@ Rails.application.routes.draw do
   resources :infractions
   
   resources :repuestos_planificacions
+  
+  resources :orden_trabajos
+  
+  resources :proveedors
   
   
   

@@ -28,5 +28,5 @@
 		</table>
 	</div>
 			
-			<%= link_to 'Agregar Repuesto +', repuestos_planificacions_new_path(id: @planificacion.id), class: "btn btn-primary" %>
+			<%= link_to "Agregar Repuesto +", new_repuestos_planificacion_path(id: @planificacion.id), data: { modal: true },  class: "btn btn-primary" %>
            <br><br>

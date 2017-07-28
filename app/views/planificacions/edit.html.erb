@@ -1,8 +1,7 @@
 <div class="content-table">
+<legend><h2>Editar Planificación - <%= Maquina.find(@planificacion.maquina_id).nombre %> - <%= @planificacion.fecha %></h2></legend>
     <%= link_to 'Volver', planificacions_path, class: "btn btn-warning" %>
     <br><br>
-    <legend>Editar Planificación </legend>
-    <div class="contentForm">
     
     <%=  %>
 
@@ -13,7 +12,9 @@
 		<%= render "mecanicos" %>
 		
 		<%= render "repuestos" %>
-		   
+		
+		<%= render "orden_trabajos" %>
+		   <div class="contentForm">
 		   
             <%= f.select :maquina_id, [["#{Maquina.find(@planificacion.maquina_id).nombre}", @planificacion.maquina_id]], {label: "Maquina"}, {class: "selectpicker"} %>
 

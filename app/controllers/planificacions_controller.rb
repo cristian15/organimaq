@@ -17,6 +17,8 @@ class PlanificacionsController < ApplicationController
 	@repuesto = Repuesto.joins("INNER JOIN repuestos_planificacions on repuesto_id = repuestos.id AND planificacion_id = ", params[:id])
 	@RepuestoPla = RepuestosPlanificacion.joins("INNER JOIN repuestos on repuesto_id = repuestos.id AND planificacion_id = ", params[:id])
 	
+	@orden_trabajos = OrdenTrabajo.where("planificacion_id ="+params[:id])
+	
   end
 
   def new
