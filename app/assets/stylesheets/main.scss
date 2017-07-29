@@ -141,9 +141,14 @@ text-align: left;
 	font-weight: bold;
 
 	}
+	
+	@media(max-width:768px){
+	font-size: 0.8em;
+	}
 
 	.calendar-heading
 	{
+	padding-bottom:0.5em;
 	text-align: center;
 	margin: 0 auto;
 	width:100%;
@@ -173,10 +178,10 @@ text-align: left;
 			background-color: #b2a7be;
 			color:#36135f;
 		}
-		
+	
 	}
 	
-	table{
+	.table{
 		border: 1px solid #36135f;
 		thead{
 		background-color:#36135f;
@@ -307,11 +312,11 @@ legend{
 
 /* Busquedas */
 
-.report_search, .arriendo_search, .operador_search{
+.report_search, .arriendo_search, .operador_search, .repuesto_search{
 	padding:1em;
 }
 
-.report_search input, .arriendo_search input, .operador_search input{
+.report_search input, .arriendo_search input, .operador_search input, .repuesto_search input{
 	color:#3a2166;
 	border: 1px solid #b9a9d5;
 	border-radius: 5px;
@@ -329,3 +334,26 @@ legend{
 
 /* Busquedas */
 
+.table{
+	thead{
+		background-color: #603f97;
+		color: white;
+		border: none;
+		a{
+		color:white;
+		text-decoration:none;
+		}
+		}
+}
+
+.table-bordered > thead > tr > th{
+	border:none;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #e8e3f0;
+}
+
+.table-striped > tbody > tr:hover {
+    background-color: #cec3df;
+}

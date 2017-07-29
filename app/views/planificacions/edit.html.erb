@@ -5,17 +5,24 @@
     
     <%=  %>
 
-      <%= bootstrap_form_for (@planificacion)  do |f| %>
-      
-      <div class="form-group">       
-			
-		<%= render "mecanicos" %>
+		<div id="mecanicos">	
+		<%= render "mecanicos" %></div>
 		
-		<%= render "repuestos" %>
+		
+		<%= search_form_for @search, :remote=>"true", url:edit_planificacion_path(@planificacion.id), :method => :get do |f| %>
+		<%= f.label :nombre %>
+		<%= f.text_field :nombre_cont %>
+		<%= f.submit %>
+		<% end %>
+		
+		<div id="repuestos">
+		<%= render "repuestos" %></div>
 		
 		<%= render "orden_trabajos" %>
+		<div class="form-group">
 		   <div class="contentForm">
 		   
+		<%= bootstrap_form_for (@planificacion)  do |f| %>   
             <%= f.select :maquina_id, [["#{Maquina.find(@planificacion.maquina_id).nombre}", @planificacion.maquina_id]], {label: "Maquina"}, {class: "selectpicker"} %>
 
             <%= f.date_field :fecha %>

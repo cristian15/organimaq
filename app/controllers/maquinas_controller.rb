@@ -8,6 +8,8 @@ class MaquinasController < ApplicationController
 	end
 	def show
 		@maquina = Maquina.find(params[:id])
+		@search = Factura.joins('INNER JOIN maquinas ON maquina_id = maquinas.id AND maquinas.id =', params[:id]).ransack(params[:q])
+		@factura = @search.result.paginate(page: params[:page], per_page:2)
 	end
 	def new
 		@maquina = Maquina.new

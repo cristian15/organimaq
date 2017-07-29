@@ -1,0 +1,36 @@
+<div class="content-table">
+
+	<legend><h2>Factura No.<%= @factura.numero %></h2></legend>
+	<%= link_to 'Volver', maquina_path(@factura.maquina_id), class: "btn btn-primary" %>
+	<br>
+	
+  <% if @factura.foto.blank? %>
+      <%= image_tag "SINFOTO.png", class: "img-thumbnail" %>
+  <% else %>
+      <img class="img-thumbnail" alt="Foto" width="300px" src="<%= @factura.foto_url %>">
+  <% end %>
+	  
+	  
+	<div class="table-responsive">
+		<table class="table table-striped table-hover table-bordered">
+			<thead>
+				<th>Datos de la Factura<th>
+			</thead>
+			
+			<tbody>
+				
+					<tr><td>Número</td><td><%= @factura.numero %></td></tr>
+					<tr><td>Descripción</td><td><%= @factura.descripcion %></td></tr>
+					<tr><td>Fecha</td><td><%= @factura.fecha %></td></tr>
+					<tr><td>Valor Total</td><td><%= @factura.total %></td></tr>
+					<tr><td>Valor Neto</td><td><%= @factura.neto %></td></tr>
+					<tr><td>Tipo Factura</td><td><%= TipoFactura.find(@factura.tipo_factura_id).nombre %></td></tr>
+					<tr><td>Proveedor</td><td><%= Proveedor.find(@factura.proveedor_id).nombre %></td></tr>
+					<tr><td>Maquina</td><td><%= Maquina.find(@factura.maquina_id).nombre %></td></tr>
+					<tr><td><%= link_to "Editar", edit_factura_path(@factura), class: "btn btn-success" %></td></tr>
+					
+			</tbody>
+		</table>
+	</div>
+
+</div>

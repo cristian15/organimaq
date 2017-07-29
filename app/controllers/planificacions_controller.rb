@@ -1,4 +1,9 @@
 class PlanificacionsController < ApplicationController
+
+	helper_method :sort_column, :sort_direction
+	
+	before_action :clear_search_index, :only => [:index]
+
   def index
     @planificacions = Planificacion.all
 	
@@ -14,7 +19,8 @@ class PlanificacionsController < ApplicationController
 	@mecanico = Mecanico.joins("INNER JOIN mecanicos_planificacions on mecanico_id = mecanicos.id AND planificacion_id = ", params[:id])
 	@pla = MecanicosPlanificacion.joins("INNER JOIN mecanicos on mecanico_id = mecanicos.id AND planificacion_id = ", params[:id])
 	
-	@repuesto = Repuesto.joins("INNER JOIN repuestos_planificacions on repuesto_id = repuestos.id AND planificacion_id = ", params[:id])
+	@search = Repuesto.joins("INNER JOIN repuestos_planificacions on repuesto_id = repuestos.id AND planificacion_id = ", params[:id]).ransack(params[:q])
+	@repuestos = @search.result.paginate(page: params[:page], per_page:4)
 	@RepuestoPla = RepuestosPlanificacion.joins("INNER JOIN repuestos on repuesto_id = repuestos.id AND planificacion_id = ", params[:id])
 	
 	@orden_trabajos = OrdenTrabajo.where("planificacion_id ="+params[:id])

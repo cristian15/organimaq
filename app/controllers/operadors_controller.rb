@@ -1,9 +1,5 @@
 class OperadorsController < ApplicationController
 
-	helper_method :sort_column, :sort_direction
-	
-	before_action :clear_search_index, :only => [:index]
-
   def index
 	@search = Operador.ransack(params[:q])
 	@operador = @search.result.paginate(page: params[:page], per_page:2)

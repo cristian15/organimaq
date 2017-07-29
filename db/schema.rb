@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170728024233) do
+ActiveRecord::Schema.define(version: 20170729013517) do
 
   create_table "arriendos", force: :cascade do |t|
     t.date     "fecha_arriendo"
@@ -46,6 +46,24 @@ ActiveRecord::Schema.define(version: 20170728024233) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
+
+  create_table "facturas", force: :cascade do |t|
+    t.integer  "numero",          limit: 4
+    t.text     "descripcion",     limit: 65535
+    t.date     "fecha"
+    t.integer  "total",           limit: 4
+    t.integer  "maquina_id",      limit: 4
+    t.integer  "tipo_factura_id", limit: 4
+    t.integer  "proveedor_id",    limit: 4
+    t.integer  "neto",            limit: 4
+    t.string   "foto",            limit: 255
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_index "facturas", ["maquina_id"], name: "fk_rails_23c47a1ae9", using: :btree
+  add_index "facturas", ["proveedor_id"], name: "fk_rails_8f1194c5d8", using: :btree
+  add_index "facturas", ["tipo_factura_id"], name: "fk_rails_41e690de45", using: :btree
 
   create_table "infractions", force: :cascade do |t|
     t.date     "fecha"
@@ -230,6 +248,12 @@ ActiveRecord::Schema.define(version: 20170728024233) do
   add_index "repuestos_planificacions", ["planificacion_id"], name: "fk_rails_471300c48a", using: :btree
   add_index "repuestos_planificacions", ["repuesto_id"], name: "fk_rails_f55222dba1", using: :btree
 
+  create_table "tipo_facturas", force: :cascade do |t|
+    t.string   "nombre",     limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
   create_table "tipo_maquinas", force: :cascade do |t|
     t.string   "nombre",     limit: 255
     t.datetime "created_at",             null: false
@@ -248,6 +272,9 @@ ActiveRecord::Schema.define(version: 20170728024233) do
     t.datetime "updated_at",             null: false
   end
 
+  add_foreign_key "facturas", "maquinas"
+  add_foreign_key "facturas", "proveedors"
+  add_foreign_key "facturas", "tipo_facturas"
   add_foreign_key "maquinas", "estado_maquinas"
   add_foreign_key "maquinas", "tipo_maquinas"
   add_foreign_key "mecanicos", "tipo_mecanicos"

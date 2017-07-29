@@ -1,6 +1,18 @@
 Rails.application.routes.draw do
  
 
+  get 'facturas/index'
+
+  get 'facturas/show'
+
+  get 'facturas/edit'
+
+  get 'facturas/new'
+
+  get 'tipo_facturas/index'
+
+  get 'tipo_facturas/new'
+
   get 'proveedors/index'
 
   get 'proveedors/show'
@@ -171,6 +183,10 @@ Rails.application.routes.draw do
   resources :orden_trabajos
   
   resources :proveedors
+  
+  resources :tipo_facturas
+  
+  resources :facturas
   
   
   
