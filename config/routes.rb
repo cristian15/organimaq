@@ -212,6 +212,8 @@ Rails.application.routes.draw do
   
   resources :estanque_fijos
   
+  resources :carga_combustibles
+  
   
   
 

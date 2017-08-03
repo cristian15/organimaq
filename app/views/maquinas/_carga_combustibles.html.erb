@@ -1,0 +1,47 @@
+<legend>Cargas de Combustible</legend>
+	
+	<% if !flash[:notice].blank? %>
+     <div class = "alert alert-info">
+        <%= flash[:notice] %>
+     </div>
+  <% end %>
+  
+  <%= search_form_for @search_cargas, :remote=>"true", url: maquina_path(@maquina.id), :method => :get, as: :q_carga do |f| %>
+			
+			<%= f.label :"Intervalos de Fecha: " %><%= f.date_field :fecha_gteq %>
+			<%= f.label :" - " %><%= f.date_field :fecha_lteq %>
+			<%= f.submit %>
+		<% end %>
+	  <br>
+	  
+		<table class="table table-striped table-hover table-bordered">
+			<thead>
+				<th>Litros Cargados</th>
+				<th>Lugar</th>
+				<th>Horometro</th>
+				<th>Kilometraje</th>
+				<th>Fecha</th>
+				<th>Nº Report</th>
+			</thead>
+			
+			<tbody>
+				<% @carga.each do |c| %>
+				<tr>
+				
+					<td><%= c.litros_cargados %></td>
+					<td><%= c.lugar %></td>
+					<td><%= c.horometro %></td>
+					<td><%= c.kilometraje %></td>
+					<td><%= c.fecha %></td>
+					<td><%= c.numero_report %></td>
+					
+					<td><%= button_to "Eliminar", c, data: {confirm: "Desea Eliminar Carga '#{c.numero_report}'?"}, method: :delete, class: "btn btn-danger" %></td>
+					
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+		
+		<%= link_to "Añadir Carga de Combustible", carga_combustibles_new_path(id: @maquina.id), data: { modal: true, title: "HOLA" }, class: "btn btn-primary" %><br><br>
+		
+		<%= paginate @carga,  :param_name => "page_cargas" %>
