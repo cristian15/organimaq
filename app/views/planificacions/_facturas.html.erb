@@ -1,0 +1,49 @@
+<br>
+<legend>Facturas</legend>
+	
+	<% if !flash[:notice].blank? %>
+     <div class = "alert alert-info">
+        <%= flash[:notice] %>
+     </div>
+  <% end %>
+	  <br>
+	  <%= search_form_for @search_factura, :remote=>"true", url: edit_planificacion_path(@planificacion.id), :method => :get do |f| %>
+			<%= f.label :numero %>
+			<%= f.text_field :numero_cont %>
+			<%= f.label :'Intervalos de Fecha: ' %><%= f.date_field :fecha_gteq %>
+			<%= f.date_field :fecha_lteq %>
+			<%= f.submit %>
+		<% end %>
+		<table class="table table-striped table-hover table-bordered">
+			<thead>
+				<th>Numero</th>
+				<th>Descripción</th>
+				<th>Fecha</th>
+				<th>Valor Total</th>
+				<th>Valor Neto</th>
+				<th>Tipo Factura</th>
+				<th>Proveedor</th>
+			</thead>
+			
+			<tbody>
+				<% @facturas.each do |fac| %>
+				<tr>
+					<td><%= fac.numero %></td>
+					<td><%= fac.descripcion %></td>
+					<td><%= fac.fecha %></td>
+					<td><%= fac.total %></td>
+					<td><%= fac.neto %></td>
+					<td><%= TipoFactura.find(fac.tipo_factura_id).nombre %></td>
+					<td><%= Proveedor.find(fac.proveedor_id).nombre %></td>
+					<td><%= link_to "Mostrar", factura_path(fac), class: "btn btn-info" %></td>
+					<td><%= button_to "Eliminar", fac, data: {confirm: "Desea Eliminar Factura No.'#{fac.numero}'?"}, method: :delete, class: "btn btn-danger" %></td>
+					<td><%= link_to "Editar", edit_factura_path(fac), class: "btn btn-success" %></td>
+					
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+		
+		<%= link_to "Añadir Factura", facturas_new_path(id: @planificacion.maquina_id, pl: @planificacion.id), class: "btn btn-primary" %><br><br>
+		
+		<%= paginate @facturas, :param_name => "page_facturas" %>

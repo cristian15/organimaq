@@ -19,3 +19,17 @@
 
   <% end %>
   </div>
+  
+  <script type="text/javascript">
+  var calculoBruto = function (neto){
+	var x = neto*1.19;
+	var bruto = Math.round(x);
+	return bruto
+  }
+   $("#factura_neto").on('change',
+  function(){
+
+   $("#factura_total").val(calculoBruto($("#factura_neto").val()));
+
+  });
+  </script>

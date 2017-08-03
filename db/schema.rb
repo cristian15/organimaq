@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170729013517) do
+ActiveRecord::Schema.define(version: 20170803184811) do
 
   create_table "arriendos", force: :cascade do |t|
     t.date     "fecha_arriendo"
@@ -27,6 +27,22 @@ ActiveRecord::Schema.define(version: 20170729013517) do
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
   end
+
+  create_table "carga_combustibles", force: :cascade do |t|
+    t.integer  "maquina_id",            limit: 4
+    t.integer  "fuente_combustible_id", limit: 4
+    t.float    "litros_cargados",       limit: 24
+    t.integer  "horometro",             limit: 4
+    t.integer  "kilometraje",           limit: 4
+    t.date     "fecha"
+    t.text     "lugar",                 limit: 65535
+    t.integer  "numero_report",         limit: 4
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  add_index "carga_combustibles", ["fuente_combustible_id"], name: "fk_rails_af6b3f7a4b", using: :btree
+  add_index "carga_combustibles", ["maquina_id"], name: "fk_rails_753c177068", using: :btree
 
   create_table "clientes", force: :cascade do |t|
     t.integer  "rut_cliente",     limit: 4
@@ -47,8 +63,18 @@ ActiveRecord::Schema.define(version: 20170729013517) do
     t.datetime "updated_at",             null: false
   end
 
+  create_table "estanque_fijos", force: :cascade do |t|
+    t.string   "nombre",        limit: 255
+    t.string   "codigo",        limit: 255
+    t.float    "capacidad",     limit: 24
+    t.float    "litros_actual", limit: 24
+    t.string   "ubicacion",     limit: 255
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
   create_table "facturas", force: :cascade do |t|
-    t.integer  "numero",          limit: 4
+    t.string   "numero",          limit: 255
     t.text     "descripcion",     limit: 65535
     t.date     "fecha"
     t.integer  "total",           limit: 4
@@ -64,6 +90,15 @@ ActiveRecord::Schema.define(version: 20170729013517) do
   add_index "facturas", ["maquina_id"], name: "fk_rails_23c47a1ae9", using: :btree
   add_index "facturas", ["proveedor_id"], name: "fk_rails_8f1194c5d8", using: :btree
   add_index "facturas", ["tipo_factura_id"], name: "fk_rails_41e690de45", using: :btree
+
+  create_table "fuente_combustibles", force: :cascade do |t|
+    t.float    "litros_combustible", limit: 24
+    t.float    "capacidad",          limit: 24
+    t.string   "codigo",             limit: 255
+    t.string   "nombre",             limit: 255
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
 
   create_table "infractions", force: :cascade do |t|
     t.date     "fecha"
@@ -171,6 +206,16 @@ ActiveRecord::Schema.define(version: 20170729013517) do
 
   add_index "orden_trabajos", ["planificacion_id"], name: "fk_rails_2deefec68e", using: :btree
 
+  create_table "planificacion_facturas", force: :cascade do |t|
+    t.integer  "planificacion_id", limit: 4
+    t.integer  "factura_id",       limit: 4
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "planificacion_facturas", ["factura_id"], name: "fk_rails_7fe20caae8", using: :btree
+  add_index "planificacion_facturas", ["planificacion_id"], name: "fk_rails_5408412bfc", using: :btree
+
   create_table "planificacions", force: :cascade do |t|
     t.datetime "fecha_planificacion"
     t.text     "descripcion",         limit: 65535
@@ -272,6 +317,8 @@ ActiveRecord::Schema.define(version: 20170729013517) do
     t.datetime "updated_at",             null: false
   end
 
+  add_foreign_key "carga_combustibles", "fuente_combustibles"
+  add_foreign_key "carga_combustibles", "maquinas"
   add_foreign_key "facturas", "maquinas"
   add_foreign_key "facturas", "proveedors"
   add_foreign_key "facturas", "tipo_facturas"
@@ -281,6 +328,8 @@ ActiveRecord::Schema.define(version: 20170729013517) do
   add_foreign_key "mecanicos_planificacions", "mecanicos"
   add_foreign_key "mecanicos_planificacions", "planificacions"
   add_foreign_key "orden_trabajos", "planificacions"
+  add_foreign_key "planificacion_facturas", "facturas"
+  add_foreign_key "planificacion_facturas", "planificacions"
   add_foreign_key "planificacions", "estado_maquinas"
   add_foreign_key "planificacions", "maquinas"
   add_foreign_key "reports", "operadors"

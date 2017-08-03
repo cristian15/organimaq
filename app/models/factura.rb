@@ -4,6 +4,16 @@ class Factura < ActiveRecord::Base
 	has_one :proveedors
 	has_one :maquinas
 	
+	has_many :planificacionfacturas
+	
 	mount_uploader :foto, FotoUploader		# agrega el upload, para subir archivo
+	
+	def self.search(search)
+	  if search
+		where("nombre LIKE '%"+search+"%' OR patente LIKE '%"+search+"%'")
+	  else
+		all
+	  end
+	end
 	
 end

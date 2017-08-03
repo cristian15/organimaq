@@ -1,0 +1,32 @@
+<div class="table-responsive">
+		<table class="table table-striped table-hover table-bordered">
+			<thead>
+				<th>Nombre</th>
+				<th>Codigo</th>
+				<th>Litros</th>
+				<th>Capacidad</th>
+			</thead>
+			
+			<tbody>
+				<% @fuente_combustible.each do |font| %>
+				<tr>
+				
+					<td><%= font.nombre %></td>
+					<td><%= font.codigo %></td>
+					<td><%= font.litros_combustible %></td>
+					<td><%= font.capacidad %></td>
+					<td><%= link_to "Mostrar", fuente_combustible_path(font), class: "btn btn-info" %></td>
+					<td><%= button_to "Eliminar", font, data: {confirm: "Desea Eliminar '#{font.nombre}'?"}, method: :delete, class: "btn btn-danger" %></td>
+					<td><%= link_to "Editar", edit_fuente_combustible_path(font), class: "btn btn-success" %></td>
+					
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+	<% # paginate @fuente_combustible %>	
+	<div id="page_links"> 
+	<div id="pagination">
+	<%= paginate @fuente_combustible, renderer: BootstrapPagination::Rails %>	
+	</div>
+	</div> 

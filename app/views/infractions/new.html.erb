@@ -1,7 +1,6 @@
 <div class="contentForm">
-<%= link_to 'Volver', operadors_path, class: "btn btn-warning" %><br>
 <legend>Ingresar Multa</legend>
-	<%= bootstrap_form_for (@infraction) do |f| %>
+	<%= bootstrap_form_for(@infraction, remote: request.xhr?, html: { data: { modal: true } }) do |f| %>
 	<div class="form-group">
 		<%= f.hidden_field :operador_id, value: params[:id] %>
 		<%= f.date_field :fecha, label: "Fecha Infracción", :required => true %>

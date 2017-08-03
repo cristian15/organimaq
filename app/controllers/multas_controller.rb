@@ -6,6 +6,7 @@ class MultasController < ApplicationController
   def new
 	@multas = Multa.new
 	@operador = Operador.find(params[:id])
+	respond_modal_with @multas
   end
 
   def show
@@ -18,11 +19,12 @@ class MultasController < ApplicationController
   
   def create
   	@multa = Multa.new(report_params)
-  	if @multa.save
-  		redirect_to operador_path(@multa.operador_id)
-  	else
-  		render 'new'
-  	end
+  	@multa.save
+	respond_modal_with @multa, location: operadors_path(@multa.operador_id)
+  	#	redirect_to operador_path(@multa.operador_id)
+  	#else
+  	#	render 'new'
+  	#end
   end
   
   def update

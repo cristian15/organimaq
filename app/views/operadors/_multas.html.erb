@@ -24,6 +24,6 @@
 				<% end %>
 			</tbody>
 		</table>
-		
+		<%= link_to "Añadir Multa +", new_infraction_path(id: @operador.id),data: { modal: true, title: "Ingresa Multa" },  class: "btn btn-primary" %>
 		<%= link_to 'Añadir Multa', infractions_new_path(id: @operador.id), class: "btn btn-primary" %><br><br>
 	

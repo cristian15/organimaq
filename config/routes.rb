@@ -1,6 +1,26 @@
 Rails.application.routes.draw do
  
 
+  get 'carga_combustibles/new'
+
+  get 'estanque_fijos/index'
+
+  get 'estanque_fijos/new'
+
+  get 'estanque_fijos/edit'
+
+  get 'estanque_fijos/show'
+
+  get 'fuente_combustibles/index'
+
+  get 'fuente_combustibles/new'
+
+  get 'fuente_combustibles/edit'
+
+  get 'fuente_combustibles/show'
+
+  get 'planificaion_facturas/new'
+
   get 'facturas/index'
 
   get 'facturas/show'
@@ -187,6 +207,10 @@ Rails.application.routes.draw do
   resources :tipo_facturas
   
   resources :facturas
+  
+  resources :fuente_combustibles
+  
+  resources :estanque_fijos
   
   
   

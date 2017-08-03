@@ -25,6 +25,11 @@ class PlanificacionsController < ApplicationController
 	
 	@orden_trabajos = OrdenTrabajo.where("planificacion_id ="+params[:id])
 	
+	
+	@search_factura = Factura.joins("INNER JOIN planificacion_facturas on factura_id = facturas.id AND planificacion_id =", params[:id]).ransack(params[:q])
+	
+	@facturas = @search_factura.result.paginate(page: params[:page_facturas], per_page:2)
+	
   end
 
   def new

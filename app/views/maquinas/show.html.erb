@@ -10,13 +10,7 @@
       <img class="img-thumbnail" alt="Foto" width="300px" src="<%= @maquina.foto_url %>">    
   <% end %>
   
-  <%= search_form_for @search, :remote=>"true", url: maquina_path(@maquina.id), :method => :get do |f| %>
-			<%= f.label :numero %>
-			<%= f.text_field :numero_cont %>
-			<%= f.label :'Intervalos de Fecha: ' %><%= f.date_field :fecha_gteq %>
-			<%= f.date_field :fecha_lteq %>
-			<%= f.submit %>
-		<% end %>
+  
   
   <div id="facturas">
   <%= render "facturas" %>

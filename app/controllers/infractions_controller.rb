@@ -1,4 +1,7 @@
 class InfractionsController < ApplicationController
+	
+	
+	respond_to :html, :json			# para modals
   def index
 	@infraction = Infraction.all
   end
@@ -6,6 +9,7 @@ class InfractionsController < ApplicationController
   def new
 	@infraction = Infraction.new
 	@operador = Operador.find(params[:id])
+	respond_modal_with @infraction
   end
 
   def show
@@ -18,11 +22,13 @@ class InfractionsController < ApplicationController
   
   def create
   	@infraction = Infraction.new(infraction_params)
-  	if @infraction.save
-  		redirect_to operador_path(@infraction.operador_id)
-  	else
-  		render 'new'
-  	end
+  	@infraction.save
+	respond_modal_with @infraction, location: operador_path(@infraction.operador_id)
+	#if @infraction.save
+  	#	redirect_to operador_path(@infraction.operador_id)
+  	#else
+  	#	render 'new'
+  	#end
   end
   
   def update

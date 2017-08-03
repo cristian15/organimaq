@@ -1,24 +1,23 @@
 <div class="content-table">
-<legend><h2>Editar Planificación - <%= Maquina.find(@planificacion.maquina_id).nombre %> - <%= @planificacion.fecha %></h2></legend>
-    <%= link_to 'Volver', planificacions_path, class: "btn btn-warning" %>
+<legend><h2>Planificación - <%= Maquina.find(@planificacion.maquina_id).nombre %> - <%= @planificacion.fecha %></h2></legend>
+    <%= link_to 'Volver', planificacions_path, class: "btn btn-primary" %>
     <br><br>
     
     <%=  %>
 
 		<div id="mecanicos">	
 		<%= render "mecanicos" %></div>
+	
 		
-		
-		<%= search_form_for @search, :remote=>"true", url:edit_planificacion_path(@planificacion.id), :method => :get do |f| %>
-		<%= f.label :nombre %>
-		<%= f.text_field :nombre_cont %>
-		<%= f.submit %>
-		<% end %>
-		
-		<div id="repuestos">
-		<%= render "repuestos" %></div>
+		<div id="repuestos"><%= render "repuestos" %></div>
 		
 		<%= render "orden_trabajos" %>
+		
+		
+		<div id="facturas"> <%= render "facturas" %> </div>
+		
+		<legend>Editar Planificación</legend>
+		
 		<div class="form-group">
 		   <div class="contentForm">
 		   

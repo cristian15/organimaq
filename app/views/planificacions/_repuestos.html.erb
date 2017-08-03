@@ -1,6 +1,10 @@
 
 <legend>Repuestos Usados</legend>
-
+<%= search_form_for @search, :remote=>"true", url:edit_planificacion_path(@planificacion.id), :method => :get do |f| %>
+		<%= f.label :nombre %>
+		<%= f.text_field :nombre_cont %>
+		<%= f.submit %>
+		<% end %>
 <table class="table table-striped table-hover table-bordered">
   <thead>
 	<th>Codigo</th>
@@ -26,7 +30,7 @@
   </tbody>
   
 </table>
-<%= paginate @repuestos %>
+<%= paginate @repuestos %><br>
 
 			
 			<%= link_to "Agregar Repuesto +", new_repuestos_planificacion_path(id: @planificacion.id), data: { modal: true },  class: "btn btn-primary" %>

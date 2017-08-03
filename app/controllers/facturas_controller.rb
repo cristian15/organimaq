@@ -1,6 +1,11 @@
 class FacturasController < ApplicationController
+
+	before_action :clear_search_index, :only => [:index]
+	$plan_id = nil			# variable global para la id planificacion
+	
   def index
-	@factura = Factura.all
+	@search = Factura.ransack(params[:q])
+	@factura = @search.result.paginate(page: params[:page], per_page:5)
   end
 
   def show
@@ -13,15 +18,27 @@ class FacturasController < ApplicationController
 
   def new
 	@factura = Factura.new
+	if params[:pl] != nil		# si viene desde planificacion edit
+		$plan_id = params[:pl]
+	end
   end
   
   def create
   	@factura = Factura.new(factura_params)
-  	if @factura.save
-  		redirect_to @factura
-  	else
-  		render 'new'
-  	end
+	
+	if $plan_id != nil
+		@factura.save		# guarda la factura
+		@plani = PlanificacionFactura.new(planificacion_id: $plan_id, factura_id: @factura.id)	# Crea objeto de la tabla relacion
+		@plani.save
+		redirect_to edit_planificacion_path($plan_id)
+	
+	else	
+		if @factura.save
+			redirect_to @factura
+		else
+			render 'new'
+		end
+	end
   end
   
 	def destroy
@@ -49,4 +66,6 @@ class FacturasController < ApplicationController
   	def factura_params
   		params.require(:factura).permit(:numero, :descripcion, :fecha, :total, :maquina_id, :tipo_factura_id, :proveedor_id, :neto, :foto)
   	end
+	
+	
 end

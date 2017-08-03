@@ -1,0 +1,39 @@
+﻿<div class="table-responsive">
+<table class="table table-striped table-hover table-bordered">
+			<thead>
+				<th>Numero</th>
+				<th>Descripción</th>
+				<th>Fecha</th>
+				<th>Valor Total</th>
+				<th>Valor Neto</th>
+				<th>Tipo Factura</th>
+				<th>Proveedor</th>
+				<th>Máquina</th>
+			</thead>
+			
+			<tbody>
+				<% @factura.each do |fac| %>
+				<tr>
+				
+					<td><%= fac.numero %></td>
+					<td><%= fac.descripcion %></td>
+					<td><%= fac.fecha %></td>
+					<td><%= fac.total %></td>
+					<td><%= fac.neto %></td>
+					<td><%= TipoFactura.find(fac.tipo_factura_id).nombre %></td>
+					<td><%= Proveedor.find(fac.proveedor_id).nombre %></td>
+					<td><%= Maquina.find(fac.maquina_id).nombre %></td>
+					<td><%= link_to "Mostrar", factura_path(fac), class: "btn btn-info" %></td>
+					<td><%= button_to "Eliminar", fac, data: {confirm: "Desea Eliminar Factura No.'#{fac.numero}'?"}, method: :delete, class: "btn btn-danger" %></td>
+					<td><%= link_to "Editar", edit_factura_path(fac), class: "btn btn-success" %></td>
+					
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	<% # paginate @factura %>	
+	<div id="page_links"> 
+	<div id="pagination">
+	<%= paginate @factura, renderer: BootstrapPagination::Rails %>	
+	</div>
+</div>

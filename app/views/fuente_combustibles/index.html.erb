@@ -1,0 +1,23 @@
+<div class="content-table">
+	<legend><h2>Fuente de Combustible</h2></legend>
+	
+	<%= link_to 'Agregar +', fuente_combustibles_new_path, class: 'btn btn-primary' %>
+	<br>
+	<% if !flash[:notice].blank? %>
+     <div class = "alert alert-info">
+        <%= flash[:notice] %>
+     </div>
+  <% end %>
+	  <br>
+	
+	<%= search_form_for @search, :remote=>"true", url: fuente_combustibles_path, :method => :get do |f| %>
+		<%= f.text_field :nombre_cont %>
+		<%= f.submit %>
+	<% end %>
+	<br>
+	<div id="fuentes">
+	<%= render "fuentes" %> 
+	</div>
+
+	
+</div>
