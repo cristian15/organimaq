@@ -2,8 +2,8 @@ class CargaCombustiblesController < ApplicationController
   respond_to :html, :json			# para modals
   
   
-  def
-	@carga_combustibles = CargaCombustible.all
+  def index
+	@carga = CargaCombustible.all
   end
   
   def new
@@ -18,6 +18,12 @@ class CargaCombustiblesController < ApplicationController
 	@carga.save
 	respond_modal_with @carga, location: maquina_path(@carga.maquina_id)
 	
+  end
+  
+  def destroy
+		@carga = CargaCombustible.find(params[:id])
+		@carga.destroy
+		redirect_to maquina_path(@carga.maquina_id), notice: "Carga Nº #{@carga.numero_report} ha sido elminada."
   end
   
   

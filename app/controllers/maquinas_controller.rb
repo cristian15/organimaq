@@ -9,7 +9,7 @@ class MaquinasController < ApplicationController
 	def show
 		@maquina = Maquina.find(params[:id])
 		
-		@search_cargas =CargaCombustible.all.ransack(params[:q_carga])
+		@search_cargas =CargaCombustible.joins("INNER JOIN maquinas ON maquina_id=maquinas.id and maquinas.id=", params[:id]).ransack(params[:q_carga])
 		@carga = @search_cargas.result.paginate(page: params[:page_cargas], per_page:2)
 		
 		@search = Factura.joins('INNER JOIN maquinas ON maquina_id = maquinas.id AND maquinas.id =', params[:id]).ransack(params[:q])

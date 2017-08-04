@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170803184811) do
+ActiveRecord::Schema.define(version: 20170804122022) do
 
   create_table "arriendos", force: :cascade do |t|
     t.date     "fecha_arriendo"
@@ -366,6 +366,12 @@ END
       on("repuestos_planificacions").
       after(:insert) do
     "UPDATE repuestos SET stock = stock - NEW.cantidad WHERE repuestos.id = NEW.repuesto_id;"
+  end
+
+  create_trigger("horometro_km_after_insert_row_tr", :generated => true, :compatibility => 1).
+      on("carga_combustibles").
+      after(:insert) do
+    "UPDATE maquinas SET km_actual = NEW.kilometraje, horometro_actual = NEW.horometro WHERE maquinas.id = NEW.maquina_id; UPDATE fuente_combustibles SET litros_combustible = litros_combustible - NEW.litros_cargados WHERE fuente_combustibles.id = NEW.fuente_combustible_id;"
   end
 
 end
