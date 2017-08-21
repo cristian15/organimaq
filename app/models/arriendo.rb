@@ -1,7 +1,7 @@
 class Arriendo < ActiveRecord::Base
 	has_one :maquinas
 	
-	has_one :clientes
+	has_one :clientes, :dependent => :destroy
 	belongs_to :report
 	
 	def self.search(search)

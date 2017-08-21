@@ -28,7 +28,7 @@
 					<tr><td>Correo</td><td><%= @cliente.mail %></td></tr>
 					<tr><td>Giro</td><td><%= @cliente.giro %></td></tr>
 					<tr><td><%= link_to "Editar", edit_cliente_path(@cliente), class: "btn btn-success" %></td>
-					<td><%= button_to "Eliminar", @cliente, data: {confirm: "Desea Eliminar '#{@cliente.nombre}'?"}, method: :delete, class: "btn btn-danger" %></td></tr>
+					<td><%= button_to "Eliminar", @cliente, data: {confirm: "Desea Eliminar '#{@cliente.nombre}' y sus arriendos?"}, method: :delete, class: "btn btn-danger" %></td></tr>
 					
 			</tbody>
 		</table>
