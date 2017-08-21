@@ -23,7 +23,7 @@ class CargaCombustiblesController < ApplicationController
   def destroy
 		@carga = CargaCombustible.find(params[:id])
 		@carga.destroy
-		redirect_to maquina_path(@carga.maquina_id), notice: "Carga Nº #{@carga.numero_report} ha sido elminada."
+		redirect_to maquina_path(@carga.maquina_id), notice_cargas: "Carga Nº #{@carga.numero_report} ha sido elminada."
   end
   
   

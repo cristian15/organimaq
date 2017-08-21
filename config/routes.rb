@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
  
 
+  mount Dashing::Engine, at: Dashing.config.engine_path
+  
   get 'carga_combustibles/new'
 
   get 'estanque_fijos/index'
@@ -159,6 +161,7 @@ Rails.application.routes.draw do
 
   get 'tipo_maquinas/new' =>'tipo_maquinas#new'
 
+  get 'dashing/dashboards'
 
   root 'welcome#index'
 

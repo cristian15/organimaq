@@ -17,6 +17,10 @@ class ClientesController < ApplicationController
 
   def show
 	@cliente = Cliente.find(params[:id])
+	
+	@search = Arriendo.joins('INNER JOIN clientes ON cliente_id = clientes.id AND clientes.id =', params[:id]).ransack(params[:q])
+	@arriendos = @search.result.paginate(page: params[:page], per_page:2)
+	
   end
   
   def create

@@ -58,6 +58,10 @@ gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'responders', '~> 2.0'
 
 
+# Dashboard
+gem 'dashing-rails'
+gem 'puma'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
