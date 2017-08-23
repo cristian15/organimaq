@@ -12,7 +12,7 @@
 	
 	<%= search_form_for @search, :remote=>"true", url: clientes_path, :method => :get do |f| %>
 		<%= f.text_field :nombre_cont %>
-		<%= f.submit %>
+		<%= f.submit :value => "Buscar" %>
 	<% end %>
 	<br>
 	<div id="clientes">
