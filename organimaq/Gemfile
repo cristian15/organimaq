@@ -32,6 +32,9 @@ gem 'autoprefixer-rails'
 gem 'mail_form', '>= 1.3.0'
 gem 'simple_form'
 
+#dashboard
+gem 'bootstrap_sb_admin_base_v2'
+gem "font-awesome-rails"
 
 # Upload Files
 gem 'carrierwave'

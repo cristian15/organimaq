@@ -63,6 +63,9 @@ GEM
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
     bootstrap_form (2.7.0)
+    bootstrap_sb_admin_base_v2 (0.3.6)
+      font-awesome-rails
+      jquery-rails
     builder (3.2.3)
     byebug (9.0.6)
     carrierwave (1.1.0)
@@ -91,6 +94,8 @@ GEM
       tzinfo
     execjs (2.7.0)
     ffi (1.9.18)
+    font-awesome-rails (4.7.0.2)
+      railties (>= 3.2, < 5.2)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     hairtrigger (0.2.19)
@@ -223,10 +228,12 @@ DEPENDENCIES
   autoprefixer-rails
   bootstrap-sass (~> 3.3.6)
   bootstrap_form
+  bootstrap_sb_admin_base_v2
   byebug
   carrierwave
   coffee-rails (~> 4.1.0)
   dashing-rails
+  font-awesome-rails
   hairtrigger
   jbuilder
   jquery-rails

@@ -1,0 +1,98 @@
+<h1>Dashboards#index</h1>
+<p>Find me in app/views/dashboards/index.html.erb</p>
+
+<div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Dashboard</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        
+		
+		<div class="col-lg-3 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-truck fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge"><%= @maquinas.count %></div>
+                                    <div>Maquinas</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">Detalles</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+        </div>
+		
+		<div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Maquinas
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="flot-chart">
+                                <div class="flot-chart-content" id="flot-pie-chart"></div>
+                            </div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+</div>		
+
+<script>
+//Flot Pie Chart
+$(function() {
+
+	<%
+		EstadoMaquina.all.each do |e| 
+			Maquina.where("estado_maquina_id="+e.id.to_s).count 
+		 end
+	%>
+    var data = [{
+        label: "Arrendadas",
+        data: 6
+    }, {
+        label: "Series 1",
+        data: 3
+    }, {
+        label: "Series 2",
+        data: 9
+    }, {
+        label: "Series 3",
+        data: 20
+    }];
+
+    var plotObj = $.plot($("#flot-pie-chart"), data, {
+        series: {
+            pie: {
+                show: true
+            }
+        },
+        grid: {
+            hoverable: true
+        },
+        tooltip: true,
+        tooltipOpts: {
+            content: "%p.0%, %s", // show percentages, rounding to 2 decimal places
+            shifts: {
+                x: 20,
+                y: 0
+            },
+            defaultTheme: false
+        }
+    });
+
+});
+</script>

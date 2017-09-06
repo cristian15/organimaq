@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
  
 
-  mount Dashing::Engine, at: Dashing.config.engine_path
+  get 'dashboards/index'
+
+  
   
   get 'carga_combustibles/new'
 
@@ -216,6 +218,8 @@ Rails.application.routes.draw do
   resources :estanque_fijos
   
   resources :carga_combustibles
+  
+  resources :dashboards
   
   
   
