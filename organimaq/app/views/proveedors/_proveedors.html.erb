@@ -1,0 +1,36 @@
+<div class="table-responsive">
+		<table class="table table-striped table-hover table-bordered">
+			<thead>
+				<th>Rut</th>
+				<th>Proveedor</th>
+				<th>Direccion</th>
+				<th>Telefono</th>
+				<th>Email</th>
+				<th>Giro</th>
+			</thead>
+			
+			<tbody>
+				<% @proveedor.each do |proveedor| %>
+				<tr>
+				
+					<td><%= proveedor.rut.to_s + "-" + proveedor.dv %></td>
+					<td><%= proveedor.nombre %></td>
+					<td><%= proveedor.direccion %></td>
+					<td><%= proveedor.telefono %></td>
+					<td><%= proveedor.email %></td>
+					<td><%= proveedor.giro %></td>
+					<td><%= link_to "Mostrar", proveedor_path(proveedor), class: "btn btn-info" %></td>
+					<td><%= button_to "Eliminar", proveedor, data: {confirm: "Desea Eliminar '#{proveedor.nombre}'?"}, method: :delete, class: "btn btn-danger" %></td>
+					<td><%= link_to "Editar", edit_proveedor_path(proveedor), class: "btn btn-success" %></td>
+					
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+	<% # paginate @proveedor %>	
+	<div id="page_links"> 
+	<div id="pagination">
+	<%= paginate @proveedor %>	
+	</div>
+	</div> 

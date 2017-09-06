@@ -1,0 +1,20 @@
+<div class="contentForm">
+<legend><h2>Ingresar Fuente de Combustible</h2></legend>
+<%= link_to 'Volver', estanque_fijos_path, class: "btn btn-primary" %><br>
+
+
+	<%= bootstrap_form_for (@estanque_fijo)  do |f| %>
+	<div class="form-group">
+		<%= f.text_field :nombre, label: "Nombre", :required => true %>
+		<%= f.text_field :codigo %>
+		<%= f.text_field :ubicacion %>
+		<%= f.number_field :litros_actual, label: "Capacidad Usada" %>
+		<%= f.number_field :capacidad, label: "Capacidad Total" %>
+		
+		<%= f.primary 'Guardar' %>
+	
+	</div>
+	
+	<% end %>
+	
+</div>

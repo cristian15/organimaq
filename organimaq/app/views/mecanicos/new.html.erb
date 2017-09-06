@@ -1,0 +1,79 @@
+<div class="contentForm">
+<legend>Ingresar Mecacnico</legend>
+
+  <%= bootstrap_form_for (@mecanico)  do |f| %>
+  <div class="form-group">
+    
+    <%= f.file_field :foto %>
+
+    <div class="form-inline">
+        <div class="form-group">
+        <%= f.collection_select :tipo_mecanico_id, TipoMecanico.all, :id, :nombre %>
+        <%= link_to 'Agregar +', tipo_mecanicos_new_path, class: "btn btn-primary" %>
+        <%= link_to 'Ver', tipo_mecanicos_path, class: "btn btn-info" %>
+        </div>
+    </div>
+<br>
+    <div class="form-inline">
+        <div class="form-group">
+        
+            <%= f.number_field :rut, :maxlength => 8 %>
+            <%= f.text_field :dv, :size => 4 %>
+
+        </div>
+    </div>
+
+    <%= f.text_field :nombre %>
+
+    <%= f.text_field :apellido_paterno %>
+
+    <%= f.text_field :apellido_materno %>
+
+    <%= f.number_field :jornada %>
+
+    <%= f.number_field :valor_hora %>
+    
+    
+
+
+
+    
+      <%= f.primary 'Guardar' %>
+   </div>
+
+  <% end %>
+  </div>
+
+  <script type="text/javascript">
+
+    var calculaDigitoVerificador = function (rut) {
+
+     
+  // type check
+  if (!rut || !rut.length || typeof rut !== 'string') {
+    return -1;
+  }
+  // serie numerica
+  var secuencia = [2,3,4,5,6,7,2,3];
+  var sum = 0;
+  //
+  for (var i=rut.length - 1; i >=0; i--) {
+    var d = rut.charAt(i)
+    sum += new Number(d)*secuencia[rut.length - (i + 1)];
+  };
+  // sum mod 11
+  var rest = 11 - (sum % 11);
+  // si es 11, retorna 0, sino si es 10 retorna K,
+  // en caso contrario retorna el numero
+  return rest === 11 ? 0 : rest === 10 ? "K" : rest;
+};
+
+
+ $("#mecanico_rut").on('change',
+  function(){
+
+   $("#mecanico_dv").val(calculaDigitoVerificador($("#mecanico_rut").val()));
+
+  });
+
+  </script>

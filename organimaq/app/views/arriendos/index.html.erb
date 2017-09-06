@@ -1,0 +1,25 @@
+<div class="content-table">
+<legend><h2>Arriendos</h2></legend>
+	<%= link_to 'Agregar +', arriendos_new_path, class: 'btn btn-primary' %>
+	<br>
+	<% if !flash[:notice].blank? %>
+     <div class = "alert alert-info">
+        <%= flash[:notice] %>
+     </div>
+  <% end %>
+	
+	<br>
+	<%= search_form_for @search, :remote=>"true", url: arriendos_path, :method => :get do |f| %>
+		<%= f.label :"Nombre Faena" %>
+		<%= f.text_field :nombre_faena_cont %>
+		<%= f.label :"Intervalo Fecha Arriendo" %>
+		<%= f.date_field :fecha_arriendo_gteq %>
+		<%= f.date_field :fecha_arriendo_lteq %>
+		<%= f.submit :value => "Buscar"  %>
+	<% end %>
+	<br>
+	<div id="arriendos">
+	<%= render "arriendos" %> 
+	</div>
+	
+	</div>

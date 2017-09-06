@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Hammersmith+One" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <title>Organimaq</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  
+  
+ <%= csrf_meta_tags %>
+ <%= favicon_link_tag 'icono.png' %>
+
+ </head>
+<body>
+<div id="modal-holder"></div>
+<%= render 'partials/barbar' %>
+
+<%= yield %>
+
+<%= render 'partials/footer' %>
+
+</body>
+</html>
+<script>
+$(document).ready(function(){
+		$("#dropmaq").click(function(){
+		$("#maq").slideToggle("slow");
+		});
+		$("#dropmech").click(function(){
+		$("#mech").slideToggle("slow");
+		});
+		$("#close").click(function(){
+		$("#nava").hide("slow");
+		});
+		$("#show").click(function(){
+			console.log( "You clicked a paragraph!" );
+		$("#nava").toggle("slow");
+		});
+	});
+</script>

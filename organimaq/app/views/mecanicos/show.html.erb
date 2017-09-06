@@ -1,0 +1,30 @@
+<div class="content-table">
+<legend><h2><%= @mecanico.nombre %> <%= @mecanico.apellido_paterno %></h2></legend>
+  <%= link_to 'Volver', mecanicos_path, class: "btn btn-primary" %>
+  <br><br>
+
+  
+  
+ <% if @mecanico.foto.blank? %>
+      <%= image_tag "SINFOTO.png", class: "img-thumbnail" %>
+  <% else %>
+      <img class="img-thumbnail" alt="Foto" width="50%" src="<%= @mecanico.foto_url %>">
+      
+  <% end %>
+  <div class="table-responsive">
+    <table class="table table-striped table-hover table-bordered">
+
+      <tbody>
+
+          <tr><td>Rut</td><td><%= @mecanico.rut.to_s + "-" + @mecanico.dv%></td></tr>
+          <tr><td>Nombre</td><td><%= @mecanico.nombre %></td>
+          <tr><td>Apellido</td><td><%= @mecanico.apellido_paterno %> <%= @mecanico.apellido_materno %></td>
+          <tr><td>Tipo</td><td><%= TipoMecanico.find(@mecanico.tipo_mecanico_id).nombre %></td>
+      	  <tr><td>Jornada</td><td><%= @mecanico.jornada  %></td>
+      	  <tr><td>Valor Hora</td><td><%= @mecanico.valor_hora  %></td>
+
+      </tbody>
+      
+    </table>
+  </div>
+</div>

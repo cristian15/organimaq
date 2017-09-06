@@ -1,0 +1,38 @@
+<div class="content-table">
+
+	<legend><h2><%= @cliente.nombre %></h2></legend>
+	<%= link_to 'Volver', clientes_path, class: "btn btn-primary" %>
+	<br>
+	<% if !flash[:notice].blank? %>
+     <div class = "alert alert-info">
+        <%= flash[:notice] %>
+     </div><br>
+  <% end %>
+  
+  <div id="arriendos">
+	<%= render "arriendos" %>
+  </div>
+	<div class="table-responsive">
+		<table class="table table-striped table-hover table-bordered">
+			<thead>
+				<th>Datos del Cliente<th>
+			</thead>
+			
+			<tbody>
+				
+					<tr><td>Rut</td><td><%= @cliente.rut_cliente.to_s + "-" + @cliente.dv %></td></tr>
+					<tr><td>Nombre</td><td><%= @cliente.nombre %></td></tr>
+					<tr><td>Dirección</td><td><%= @cliente.direccion %></td></tr>
+					<tr><td>Contacto</td><td><%= @cliente.nombre_contacto %></td></tr>
+					<tr><td>Telefono</td><td><%= @cliente.telefono %></td></tr>
+					<tr><td>Correo</td><td><%= @cliente.mail %></td></tr>
+					<tr><td>Giro</td><td><%= @cliente.giro %></td></tr>
+					<tr><td><%= link_to "Editar", edit_cliente_path(@cliente), class: "btn btn-success" %></td>
+					<td><%= button_to "Eliminar", @cliente, data: {confirm: "Desea Eliminar '#{@cliente.nombre}' y sus arriendos?"}, method: :delete, class: "btn btn-danger" %></td></tr>
+					
+			</tbody>
+		</table>
+	</div>
+
+</div>
+

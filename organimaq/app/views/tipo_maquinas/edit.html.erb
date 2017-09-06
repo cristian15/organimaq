@@ -1,0 +1,18 @@
+<div class="contentForm">
+<legend>Editar tipo de Maquinaria</legend>
+
+  <%= bootstrap_form_for (@tipo_maquina)  do |f| %>
+
+
+  
+  <div class="form-group">
+    
+    <%= f.text_field :nombre %>
+
+    
+      <%= f.primary 'Editar' %> <%= link_to 'Volver', tipo_maquinas_path, class: "btn btn-warning" %>
+   </div>
+   
+
+  <% end %>
+  </div>

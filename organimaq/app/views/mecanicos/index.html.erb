@@ -1,0 +1,21 @@
+<div class="content-table">
+<legend><h2>Mecánicos</h2></legend>
+  <%= link_to 'Agregar +', mecanicos_new_path, class: "btn btn-primary" %>
+  <br><br>
+
+  <% if !flash[:notice].blank? %>
+     <div class = "alert alert-info">
+        <%= flash[:notice] %>
+     </div>
+  <% end %>
+
+	<%= search_form_for @search, :remote=>"true", url: mecanicos_path, :method => :get do |f| %>
+		<%= f.text_field :nombre_cont %>
+		<%= f.submit %>
+	<% end %>
+	<br><br>
+	<div id="mecanicos">
+	<%= render "mecanicos" %> 
+	</div>
+
+</div>

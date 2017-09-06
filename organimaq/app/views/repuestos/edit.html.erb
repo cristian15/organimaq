@@ -1,0 +1,33 @@
+<div class="content-table">
+    <%= link_to 'Volver', repuestos_path, class: "btn btn-warning" %>
+    <br><br>
+    <legend>Editar Repuesto </legend>
+    <div class="contentForm">
+    
+
+      <%= bootstrap_form_for (@repuesto)  do |f| %>
+
+
+      
+      <div class="form-group">
+        
+        <%= f.file_field :foto%>
+
+        <%= f.text_field :nombre %>
+
+        <%= f.collection_select :tipo_repuesto_id, TipoRepuesto.all, :id, :nombre %>
+
+        <%= f.text_field :codigo %>
+
+        <%= f.text_area :descripcion %>
+
+        <%= f.number_field :stock %>
+        
+          <%= f.primary 'Editar' %>
+       </div>
+       
+
+      <% end %>
+      </div>
+
+  </div>

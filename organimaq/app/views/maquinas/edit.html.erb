@@ -1,0 +1,48 @@
+<div class="content-table">
+    <%= link_to 'Volver', maquinas_path, class: "btn btn-warning" %>
+    <br><br>
+    <legend>Editar Maquina </legend>
+    <div class="contentForm">
+    
+
+      <%= bootstrap_form_for (@maquina)  do |f| %>
+
+
+      
+      <div class="form-group">
+        
+        <%= f.file_field :foto%>
+        <%= f.text_field :nombre, :required => true %>
+        <%= f.collection_select :tipo_maquina_id, TipoMaquina.all, :id, :nombre %>
+        <%= f.collection_select :estado_maquina_id, EstadoMaquina.all, :id, :nombre %>
+        <%= f.text_field :codigo, :required => true %>
+        <%= f.text_field :chasis %>
+        <%= f.text_field :motor %>
+        <%= f.text_field :patente %>
+        <%= f.text_field :marca %>
+        <%= f.number_field :valor_hora, :required => true %>
+        <%= f.number_field :valor_dia, :required => true %>
+        <%= f.number_field :anio %>
+        <%= f.number_field :km_actual %>
+        <%= f.number_field :neumaticos %>
+        <%= f.date_field :fecha_permiso %>
+        <%= f.date_field :fecha_revision %>
+        <%= f.date_field :fecha_seguro %>
+        <%= f.number_field :ejes %>
+        <%= f.number_field :horometro_actual %>
+        <%= f.number_field :anio_compra %>
+        <%= f.number_field :valor_compra %>
+        <%= f.text_field :modelo %>
+        <%= f.number_field :hora_minima %>
+        <%= f.number_field :rendimiento_hora %>
+        <%= f.number_field :rendimiento_km %>
+
+        
+          <%= f.primary 'Editar' %>
+       </div>
+       
+
+      <% end %>
+      </div>
+
+  </div>

@@ -1,0 +1,34 @@
+<table class="table table-striped table-hover table-bordered">
+		  <thead>
+			<th>Nombre</th>
+			<th>Fecha</th>
+			<th>Horas</th>
+			<th>Numero</th>
+			<th>Detalle</th>			
+			<th>Horometro Inicial</th>
+			<th>Horometro Final</th>			
+
+		  </thead>
+		  <tbody>
+		  <% i = 0 %>
+		  <% @report.each do |report| %>
+			<tr>
+			  <td><%= report.nombre %></td>
+			  <td><%= report.fecha %></td>
+			  <td><%= report.horas %></td>
+			  <td><%= report.numero %></td>
+			  <td><%= report.detalle  %></td>
+			  <td><%= report.horometro_inicial %></td>
+			  <td><%= report.horometro_final %></td>
+			  <td><%= button_to "Eliminar", report, data: {confirm: "Desea Eliminar '#{report.nombre}'?"}, method: :delete, class: "btn btn-danger" %></td>
+					<td><%= link_to "Editar", edit_report_path(report), class: "btn btn-success" %></td>
+			 
+			</tr>
+			<% 
+			i = i+1
+			end %>
+		  </tbody>
+		  
+		</table>
+		<%= paginate @report%>
+		

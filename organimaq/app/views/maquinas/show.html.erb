@@ -1,0 +1,56 @@
+<div class="content-table">
+  <legend><h2><%= @maquina.nombre %></h2></legend>
+  <%= link_to 'Volver', maquinas_path, class: "btn btn-primary" %>
+  <br><br>
+ 
+  
+  <% if @maquina.foto.blank? %>
+      <%= image_tag "SINFOTO.png", class: "img-thumbnail" %>
+  <% else %>
+      <img class="img-thumbnail" alt="Foto" width="300px" src="<%= @maquina.foto_url %>">    
+  <% end %>
+  
+  
+  
+  <div id="facturas">
+  <%= render "facturas" %>
+  </div>
+  
+  <br>
+  
+  <div id="cargas">
+  <%= render "carga_combustibles" %>
+  </div>
+  
+  <br>
+  <div class="table-responsive">
+    <table class="table table-striped table-hover table-bordered">
+      <tbody>
+          <tr><td>Código</td><td><%= @maquina.codigo %></td></tr>
+          <tr><td>Nombre</td><td><%= @maquina.nombre %></td></tr>
+          <tr><td>Patente</td><td><%= @maquina.patente %></td></tr>
+          <tr><td>Chasis</td><td><%= @maquina.chasis %></td></tr>
+          <tr><td>Marca</td><td><%= @maquina.marca %></td></tr>
+          <tr><td>Modelo</td><td><%= @maquina.modelo %></td></tr>
+          <tr><td>Año</td><td><%= @maquina.anio %></td></tr>
+          <tr><td>Valor Hora</td><td><%= @maquina.valor_hora %></td></tr>
+          <tr><td>Valor Día</td><td><%= @maquina.valor_dia %></td></tr>
+          <tr><td>Kilometraje Actual</td><td><%= @maquina.km_actual %></td></tr>
+          <tr><td>Horómetro Actual</td><td><%= @maquina.horometro_actual %></td></tr>
+          <tr><td>Neumáticos</td><td><%= @maquina.neumaticos %></td></tr>
+          <tr><td>Fecha Permiso Circulacion</td><td><%= @maquina.fecha_permiso %></td></tr>
+          <tr><td>Fecha Seguro Obligatorio</td><td><%= @maquina.fecha_seguro %></td></tr>
+          <tr><td>Fecha Revisión Técnica</td><td><%= @maquina.fecha_revision %></td></tr>
+          <tr><td>Número de Ejes</td><td><%= @maquina.ejes %></td></tr>
+          <tr><td>Año de Compra</td><td><%= @maquina.anio_compra %></td></tr>
+          <tr><td>Valor de Compra</td><td><%= @maquina.valor_compra %></td></tr>
+          <tr><td>Tipo Máquina</td><td><%= TipoMaquina.find(@maquina.tipo_maquina_id).nombre %></td></tr>
+          <tr><td>Estado de Máquina</td><td><%= EstadoMaquina.find(@maquina.estado_maquina_id).nombre %></td></tr>
+
+        </tr>
+      </tbody>
+    </table>
+    
+
+  </div>
+</div>

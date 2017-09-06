@@ -1,0 +1,38 @@
+<div class="table-responsive">
+		<table class="table table-striped table-hover table-bordered">
+			<thead>
+				<th>Rut</th>
+				<th>Cliente</th>
+				<th>Direccion</th>
+				<th>Contacto</th>
+				<th>Telefono</th>
+				<th>Email</th>
+				<th>Giro</th>
+			</thead>
+			
+			<tbody>
+				<% @cliente.each do |cliente| %>
+				<tr>
+				
+					<td><%= cliente.rut_cliente.to_s + "-" + cliente.dv %></td>
+					<td><%= cliente.nombre %></td>
+					<td><%= cliente.direccion %></td>
+					<td><%= cliente.nombre_contacto %></td>
+					<td><%= cliente.telefono %></td>
+					<td><%= cliente.mail %></td>
+					<td><%= cliente.giro %></td>
+					<td><%= link_to "Mostrar", cliente_path(cliente), class: "btn btn-info" %></td>
+					<td><%= button_to "Eliminar", cliente, data: {confirm: "Desea Eliminar '#{cliente.nombre}'?"}, method: :delete, class: "btn btn-danger" %></td>
+					<td><%= link_to "Editar", edit_cliente_path(cliente), class: "btn btn-success" %></td>
+					
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+	<% # paginate @cliente %>	
+	<div id="page_links"> 
+	<div id="pagination">
+	<%= paginate @cliente, renderer: BootstrapPagination::Rails %>	
+	</div>
+	</div> 

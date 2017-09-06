@@ -1,0 +1,37 @@
+<button id="show"><i class="fa fa-bars"></i></button>
+<nav class="maquibar" id="nava">
+
+	<ul>
+		<%= image_tag("organimaq_min.png") %>
+		<li><i class="fa fa-home"></i><%= link_to " Inicio",root_path %></li>
+		<li id="dropmaq">
+		<i class="fa fa-truck"></i><a> Maquinaria</a>
+		<ul class="dropped" id="maq" style="display: none">
+			  <li><i class="fa fa-address-book"></i><%= link_to " Maquinas", maquinas_path %></a></li>
+              
+              <li><i class="fa fa-cubes"></i><%= link_to " Tipos de Maquinaria", tipo_maquinas_path %></a></li>
+
+              <li><i class="fa fa-check"></i><%= link_to " Estados de Maquinaria", estado_maquinas_path %></a></li>
+
+              <li><i class="fa fa-gear"></i><%= link_to " Repuestos", repuestos_path %></a></li>
+		</ul>
+		</li>
+		<li><i class="fa fa-user-circle-o"></i><%= link_to " Clientes",clientes_path %></li>
+		<li><i class="fa fa-dashboard"></i><%= link_to " Dashboard",dashing_dashboards_path %></li>
+		<li><i class="fa fa-handshake-o"></i><%= link_to " Arriendos",arriendos_path %></li>
+		<li><i class="fa fa-male"></i><%= link_to " Operadores",operadors_path %></li>
+		<li><i class="fa fa-calendar"></i><%= link_to " Planificaciones", planificacions_path %></li>
+		<li id="dropmech">
+		<i class="fa fa-wrench"></i><a> Mecanicos</a>
+			<ul class="dropped" id="mech" style="display: none">
+			<li><i class="fa fa-address-book"></i><%= link_to " Mecanicos", mecanicos_path %></a></li>
+			<li><i class="fa fa-cubes"></i><%= link_to " Tipos de Mecanicos", tipo_mecanicos_path %></a></li>
+			</ul>
+		</li>
+		<li><i class="fa fa-envelope-o"></i><%= link_to " Contacto",contactos_path %></li>
+		<li><i class="fa fa-calculator"></i> <%= link_to " Facturas de Compras", facturas_path %></li>
+		<li class="separate"><i class="fa fa-info-circle"></i> Ayuda</a></li>
+		<li id="close"><i class="fa fa-close"></i> cerrar</a></li>
+	</ul>
+
+</nav>

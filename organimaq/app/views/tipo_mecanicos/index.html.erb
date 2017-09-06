@@ -1,0 +1,30 @@
+<div class="content-table">
+  <%= link_to 'Agregar +', tipo_mecanicos_new_path, class: "btn btn-primary" %>
+  <br><br>
+
+  <% if !flash[:notice].blank? %>
+     <div class = "alert alert-info">
+        <%= flash[:notice] %>
+     </div>
+  <% end %>
+
+  <div class="table-responsive">
+    <table class="table table-striped table-hover ">
+      <thead>
+        <th>Tipo de Mecanico</th>
+
+      </thead>
+      <tbody>
+      <% @tipo_mecanico.each do |tipo_mecanico| %>
+        <tr>
+          <td><%= tipo_mecanico.nombre %></td>
+          <td><%= button_to "Eliminar", tipo_mecanico, method: :delete, class: "btn btn-danger",  data: {confirm: "Desea Eliminar '#{tipo_mecanico.nombre}'?"} %></td>
+          <td><%= link_to "Editar", edit_tipo_mecanico_path(tipo_mecanico), class: "btn btn-success" %></td>
+
+        </tr>
+        <% end %>
+      </tbody>
+      
+    </table>
+  </div>
+</div>

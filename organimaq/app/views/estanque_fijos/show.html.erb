@@ -1,0 +1,31 @@
+<div class="content-table">
+
+	<legend><h2><%= @estanque_fijo.nombre %></h2></legend>
+	<%= link_to 'Volver', estanque_fijos_path, class: "btn btn-primary" %>
+	<br>
+	<% if !flash[:notice].blank? %>
+     <div class = "alert alert-info">
+        <%= flash[:notice] %>
+     </div><br>
+  <% end %>
+	<div class="table-responsive">
+		<table class="table table-striped table-hover table-bordered">
+			<thead>
+				<th>Datos del Estanquee<th>
+			</thead>
+			
+			<tbody>
+				
+					<tr><td>Nombre</td><td><%= @estanque_fijo.nombre %></td></tr>
+					<tr><td>Codigo</td><td><%= @estanque_fijo.codigo %></td></tr>
+					<tr><td>Capacidad Total</td><td><%= @estanque_fijo.capacidad %></td></tr>
+					<tr><td>Capacidad Usada</td><td><%= @estanque_fijo.litros_actual %></td></tr>
+					<tr><td>Ubicacion</td><td><%= @estanque_fijo.ubicacion %></td></tr>
+					<tr><td><%= link_to "Editar", edit_estanque_fijo_path(@estanque_fijo), class: "btn btn-success" %></td>
+					<td><%= button_to "Eliminar", @estanque_fijo, data: {confirm: "Desea Eliminar '#{@estanque_fijo.nombre}'?"}, method: :delete, class: "btn btn-danger" %></td></tr>
+					
+			</tbody>
+		</table>
+	</div>
+
+</div>

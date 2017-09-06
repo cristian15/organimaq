@@ -1,0 +1,52 @@
+<div class="contentForm">
+<legend>Editar Mecacnico</legend>
+
+  <%= bootstrap_form_for (@mecanico)  do |f| %>
+  <div class="form-group">
+    
+    <%= f.file_field :foto %>
+
+    <div class="form-inline">
+        <div class="form-group">
+        <%= f.collection_select :tipo_mecanico_id, TipoMecanico.all, :id, :nombre %>
+        <%= link_to 'Agregar +', tipo_mecanicos_new_path, class: "btn btn-primary" %>
+        <%= link_to 'Ver', tipo_mecanicos_path, class: "btn btn-info" %>
+        </div>
+    </div>
+
+    <div class="form-inline">
+        <div class="form-group">
+            <%= f.text_field :rut %>
+            <%= f.text_field :dv %>
+
+
+        </div>
+    </div>
+
+    <%= f.text_field :nombre %>
+
+    <%= f.text_field :apellido_paterno %>
+
+    <%= f.text_field :apellido_materno %>
+
+    <%= f.number_field :jornada %>
+
+    <%= f.number_field :valor_hora %>
+    
+    
+
+
+
+    
+      <%= f.primary 'Editar' %>
+   </div>
+
+  <% end %>
+  </div>
+
+  <script type="text/javascript">
+ $("#planificacion_maquina_id").on('change',function(){
+   $("#planificacion_kilometraje").val(<%= Maquina.find(1).km_actual %>);
+  });
+
+  </script>

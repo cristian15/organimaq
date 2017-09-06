@@ -1,0 +1,54 @@
+<div class="content-table">
+<legend><h2>Planificación</h2></legend>
+<%= link_to 'Agregar +', planificacions_new_path, class: "btn btn-primary" %>
+<!-- <%= link_to 'Agregar s+', mecanicos_planificacions_new_path(hola: "sasa"), class: "btn btn-primary" %> -->
+  <br><br>
+   <% if !flash[:notice].blank? %>
+     <div class = "alert alert-info">
+        <%= flash[:notice] %>
+     </div>
+  <% end %>
+<div class="legenda">
+	<legend>Legenda</legend>
+	<div class="btn btn-danger">Abierta - Atrasada</div>
+	<div class="btn btn-info">Cerradas</div>
+	<div class="btn btn-success">Abierta</div>
+	<br><br>
+	<div class="btn btn-warning">Factura Pendiente</div>
+</div>
+
+<%= month_calendar events: @planificacions do |date, planificacions| %>
+
+  <%= date.day %>
+
+  <% planificacions.each do |planificacion| %>
+    <div>
+
+    	<% 
+    		@clase = "";
+    		if planificacion.factura_pendiente == "SI"
+    			@clase = "btn btn-warning btn-xs"
+    		else
+    			if planificacion.estado == "Abierta"
+    				@clase = "btn btn-success btn-xs"
+    				if Date.today >= planificacion.fecha
+    					@clase = "btn btn-danger btn-xs"
+    				end
+    			elsif planificacion.estado == "Cerrada"
+    				@clase = "btn btn-info btn-xs"
+    			end
+    		end
+    	%>    	
+	
+    		<%= link_to planificacion.descripcion + " (#{Maquina.find(planificacion.maquina_id).nombre})", edit_planificacion_path(planificacion), class: @clase %>
+    	
+    	
+
+
+    </div>
+
+  <% end %>
+
+<% end %>
+
+</div>
