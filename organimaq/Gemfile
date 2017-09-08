@@ -60,10 +60,13 @@ gem 'ransack', github: 'activerecord-hackery/ransack'
 # Modals y ajax
 gem 'responders', '~> 2.0'
 
+# JSON
+gem 'json'
+
 
 # Dashboard
-gem 'dashing-rails'
-gem 'puma'
+#gem 'dashing-rails'
+#gem 'puma'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

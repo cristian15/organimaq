@@ -17,10 +17,12 @@
 
 //= require bootstrap
 
+//= require bootstrap_sb_admin_base_v2
+
 //= require_tree 
 //= javascript_include_tag :application
 
 
-//= require bootstrap_sb_admin_base_v2
+
 
 
