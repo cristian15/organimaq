@@ -19,6 +19,8 @@
 
 //= require bootstrap_sb_admin_base_v2
 
+//= require moment
+
 //= require_tree 
 //= javascript_include_tag :application
 

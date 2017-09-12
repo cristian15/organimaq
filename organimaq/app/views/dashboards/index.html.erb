@@ -8,9 +8,9 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
-        
+        <div class="row">
 		<legend><h1>Estados de maquinas</h1></legend>
-		<% EstadoMaquina.all.each do |estado| %>
+		<% # EstadoMaquina.all.each do |estado| %>
 		<div class="col-lg-3 col-md-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
@@ -19,8 +19,8 @@
                                     <i class="fa fa-truck fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge"><%= Maquina.where("estado_maquina_id="+estado.id.to_s).count %> </div>
-                                    <div><%= estado.nombre %>  </div>
+                                    <div class="huge"><%= Maquina.all.count %> </div>
+                                    <div> Total Maquinas </div>
                                 </div>
                             </div>
                         </div>
@@ -33,15 +33,15 @@
                         </a>
                     </div>
         </div>
-		<% end %>
+		<% # end %>
 		<div class="col-lg-6">
-                    <div class="panel panel-default">
+                    <div class="panel panel-primary">
                         <div class="panel-heading">
                            <h2> Estados de Maquinas </h2>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <div id="morris-donut-chart"></div>
+                            <div id="morris-dounuts-estados-maquinas"></div>
                         </div>
                         <!-- /.panel-body -->
                     </div>
@@ -50,15 +50,97 @@
 				
 				
 		
-</div>
+		</div>
+	<div> <!-- Fin row -->
+	<div class="row">
+		<div class="col-lg-3 col-md-6">
+							<div class="panel panel-info">
+								<div class="panel-heading">
+									<div class="row">
+										<div class="col-xs-3">
+											<i class="fa fa-calendar fa-5x"></i>
+										</div>
+										<div class="col-xs-9 text-right">
+											<div class="huge"><%= @planificaciones.all.count %> </div>
+											<div> Total Planificaciones </div>
+										</div>
+									</div>
+								</div>
+								<a href="#">
+									<div class="panel-footer">
+										<span class="pull-left">Detalles</span>
+										<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+										<div class="clearfix"></div>
+									</div>
+								</a>
+							</div>
+		</div>
+	
+		<div class="col-lg-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                           <h2> Planificaciones </h2>
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div id="morris-dounuts-estados-planificaciones"></div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+				
+				
+		
+		</div>
+	</div> <!-- fin row -->
+
+
 <script>
 
-var jsondat = "<%= @emaq.to_json %>"
+var jsondat = "<%= @emaq.to_json %>"	<!-- Datos desde el modelo -->
 Morris.Donut({
-        element: 'morris-donut-chart',
+        element: 'morris-dounuts-estados-maquinas',
         data: JSON.parse(jsondat.replace(/(&quot\;)/g,"\"")),
         resize: true
     });
 	
+
 	
+var jsonplan = "<%= @eplan.to_json %>";
+console.log(jsonplan.replace(/(&quot\;)/g,"\""));
+
+Morris.Donut({
+        element: 'morris-dounuts-estados-planificaciones',
+        data: JSON.parse(jsonplan.replace(/(&quot\;)/g,"\"")),
+        resize: true
+    });
+<!--
+/*
+$(function() {
+
+    var data = JSON.parse(jsonplan.replace(/(&quot\;)/g,"\""));
+
+    var plotObj = $.plot($("#flot-pie-estados-planificaciones"), data, {
+        series: {
+            pie: {
+                show: true
+            }
+        },
+        grid: {
+            hoverable: true
+        },
+        tooltip: true,
+        tooltipOpts: {
+            content: "%p.0%, %s", // show percentages, rounding to 2 decimal places
+            shifts: {
+                x: 20,
+                y: 0
+            },
+            defaultTheme: false
+        }
+    });
+
+}); -->
+	*/
 </script>

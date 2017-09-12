@@ -60,8 +60,9 @@ gem 'ransack', github: 'activerecord-hackery/ransack'
 # Modals y ajax
 gem 'responders', '~> 2.0'
 
-# JSON
-gem 'json'
+
+# moment.js
+gem 'momentjs-rails', github: 'cristian15/momentjs-rails'
 
 
 # Dashboard

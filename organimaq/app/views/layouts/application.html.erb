@@ -17,6 +17,8 @@
  </head>
 <body>
 <div id="modal-holder"></div>
+
+<%= render 'partials/topbar' %>
 <%= render 'partials/barbar' %>
 
 <%= yield %>
@@ -39,6 +41,10 @@ $(document).ready(function(){
 		$("#show").click(function(){
 			console.log( "You clicked a paragraph!" );
 		$("#nava").toggle("slow");
+		});
+		
+		$("#noticias").click(function(){
+			$("#panel-notifica").toggle('slow');
 		});
 	});
 </script>
