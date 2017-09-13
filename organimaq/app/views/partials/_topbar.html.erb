@@ -1,38 +1,33 @@
-<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-	<ul class="nav navbar-top-links navbar-right">
-		<li class="dropdown">
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="noticias">
-                <span class="fa fa-bell fa-fw"></span> <span class="fa fa-caret-down"></span>
-            </a>
-			<ul class="dropdown-menu " id="panel-notifica">
-				<li>
-                    <a href="#">
-						<div>
-							<i class="fa fa-comment fa-fw"></i> New Comment
-							<span class="pull-right text-muted small">
-							<script>
-								var fecha = moment('20170911');
-								fecha.locale('es');
-								
-								console.log(fecha.startOf('hour').fromNow());
-								
-								document.write(fecha.startOf('hour').fromNow());
-							</script>
-							</span>
-						</div>
-                    </a>
-                </li>
-                <li role="separator" class="divider"></li>
-                <li>
-					<a href="#">
-						<div>
-							<i class="fa fa-twitter fa-fw"></i> 3 New Followers
-								<span class="pull-right text-muted small">12 minutes ago</span>
-						</div>
-					</a>
-                </li>
-			</ul>
-			
+<button id="notiButton"><span class="fa fa-bell fa-fw"></span><span class="fa fa-caret-down"></span></button>
+	
+	<ul id="panel-notificacion">
+		<li class="dropdown">				
+			<ul class="dropdown-menu" id="panel-notifica">			
+				<% Planificacion.all.each do |pl| 
+					if pl.estado == "Abierta"
+						if Date.today >= pl.fecha
+				%>		
+						<li>
+							<a href="<%= edit_planificacion_path(pl.id) %>">
+								<div>
+									<i class="fa fa-exclamation-circle"></i>Planificacion de <%= Maquina.find(pl.maquina_id).nombre %>
+									<span class="pull-right text-muted small" id="fecha_noti<%= pl.id %>"/>
+									<script>
+										var fecha = moment("<%= pl.fecha %>");
+										fecha.locale('es');
+										$("#fecha_noti<%= pl.id %>").html(fecha.fromNow());
+										
+									</script>
+									</span>
+								</div>
+							</a>
+						</li>
+						<li role="separator" class="divider"></li>
+						<% 
+						end
+					end	
+				end
+				%>
+			</ul>			
 		</li>
 	</ul>
-</nav>

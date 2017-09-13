@@ -41,10 +41,7 @@
     	%>    	
 	
     		<%= link_to planificacion.descripcion + " (#{Maquina.find(planificacion.maquina_id).nombre})", edit_planificacion_path(planificacion), class: @clase %>
-    	
-    	
-
-
+			
     </div>
 
   <% end %>

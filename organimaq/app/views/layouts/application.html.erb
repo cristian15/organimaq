@@ -18,12 +18,16 @@
 <body>
 <div id="modal-holder"></div>
 
-<%= render 'partials/topbar' %>
+
 <%= render 'partials/barbar' %>
+<%= render 'partials/topbar' %>
 
 <%= yield %>
 
 <%= render 'partials/footer' %>
+
+
+
 
 </body>
 </html>
@@ -43,7 +47,7 @@ $(document).ready(function(){
 		$("#nava").toggle("slow");
 		});
 		
-		$("#noticias").click(function(){
+		$("#notiButton").click(function(){
 			$("#panel-notifica").toggle('slow');
 		});
 	});

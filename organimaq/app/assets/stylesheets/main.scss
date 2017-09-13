@@ -358,3 +358,42 @@ legend{
     background-color: #cec3df;
 }
 
+#notiButton
+{
+	top: 0.8em;
+	right: 3em;
+	position: fixed;
+	display: block;
+	border-radius: 15%;
+	background-color: #260a47;
+	color: white;
+	padding: 5px;
+	margin-bottom: 1em;
+	font-size: 25px;
+	cursor: pointer;
+	text-align: center;
+	border:none;
+	transition: 0.5s ease;
+}
+#notiButton:hover{
+	color: #260a47;
+	background-color: #b2a7be;
+}
+
+.num {
+  position: absolute;
+  right: 11px;
+  top: 6px;
+  color: #fff;
+}
+
+#panel-notificacion
+{
+	 list-style: none; /* Remove list bullets */
+	 display: inline-block;
+	 position: absolute;
+	 right: 25%;
+	 top: 10%;
+}
+
+
