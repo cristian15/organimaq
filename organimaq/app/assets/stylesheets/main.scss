@@ -363,7 +363,7 @@ legend{
 	top: 0.8em;
 	right: 3em;
 	position: fixed;
-	display: block;
+	display: inline-block;
 	border-radius: 15%;
 	background-color: #260a47;
 	color: white;
@@ -378,20 +378,29 @@ legend{
 #notiButton:hover{
 	color: #260a47;
 	background-color: #b2a7be;
+	
 }
 
-.num {
-  position: absolute;
-  right: 11px;
-  top: 6px;
-  color: #fff;
+.num {				/* Numero que indica notificaciones */
+  background-color: #fa3e3e;
+  border-radius: 2em;
+  color: white;
+ 
+  padding: .2em .5em;
+  font-size: 10px;
+  
+  position: absolute; 
+  top: .2em;
+  right: 4em;
 }
-
+#panel-notificacion ul
+{
+	list-style: none;
+}
 #panel-notificacion
 {
-	 list-style: none; /* Remove list bullets */
 	 display: inline-block;
-	 position: absolute;
+	 position: fixed;
 	 right: 25%;
 	 top: 10%;
 }

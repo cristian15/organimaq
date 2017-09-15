@@ -1,6 +1,10 @@
-<button id="notiButton"><span class="fa fa-bell fa-fw"></span><span class="fa fa-caret-down"></span></button>
-	
-	<ul id="panel-notificacion">
+<button id="notiButton">
+	<span class="fa fa-bell fa-fw"></span>
+	<span class="num"><%= Planificacion.where("fecha <= '"+Date.today.to_s+"' and estado = 'Abierta'").count %>  </span>
+	<span class="fa fa-caret-down"></span>
+</button>	
+	<nav id="panel-notificacion">
+	<ul >
 		<li class="dropdown">				
 			<ul class="dropdown-menu" id="panel-notifica">			
 				<% Planificacion.all.each do |pl| 
@@ -31,3 +35,4 @@
 			</ul>			
 		</li>
 	</ul>
+	</nav>

@@ -26,27 +26,22 @@
 
 <%= render 'partials/footer' %>
 
-
-
-
 </body>
 </html>
 <script>
 $(document).ready(function(){
 		$("#dropmaq").click(function(){
-		$("#maq").slideToggle("slow");
+			$("#maq").slideToggle("slow");
 		});
 		$("#dropmech").click(function(){
-		$("#mech").slideToggle("slow");
+			$("#mech").slideToggle("slow");
 		});
 		$("#close").click(function(){
-		$("#nava").hide("slow");
+			$("#nava").hide("slow");
 		});
-		$("#show").click(function(){
-			console.log( "You clicked a paragraph!" );
-		$("#nava").toggle("slow");
-		});
-		
+		$("#show").click(function(){			
+			$("#nava").toggle("slow");
+		});		
 		$("#notiButton").click(function(){
 			$("#panel-notifica").toggle('slow');
 		});
