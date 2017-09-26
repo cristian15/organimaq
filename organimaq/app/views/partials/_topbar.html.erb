@@ -1,3 +1,4 @@
+<%  if (Planificacion.where("fecha <= '"+Date.today.to_s+"' and estado = 'Abierta'").count > 0 ) %>
 <button id="notiButton">
 	<span class="fa fa-bell fa-fw"></span>
 	<span class="num"><%= Planificacion.where("fecha <= '"+Date.today.to_s+"' and estado = 'Abierta'").count %>  </span>
@@ -36,3 +37,4 @@
 		</li>
 	</ul>
 	</nav>
+<% end %>

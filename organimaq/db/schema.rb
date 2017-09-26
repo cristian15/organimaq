@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170821215954) do
+ActiveRecord::Schema.define(version: 20170926043619) do
 
   create_table "arriendos", force: :cascade do |t|
     t.date     "fecha_arriendo"
