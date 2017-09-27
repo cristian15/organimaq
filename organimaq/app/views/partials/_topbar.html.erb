@@ -1,16 +1,21 @@
-<%  if (Planificacion.where("fecha <= '"+Date.today.to_s+"' and estado = 'Abierta'").count > 0 ) %>
+<%  
+
+@notificaciones = Planificacion.where("fecha <= '"+Date.today.to_s+"' and estado = 'Abierta'").count+ Repuesto.where("stock < 3").count
+
+if (@notificaciones > 0)
+%>
+
 <button id="notiButton">
 	<span class="fa fa-bell fa-fw"></span>
-	<span class="num"><%= Planificacion.where("fecha <= '"+Date.today.to_s+"' and estado = 'Abierta'").count %>  </span>
+	<span class="num"><%= @notificaciones %>  </span>
 	<span class="fa fa-caret-down"></span>
 </button>	
 	<nav id="panel-notificacion">
 	<ul >
 		<li class="dropdown">				
 			<ul class="dropdown-menu" id="panel-notifica">			
-				<% Planificacion.all.each do |pl| 
-					if pl.estado == "Abierta"
-						if Date.today >= pl.fecha
+				<% Planificacion.where("fecha <= '"+Date.today.to_s+"' and estado = 'Abierta'").each do |pl| 
+						
 				%>		
 						<li>
 							<a href="<%= edit_planificacion_path(pl.id) %>">
@@ -29,9 +34,33 @@
 						</li>
 						<li role="separator" class="divider"></li>
 						<% 
-						end
-					end	
+					
 				end
+				%>
+				
+				<%Repuesto.where("stock < 3").each do |rep| 
+					
+						
+				%>		
+						<li>
+							<a href="<%= repuestos_path %>">
+								<div>
+									<i class="fa fa-exclamation-circle"></i>Bajo stock de <%= rep.nombre %>
+									<span class="pull-right text-muted small" id="fecha_rep<%= rep.id %>"/>
+									<script>
+										var fecha = moment("<%= rep.updated_at %>");
+										fecha.locale('es');
+										$("#fecha_rep<%= rep.id %>").html(fecha.fromNow());
+										
+									</script>
+									</span>
+								</div>
+							</a>
+						</li>
+						<li role="separator" class="divider"></li>
+						<% 
+					end	
+				
 				%>
 			</ul>			
 		</li>

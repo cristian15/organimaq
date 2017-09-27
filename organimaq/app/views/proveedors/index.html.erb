@@ -11,8 +11,9 @@
 	  <br>
 	
 	<%= search_form_for @search, :remote=>"true", url: proveedors_path, :method => :get do |f| %>
+		<%= f.label "Nombre" %>
 		<%= f.text_field :nombre_cont %>
-		<%= f.submit %>
+		<%= f.submit :value=>"Buscar" %>
 	<% end %>
 	<br><br>
 	<div id="proveedors">
