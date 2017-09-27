@@ -1,9 +1,10 @@
 class ClientesController < ApplicationController
 
 	before_action :clear_search_index, :only => [:index]
-	
+	respond_to :html, :json
   def new
 	@cliente = Cliente.new
+	respond_modal_with @cliente
   end
 
   def index
@@ -26,7 +27,7 @@ class ClientesController < ApplicationController
   def create
   	@cliente = Cliente.new(cliente_params)
   	if @cliente.save
-  		redirect_to @cliente
+  		redirect_to clientes_path(), notice: "Cliente '#{@cliente.nombre}' agregado correctamente."
   	else
   		render 'new'
   	end

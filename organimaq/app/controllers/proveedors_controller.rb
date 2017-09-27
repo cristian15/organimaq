@@ -1,4 +1,5 @@
 class ProveedorsController < ApplicationController
+	respond_to :html, :json
   def index
 	@search = Proveedor.ransack(params[:q])
 	@proveedor = @search.result.paginate(page: params[:page], per_page:2)
@@ -14,12 +15,13 @@ class ProveedorsController < ApplicationController
 
   def new
 	@proveedor = Proveedor.new
+	respond_modal_with @proveedor
   end
   
   def create
   	@proveedor = Proveedor.new(proveedor_params)
   	if @proveedor.save
-  		redirect_to @proveedor, notice: " '#{@proveedor.nombre}' ha sido Creado."
+  		redirect_to proveedors_path, notice: " '#{@proveedor.nombre}' ha sido Creado."
   	else
   		render 'new'
   	end

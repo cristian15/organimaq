@@ -1,6 +1,8 @@
 class TipoMecanicosController < ApplicationController
+	respond_to :html, :json
   def new
   	@tipo_mecanico = TipoMecanico.new
+	respond_modal_with @tipo_mecanico
   end
 
   def destroy

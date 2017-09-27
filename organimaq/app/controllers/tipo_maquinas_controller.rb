@@ -1,6 +1,8 @@
 class TipoMaquinasController < ApplicationController
+	respond_to :html, :json
   def new
   	@tipo_maquina = TipoMaquina.new
+	respond_modal_with @tipo_maquina
   end
 
   def destroy

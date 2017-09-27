@@ -1,4 +1,5 @@
 class EstadoMaquinasController < ApplicationController
+	respond_to :html, :json
   def index
   	@estado_maquina = EstadoMaquina.all
   end
@@ -10,6 +11,7 @@ class EstadoMaquinasController < ApplicationController
 
   def new
   	@estado_maquina = EstadoMaquina.new
+	respond_modal_with @estado_maquina
   end
 
   def destroy

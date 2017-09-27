@@ -1,5 +1,5 @@
 <div class="content-table">
-	<%= link_to 'Agregar +', estado_maquinas_new_path, class: "btn btn-primary" %>
+	<%= link_to "Agregar +", estado_maquinas_new_path, data:{modal: true}, class: "btn btn-primary" %>
   <br><br>
 	<% if !flash[:notice].blank? %>
 	   <div class = "alert alert-info">
