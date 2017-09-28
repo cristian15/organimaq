@@ -24,3 +24,12 @@
 	<% end %>
 	
 </div>
+
+<script>
+$("#cliente_rut_cliente").on('change',
+  function(){
+
+   $("#cliente_dv").val(calculaDigitoVerificador($("#cliente_rut_cliente").val()));
+
+  });
+</script>

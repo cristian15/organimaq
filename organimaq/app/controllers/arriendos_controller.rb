@@ -7,14 +7,14 @@ class ArriendosController < ApplicationController
 
   def index
 	@search = Arriendo.ransack(params[:q])
-	@arriendo = @search.result.paginate(page: params[:page], per_page:2)
+	@arriendo = @search.result.paginate(page: params[:page], per_page:4)
   end
 
   def show
 	@arriendo = Arriendo.find(params[:id])
 	
 	@search = Report.joins('INNER JOIN arriendos ON arriendo_id = arriendos.id AND arriendos.id =', params[:id]).ransack(params[:q])
-	@report = @search.result.paginate(page: params[:page], per_page:2)
+	@report = @search.result.paginate(page: params[:page], per_page:4)
   end
 
   def edit

@@ -25,3 +25,12 @@
 	<% end %>
 	
 </div>
+
+<script>
+$("#operador_rut").on('change',
+  function(){
+
+   $("#operador_dv").val(calculaDigitoVerificador($("#operador_rut").val()));
+
+  });
+</script>

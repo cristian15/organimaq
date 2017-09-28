@@ -14,8 +14,8 @@
     <div class="form-inline">
     <div class="form-group">
     <%= f.collection_select :tipo_repuesto_id, TipoRepuesto.all, :id, :nombre %>
-    <%= link_to 'Agregar +', tipo_repuestos_new_path, class: "btn btn-primary" %>
-    <%= link_to 'Ver', tipo_repuestos_path, class: "btn btn-info" %>
+    <%= link_to "Agregar +", tipo_repuestos_new_path, data:{modal:true} ,  class: "btn btn-primary" %>
+    
     </div>
     </div>
     <%= f.text_field :codigo %>

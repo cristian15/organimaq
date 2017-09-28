@@ -1,6 +1,7 @@
 <%  
 
-@notificaciones = Planificacion.where("fecha <= '"+Date.today.to_s+"' and estado = 'Abierta'").count+ Repuesto.where("stock < 3").count
+@notificaciones = Planificacion.where("fecha <= '"+Date.today.to_s+"' and estado = 'Abierta'").count + Repuesto.where("stock < 3").count + Maquina.where("DATEDIFF(fecha_permiso,'"+Date.today.to_s+"') <= 10 ").count + Maquina.where("DATEDIFF(fecha_seguro,'"+Date.today.to_s+"') <= 10 ").count + Maquina.where("DATEDIFF(fecha_revision,'"+Date.today.to_s+"') <= 10 ").count
+
 
 if (@notificaciones > 0)
 %>
@@ -10,6 +11,7 @@ if (@notificaciones > 0)
 	<span class="num"><%= @notificaciones %>  </span>
 	<span class="fa fa-caret-down"></span>
 </button>	
+
 	<nav id="panel-notificacion">
 	<ul >
 		<li class="dropdown">				
@@ -20,48 +22,91 @@ if (@notificaciones > 0)
 						<li>
 							<a href="<%= edit_planificacion_path(pl.id) %>">
 								<div>
-									<i class="fa fa-exclamation-circle"></i>Planificacion de <%= Maquina.find(pl.maquina_id).nombre %>
+									<i class="fa fa-exclamation-circle"></i>Planificacion de <b><%= Maquina.find(pl.maquina_id).nombre %></b>
 									<span class="pull-right text-muted small" id="fecha_noti<%= pl.id %>"/>
 									<script>
 										var fecha = moment("<%= pl.fecha %>");
 										fecha.locale('es');
 										$("#fecha_noti<%= pl.id %>").html(fecha.fromNow());
-										
 									</script>
 									</span>
 								</div>
 							</a>
 						</li>
 						<li role="separator" class="divider"></li>
-						<% 
-					
-				end
-				%>
+						<% 	end	%>
 				
-				<%Repuesto.where("stock < 3").each do |rep| 
-					
-						
-				%>		
+				<% Repuesto.where("stock < 3").each do |rep| %>		
 						<li>
 							<a href="<%= repuestos_path %>">
 								<div>
-									<i class="fa fa-exclamation-circle"></i>Bajo stock de <%= rep.nombre %>
+									<i class="fa fa-exclamation-circle"></i>Bajo stock de <b><%= rep.nombre %></b>
 									<span class="pull-right text-muted small" id="fecha_rep<%= rep.id %>"/>
 									<script>
 										var fecha = moment("<%= rep.updated_at %>");
 										fecha.locale('es');
-										$("#fecha_rep<%= rep.id %>").html(fecha.fromNow());
-										
+										$("#fecha_rep<%= rep.id %>").html(fecha.fromNow());									
 									</script>
 									</span>
 								</div>
 							</a>
 						</li>
-						<li role="separator" class="divider"></li>
-						<% 
-					end	
-				
-				%>
+						<li role="separator" class="divider"></li> 
+						<% end %>
+						
+				<% Maquina.where("DATEDIFF(fecha_permiso,'"+Date.today.to_s+"') <= 10 ").each do |maq| %>		
+						<li>
+							<a href="<%= edit_maquina_path(maq.id) %>">
+								<div>
+									<i class="fa fa-exclamation-circle"></i>Permiso de circulacion de<b> <%= maq.nombre %></b>
+									<span class="pull-right text-muted small" id="fecha_per<%= maq.id %>"/>
+									<script>
+										var fecha = moment("<%= maq.fecha_permiso %>");
+										fecha.locale('es');
+										$("#fecha_per<%= maq.id %>").html(fecha.fromNow());									
+									</script>
+									</span>
+								</div>
+							</a>
+						</li>
+						<li role="separator" class="divider"></li> 
+						<% end %>
+						
+				<% Maquina.where("DATEDIFF(fecha_seguro,'"+Date.today.to_s+"') <= 10 ").each do |maq| %>		
+						<li>
+							<a href="<%= edit_maquina_path(maq.id) %>">
+								<div>
+									<i class="fa fa-exclamation-circle"></i>Seguro Obligatorio de<b> <%= maq.nombre %></b>
+									<span class="pull-right text-muted small" id="fecha_seg<%= maq.id %>"/>
+									<script>
+										var fecha = moment("<%= maq.fecha_seguro %>");
+										fecha.locale('es');
+										$("#fecha_seg<%= maq.id %>").html(fecha.fromNow());									
+									</script>
+									</span>
+								</div>
+							</a>
+						</li>
+						<li role="separator" class="divider"></li> 
+						<% end %>
+						
+				<% Maquina.where("DATEDIFF(fecha_revision,'"+Date.today.to_s+"') <= 10 ").each do |maq| %>		
+						<li>
+							<a href="<%= edit_maquina_path(maq.id) %>">
+								<div>
+									<i class="fa fa-exclamation-circle"></i>Revision Técnica de<b> <%= maq.nombre %></b>
+									<span class="pull-right text-muted small" id="fecha_rev<%= maq.id %>"/>
+									<script>
+										var fecha = moment("<%= maq.fecha_revision %>");
+										fecha.locale('es');
+										$("#fecha_rev<%= maq.id %>").html(fecha.fromNow());									
+									</script>
+									</span>
+								</div>
+							</a>
+						</li>
+						<li role="separator" class="divider"></li> 
+						<% end %>
 			</ul>			
 		</li>
 	</ul>

@@ -9,7 +9,7 @@ class ClientesController < ApplicationController
 
   def index
 	@search = Cliente.ransack(params[:q])
-	@cliente = @search.result.paginate(page: params[:page], per_page:2)
+	@cliente = @search.result.paginate(page: params[:page], per_page:4)
   end
 
   def edit
@@ -20,7 +20,7 @@ class ClientesController < ApplicationController
 	@cliente = Cliente.find(params[:id])
 	
 	@search = Arriendo.joins('INNER JOIN clientes ON cliente_id = clientes.id AND clientes.id =', params[:id]).ransack(params[:q])
-	@arriendos = @search.result.paginate(page: params[:page], per_page:2)
+	@arriendos = @search.result.paginate(page: params[:page], per_page:4)
 	
   end
   

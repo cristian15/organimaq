@@ -1,4 +1,5 @@
 class RepuestosController < ApplicationController
+	respond_to :html, :json
   def index
   	@repuesto = Repuesto.all
   end

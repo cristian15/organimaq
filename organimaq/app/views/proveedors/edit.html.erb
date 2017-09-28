@@ -18,3 +18,12 @@
 	<% end %>
 	
 </div>
+
+<script>
+$("#proveedor_rut").on('change',
+  function(){
+
+   $("#proveedor_dv").val(calculaDigitoVerificador($("#proveedor_rut").val()));
+
+  });
+</script>

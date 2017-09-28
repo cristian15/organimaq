@@ -1,6 +1,8 @@
 class TipoRepuestosController < ApplicationController
+	respond_to :html, :json
   def new
   	@tipo_repuesto = TipoRepuesto.new
+	respond_modal_with @tipo_repuesto
   end
 
   def destroy

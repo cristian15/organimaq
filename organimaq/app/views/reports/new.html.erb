@@ -13,7 +13,7 @@
 		<%= f.number_field :numero %>
 		<%= f.text_field :detalle %>
 		<%= f.number_field :horometro_inicial, label: "Horómetro Inicial", value: @maquina.horometro_actual %>
-		<%= f.number_field :horometro_final, label: "Horómetro Final" %>
+		<%= f.number_field :horometro_final, label: "Horómetro Final", value: @maquina.horometro_actual %>
 		<%= f.number_field :km_inicio, label: "Kilometraje Inicial", value: @maquina.km_actual %>
 		<%= f.number_field :km_final, label: "Kilometraje Final", value: @maquina.km_actual %>
 		
