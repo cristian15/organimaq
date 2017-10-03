@@ -1,0 +1,46 @@
+<div class="table-responsive">
+		<table class="table table-striped table-hover table-bordered">
+			<thead>
+				<tr>
+					<th>Nombre</th>
+					<th>Fecha</th>
+					<th>Horas</th>
+					<th>Numero</th>
+					<th>ArriendoID</th>
+					<th>Operador</th>
+					<th>Maquina</th>
+					<th>Detalle</th>
+					<th>Horometro Inicial</th>
+					<th>Horometro Final</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<% @report.each do |report| %>
+				<tr>
+				
+					<td><%= report.nombre %></td>
+					<td><%= report.fecha %></td>
+					<td><%= report.horas %></td>
+					<td><%= report.numero %></td>
+					<td><%= report.arriendo_id %></td>
+					<td><%= Operador.find(report.operador_id).nombre %> <%= Operador.find(report.operador_id).apellido_p %> </td>
+					<td><%= Maquina.find(Arriendo.find(report.arriendo_id).maquina_id).nombre %></td>
+					<td><%= report.detalle %></td>
+					<td><%= report.horometro_inicial %></td>
+					<td><%= report.horometro_final %></td>
+					<td><%= link_to "Mostrar", report_path(report), class: "btn btn-info" %></td>
+					<td><%= button_to "Eliminar", report, data: {confirm: "Desea Eliminar '#{report.nombre}'?"}, method: :delete, class: "btn btn-danger" %></td>
+					<td><%= link_to "Editar", edit_report_path(report), class: "btn btn-success" %></td>
+					
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+	
+	<div id="page_links"> 
+		<div id="pagination">
+			<%= paginate @report %>	
+		</div>
+    </div>

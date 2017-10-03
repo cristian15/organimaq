@@ -8,35 +8,16 @@
         <%= flash[:notice] %>
      </div>
   <% end %>
-
-  <div class="table-responsive">
-    <table class="table table-striped table-hover table-bordered">
-      <thead>
-        <th>Codigo</th>
-        <th>Repuesto</th>
-        <th>Descripcion</th>
-        <th>Tipo</th>
-        <th>Stock</th>
-    
-
-      </thead>
-      <tbody>
-      <% @repuesto.each do |repuesto| %>
-        <tr>
-          <td><%= repuesto.codigo %></td>
-          <td><%= repuesto.nombre %></td>
-          <td><%= repuesto.descripcion %></td>
-          <td><%= TipoRepuesto.find(repuesto.tipo_repuesto_id).nombre %></td>
-          <td><%= repuesto.stock %></td>
-          
-          <td><%= link_to "Mostrar", repuesto_path(repuesto), class: "btn btn-info" %></td>
-          <td><%= button_to "Eliminar", repuesto, data: {confirm: "Desea Eliminar '#{repuesto.nombre}'?"}, method: :delete, class: "btn btn-danger" %></td>
-          <td><%= link_to "Editar", edit_repuesto_path(repuesto), class: "btn btn-success" %></td>
-
-        </tr>
-        <% end %>
-      </tbody>
-      
-    </table>
-  </div>
+  
+  <%= search_form_for @search, :remote=>"true", url: repuestos_path, :method => :get do |f| %>
+		<%= f.label "Nombre" %>
+		<%= f.text_field :nombre_cont %>
+		<%= f.label "Codigo" %>
+		<%= f.text_field :codigo_cont %>
+		<%= f.submit :value=>"Buscar" %>
+	<% end %>
+	<div id="repuestos">
+	<%= render "repuestos" %> 
+	</div>
+  
 </div>

@@ -1,4 +1,5 @@
 class ReportsController < ApplicationController
+	respond_to :html, :json
   def new
 	@report = Report.new
 	@arriendo = Arriendo.find(params[:id])
@@ -6,7 +7,8 @@ class ReportsController < ApplicationController
   end
 
   def index
-	@report = Report.all
+	@search = Report.ransack(params[:q])
+	@report = @search.result.paginate(page: params[:page], per_page:5)
   end
 
   def show

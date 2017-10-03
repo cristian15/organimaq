@@ -1,7 +1,8 @@
 class RepuestosController < ApplicationController
 	respond_to :html, :json
   def index
-  	@repuesto = Repuesto.all
+	@search = Repuesto.ransack(params[:q])
+	@repuesto = @search.result.paginate(page: params[:page], per_page:5)
   end
 
   def show

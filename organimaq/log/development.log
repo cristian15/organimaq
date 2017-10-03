@@ -32806,3 +32806,1550 @@ Processing by PlanificacionsController#index as HTML
   Rendered partials/_topbar.html.erb (9.6ms)
   Rendered partials/_footer.html.erb (0.1ms)
 Completed 200 OK in 211ms (Views: 205.8ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/" for 158.85.81.116 at 2017-09-28 19:11:21 -0300
+Cannot render console from 158.85.81.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (estado_maquina_id = 1)
+  Rendered welcome/index.html.erb within layouts/application (17.9ms)
+  Rendered partials/_barbar.html.erb (2.7ms)
+  [1m[36m (1.1ms)[0m  [1mSELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-09-28' and estado = 'Abierta')[0m
+  [1m[35m (4.7ms)[0m  SELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-09-28') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-09-28') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-09-28') <= 10 )[0m
+  [1m[35mPlanificacion Load (0.4ms)[0m  SELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-09-28' and estado = 'Abierta')
+  [1m[36mMaquina Load (1.4ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1[0m
+  [1m[35mRepuesto Load (5.2ms)[0m  SELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)
+  [1m[36mMaquina Load (0.8ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-09-28') <= 10 )[0m
+  [1m[35mMaquina Load (0.5ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-09-28') <= 10 )
+  [1m[36mMaquina Load (1.6ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-09-28') <= 10 )[0m
+  Rendered partials/_topbar.html.erb (191.9ms)
+  Rendered partials/_footer.html.erb (0.7ms)
+Completed 200 OK in 1399ms (Views: 1363.2ms | ActiveRecord: 27.2ms)
+
+
+Started GET "/planificacions" for 186.107.32.157 at 2017-10-03 14:13:45 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by PlanificacionsController#index as HTML
+  [1m[35mPlanificacion Load (0.5ms)[0m  SELECT `planificacions`.* FROM `planificacions`
+  Rendered /usr/share/rvm/gems/ruby-2.3.0/bundler/gems/simple_calendar-231755c0510c/app/views/simple_calendar/_month_calendar.html.erb (46.3ms)
+  Rendered planificacions/index.html.erb within layouts/application (70.6ms)
+  Rendered partials/_barbar.html.erb (5.4ms)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  [1m[35mPlanificacion Load (0.3ms)[0m  SELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36mMaquina Load (0.6ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1[0m
+  [1m[35mRepuesto Load (0.6ms)[0m  SELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)
+  [1m[36mMaquina Load (0.7ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.4ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  Rendered partials/_topbar.html.erb (131.8ms)
+  Rendered partials/_footer.html.erb (2.0ms)
+Completed 200 OK in 907ms (Views: 868.0ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/assets/modals.self-d2c41f701ba5ed12a30cd18b7ff1ef524098db0f7e0563f7d860946835b58a5e.js?body=1" for 186.107.32.157 at 2017-10-03 14:13:48 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap_sb_admin_base_v2.self-8f656e10010f13d661c333ec222afca6f567507f4f767f26a381330465690cd0.js?body=1" for 186.107.32.157 at 2017-10-03 14:13:48 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/arriendos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.32.157 at 2017-10-03 14:13:48 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/carga_combustibles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.32.157 at 2017-10-03 14:13:48 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/clientes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.32.157 at 2017-10-03 14:13:48 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/contacto.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.32.157 at 2017-10-03 14:13:48 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/dashboards.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.32.157 at 2017-10-03 14:13:48 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/estado_maquinas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.32.157 at 2017-10-03 14:13:48 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/estanque_fijos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.32.157 at 2017-10-03 14:13:48 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/factura.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.32.157 at 2017-10-03 14:13:48 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fuente_combustibles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.32.157 at 2017-10-03 14:13:48 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/infractions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.32.157 at 2017-10-03 14:13:48 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/maquinas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.32.157 at 2017-10-03 14:13:49 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/mecanicos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.32.157 at 2017-10-03 14:13:49 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/mecanicos_planificacions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.32.157 at 2017-10-03 14:13:49 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/multas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.32.157 at 2017-10-03 14:13:49 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/operadors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.32.157 at 2017-10-03 14:13:49 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/orden_trabajos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.32.157 at 2017-10-03 14:13:49 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/planificacions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.32.157 at 2017-10-03 14:13:49 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/planificaion_facturas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.32.157 at 2017-10-03 14:13:49 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/proveedors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.32.157 at 2017-10-03 14:13:49 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/report.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.32.157 at 2017-10-03 14:13:49 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/repuestos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.32.157 at 2017-10-03 14:13:49 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/repuestos_planificacions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.32.157 at 2017-10-03 14:13:49 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/tipo_facturas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.32.157 at 2017-10-03 14:13:49 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/tipo_maquinas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.32.157 at 2017-10-03 14:13:49 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/tipo_mecanicos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.32.157 at 2017-10-03 14:13:49 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/tipo_repuestos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.32.157 at 2017-10-03 14:13:49 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.32.157 at 2017-10-03 14:13:49 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-a61b363853b3c59b48b5162734a163a7b2f30fc02e8ab61f7ca418578edec66f.js?body=1" for 186.107.32.157 at 2017-10-03 14:13:49 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/organimaq_min-2180057bf1852148e24281dd2c08ef84c0a2b4e1b831c36d63c7bce57ec8e103.png" for 186.107.32.157 at 2017-10-03 14:13:49 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fontawesome-webfont-2adefcbc041e7d18fcf2d417879dc5a09997aa64d675b7a3c4b6ce33da13f3fe.woff2" for 186.107.32.157 at 2017-10-03 14:13:50 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/icono-1eaa33e8bf741e1324113692654421a0aa672ae3cdd867f8ca916017b3df1c55.png" for 186.107.32.157 at 2017-10-03 14:13:51 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/planificacions/index?start_date=2017-09-24" for 186.107.32.157 at 2017-10-03 14:13:56 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlanificacionsController#index as HTML
+  Parameters: {"start_date"=>"2017-09-24"}
+  [1m[35mPlanificacion Load (0.6ms)[0m  SELECT `planificacions`.* FROM `planificacions`
+  [1m[36mMaquina Load (0.5ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 3 LIMIT 1[0m
+  [1m[35mMaquina Load (0.5ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1  [["id", 5]]
+  Rendered /usr/share/rvm/gems/ruby-2.3.0/bundler/gems/simple_calendar-231755c0510c/app/views/simple_calendar/_month_calendar.html.erb (18.5ms)
+  Rendered planificacions/index.html.erb within layouts/application (23.0ms)
+  Rendered partials/_barbar.html.erb (1.6ms)
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  [1m[35mPlanificacion Load (0.2ms)[0m  SELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1[0m  [["id", 5]]
+  [1m[35mRepuesto Load (0.2ms)[0m  SELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  Rendered partials/_topbar.html.erb (10.1ms)
+  Rendered partials/_footer.html.erb (0.0ms)
+Completed 200 OK in 188ms (Views: 182.8ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/planificacions/index?start_date=2017-10-02" for 186.107.32.157 at 2017-10-03 14:14:03 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlanificacionsController#index as HTML
+  Parameters: {"start_date"=>"2017-10-02"}
+  [1m[35mPlanificacion Load (0.6ms)[0m  SELECT `planificacions`.* FROM `planificacions`
+  Rendered /usr/share/rvm/gems/ruby-2.3.0/bundler/gems/simple_calendar-231755c0510c/app/views/simple_calendar/_month_calendar.html.erb (18.9ms)
+  Rendered planificacions/index.html.erb within layouts/application (23.8ms)
+  Rendered partials/_barbar.html.erb (2.7ms)
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  [1m[35mPlanificacion Load (0.3ms)[0m  SELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36mMaquina Load (0.3ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1[0m
+  [1m[35mRepuesto Load (0.3ms)[0m  SELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)
+  [1m[36mMaquina Load (0.3ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.3ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.3ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  Rendered partials/_topbar.html.erb (13.5ms)
+  Rendered partials/_footer.html.erb (0.0ms)
+Completed 200 OK in 217ms (Views: 211.9ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/repuestos" for 186.107.32.157 at 2017-10-03 14:14:25 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RepuestosController#index as HTML
+  [1m[35mRepuesto Load (0.6ms)[0m  SELECT `repuestos`.* FROM `repuestos`
+  [1m[36mTipoRepuesto Load (0.3ms)[0m  [1mSELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 1 LIMIT 1[0m
+  [1m[35mTipoRepuesto Load (0.4ms)[0m  SELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 2 LIMIT 1[0m  [["id", 2]]
+  Rendered repuestos/index.html.erb within layouts/application (14.7ms)
+  Rendered partials/_barbar.html.erb (1.6ms)
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  [1m[36mPlanificacion Load (0.2ms)[0m  [1mSELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1
+  [1m[36mRepuesto Load (0.2ms)[0m  [1mSELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.3ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  Rendered partials/_topbar.html.erb (9.6ms)
+  Rendered partials/_footer.html.erb (0.0ms)
+Completed 200 OK in 184ms (Views: 178.4ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/repuestos/1/edit" for 186.107.32.157 at 2017-10-03 14:14:30 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RepuestosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRepuesto Load (0.7ms)[0m  [1mSELECT  `repuestos`.* FROM `repuestos` WHERE `repuestos`.`id` = 1 LIMIT 1[0m
+  [1m[35mTipoRepuesto Load (0.5ms)[0m  SELECT `tipo_repuestos`.* FROM `tipo_repuestos`
+  Rendered repuestos/edit.html.erb within layouts/application (23.5ms)
+  Rendered partials/_barbar.html.erb (2.5ms)
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  [1m[35mPlanificacion Load (0.3ms)[0m  SELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36mMaquina Load (0.4ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1[0m
+  [1m[35mRepuesto Load (0.3ms)[0m  SELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.3ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.3ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  Rendered partials/_topbar.html.erb (11.5ms)
+  Rendered partials/_footer.html.erb (0.0ms)
+Completed 200 OK in 210ms (Views: 202.8ms | ActiveRecord: 4.6ms)
+
+
+Started PATCH "/repuestos/1" for 186.107.32.157 at 2017-10-03 14:14:40 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RepuestosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9dJeqovHLqr5lisowBWG+wgJTOAWSmtJmoJpy+kup51RZRCGvDy4uAX9XU5sPGj2dsIs4WDQcqZXm9i+S20yzA==", "repuesto"=>{"nombre"=>"Baliza", "tipo_repuesto_id"=>"1", "codigo"=>"BL11", "descripcion"=>"", "stock"=>"7"}, "commit"=>"Editar", "id"=>"1"}
+  [1m[35mRepuesto Load (0.7ms)[0m  SELECT  `repuestos`.* FROM `repuestos` WHERE `repuestos`.`id` = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE `repuestos` SET `stock` = 7, `updated_at` = '2017-10-03 17:14:40' WHERE `repuestos`.`id` = 1
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://www.maquit.cl:3000/repuestos
+Completed 302 Found in 22ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/repuestos" for 186.107.32.157 at 2017-10-03 14:14:41 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RepuestosController#index as HTML
+  [1m[35mRepuesto Load (0.5ms)[0m  SELECT `repuestos`.* FROM `repuestos`
+  [1m[36mTipoRepuesto Load (0.3ms)[0m  [1mSELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 1 LIMIT 1[0m
+  [1m[35mTipoRepuesto Load (0.2ms)[0m  SELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 2 LIMIT 1[0m  [["id", 2]]
+  Rendered repuestos/index.html.erb within layouts/application (5.2ms)
+  Rendered partials/_barbar.html.erb (1.8ms)
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  [1m[36mPlanificacion Load (0.2ms)[0m  [1mSELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1
+  [1m[36mRepuesto Load (0.2ms)[0m  [1mSELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  Rendered partials/_topbar.html.erb (9.6ms)
+  Rendered partials/_footer.html.erb (0.0ms)
+Completed 200 OK in 186ms (Views: 181.9ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/repuestos/1" for 186.107.32.157 at 2017-10-03 14:14:44 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RepuestosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRepuesto Load (0.6ms)[0m  [1mSELECT  `repuestos`.* FROM `repuestos` WHERE `repuestos`.`id` = 1 LIMIT 1[0m
+  Rendered repuestos/show.html.erb within layouts/application (2.4ms)
+  Rendered partials/_barbar.html.erb (1.8ms)
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  [1m[36mPlanificacion Load (0.3ms)[0m  [1mSELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1
+  [1m[36mRepuesto Load (0.2ms)[0m  [1mSELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35mMaquina Load (0.3ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  Rendered partials/_topbar.html.erb (10.3ms)
+  Rendered partials/_footer.html.erb (0.1ms)
+Completed 200 OK in 197ms (Views: 192.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/repuestos" for 186.107.32.157 at 2017-10-03 14:14:49 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RepuestosController#index as HTML
+  [1m[36mRepuesto Load (0.5ms)[0m  [1mSELECT `repuestos`.* FROM `repuestos`[0m
+  [1m[35mTipoRepuesto Load (0.4ms)[0m  SELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 1 LIMIT 1
+  [1m[36mTipoRepuesto Load (0.2ms)[0m  [1mSELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 2 LIMIT 1  [["id", 2]]
+  Rendered repuestos/index.html.erb within layouts/application (5.1ms)
+  Rendered partials/_barbar.html.erb (1.5ms)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  [1m[35mPlanificacion Load (0.2ms)[0m  SELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1[0m
+  [1m[35mRepuesto Load (0.2ms)[0m  SELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  Rendered partials/_topbar.html.erb (8.8ms)
+  Rendered partials/_footer.html.erb (0.0ms)
+Completed 200 OK in 163ms (Views: 158.3ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/repuestos/new" for 186.107.32.157 at 2017-10-03 14:14:55 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RepuestosController#new as HTML
+  [1m[35mTipoRepuesto Load (0.5ms)[0m  SELECT `tipo_repuestos`.* FROM `tipo_repuestos`
+  Rendered repuestos/new.html.erb within layouts/application (10.3ms)
+  Rendered partials/_barbar.html.erb (1.7ms)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  [1m[35mPlanificacion Load (0.3ms)[0m  SELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36mMaquina Load (0.3ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1[0m
+  [1m[35mRepuesto Load (0.2ms)[0m  SELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)
+  [1m[36mMaquina Load (0.3ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  Rendered partials/_topbar.html.erb (9.9ms)
+  Rendered partials/_footer.html.erb (0.1ms)
+Completed 200 OK in 194ms (Views: 189.6ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/repuestos" for 186.107.32.157 at 2017-10-03 15:32:38 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RepuestosController#index as HTML
+  [1m[35mRepuesto Load (0.5ms)[0m  SELECT `repuestos`.* FROM `repuestos`
+  [1m[36mTipoRepuesto Load (0.3ms)[0m  [1mSELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 1 LIMIT 1[0m
+  [1m[35mTipoRepuesto Load (0.2ms)[0m  SELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 2 LIMIT 1[0m  [["id", 2]]
+  Rendered repuestos/index.html.erb within layouts/application (6.3ms)
+  Rendered partials/_barbar.html.erb (1.8ms)
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  [1m[36mPlanificacion Load (0.2ms)[0m  [1mSELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1
+  [1m[36mRepuesto Load (0.2ms)[0m  [1mSELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.3ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  Rendered partials/_topbar.html.erb (9.8ms)
+  Rendered partials/_footer.html.erb (0.1ms)
+Completed 200 OK in 205ms (Views: 200.6ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assets/icono-1eaa33e8bf741e1324113692654421a0aa672ae3cdd867f8ca916017b3df1c55.png" for 186.107.32.157 at 2017-10-03 15:32:42 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/repuestos" for 186.107.32.157 at 2017-10-03 15:33:11 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RepuestosController#index as HTML
+  [1m[36mRepuesto Load (0.5ms)[0m  [1mSELECT `repuestos`.* FROM `repuestos`[0m
+  [1m[35mTipoRepuesto Load (0.3ms)[0m  SELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 1 LIMIT 1
+  [1m[36mTipoRepuesto Load (0.2ms)[0m  [1mSELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 2 LIMIT 1  [["id", 2]]
+  Rendered repuestos/index.html.erb within layouts/application (7.7ms)
+  Rendered partials/_barbar.html.erb (1.8ms)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  [1m[35mPlanificacion Load (0.2ms)[0m  SELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1[0m
+  [1m[35mRepuesto Load (0.2ms)[0m  SELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)
+  [1m[36mMaquina Load (0.3ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  Rendered partials/_topbar.html.erb (9.6ms)
+  Rendered partials/_footer.html.erb (0.0ms)
+Completed 200 OK in 176ms (Views: 171.1ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/repuestos" for 186.107.32.157 at 2017-10-03 15:39:06 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RepuestosController#index as HTML
+  [1m[35mRepuesto Load (0.5ms)[0m  SELECT `repuestos`.* FROM `repuestos`
+  [1m[36mTipoRepuesto Load (0.3ms)[0m  [1mSELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 1 LIMIT 1[0m
+  [1m[35mTipoRepuesto Load (0.2ms)[0m  SELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 2 LIMIT 1[0m  [["id", 2]]
+  Rendered repuestos/index.html.erb within layouts/application (5.7ms)
+  Rendered partials/_barbar.html.erb (1.6ms)
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  [1m[36mPlanificacion Load (0.2ms)[0m  [1mSELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1
+  [1m[36mRepuesto Load (0.2ms)[0m  [1mSELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  Rendered partials/_topbar.html.erb (8.4ms)
+  Rendered partials/_footer.html.erb (0.0ms)
+Completed 200 OK in 163ms (Views: 158.6ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/repuestos" for 186.107.32.157 at 2017-10-03 15:40:30 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RepuestosController#index as HTML
+  [1m[36mRepuesto Load (0.6ms)[0m  [1mSELECT `repuestos`.* FROM `repuestos`[0m
+  [1m[35mTipoRepuesto Load (0.3ms)[0m  SELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 1 LIMIT 1
+  [1m[36mTipoRepuesto Load (0.2ms)[0m  [1mSELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 2 LIMIT 1  [["id", 2]]
+  Rendered repuestos/index.html.erb within layouts/application (6.4ms)
+  Rendered partials/_barbar.html.erb (1.6ms)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  [1m[35mPlanificacion Load (0.2ms)[0m  SELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1[0m
+  [1m[35mRepuesto Load (0.2ms)[0m  SELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  Rendered partials/_topbar.html.erb (8.5ms)
+  Rendered partials/_footer.html.erb (0.1ms)
+Completed 200 OK in 155ms (Views: 150.5ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/repuestos" for 186.107.32.157 at 2017-10-03 15:46:03 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RepuestosController#index as HTML
+  [1m[35mRepuesto Load (0.5ms)[0m  SELECT `repuestos`.* FROM `repuestos`
+  [1m[36mTipoRepuesto Load (0.3ms)[0m  [1mSELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 1 LIMIT 1[0m
+  [1m[35mTipoRepuesto Load (0.2ms)[0m  SELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 2 LIMIT 1[0m  [["id", 2]]
+  Rendered repuestos/_repuestos.html.erb (5.8ms)
+  Rendered repuestos/index.html.erb within layouts/application (7.7ms)
+  Rendered partials/_barbar.html.erb (1.9ms)
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  [1m[36mPlanificacion Load (0.4ms)[0m  [1mSELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35mMaquina Load (0.3ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1
+  [1m[36mRepuesto Load (0.2ms)[0m  [1mSELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.3ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  Rendered partials/_topbar.html.erb (10.7ms)
+  Rendered partials/_footer.html.erb (0.0ms)
+Completed 200 OK in 209ms (Views: 203.6ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/repuestos" for 186.107.32.157 at 2017-10-03 15:48:25 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RepuestosController#index as HTML
+  [1m[36mRepuesto Load (0.6ms)[0m  [1mSELECT  `repuestos`.* FROM `repuestos` LIMIT 2 OFFSET 0[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `repuestos`
+  [1m[36mTipoRepuesto Load (0.3ms)[0m  [1mSELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 1 LIMIT 1[0m
+  [1m[35mTipoRepuesto Load (0.2ms)[0m  SELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 2 LIMIT 1
+  Rendered repuestos/_repuestos.html.erb (25.6ms)
+  Rendered repuestos/index.html.erb within layouts/application (26.7ms)
+  Rendered partials/_barbar.html.erb (1.7ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  [1m[35mPlanificacion Load (0.3ms)[0m  SELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36mMaquina Load (0.4ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1[0m
+  [1m[35mRepuesto Load (0.6ms)[0m  SELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)
+  [1m[36mMaquina Load (0.3ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.3ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  Rendered partials/_topbar.html.erb (49.9ms)
+  Rendered partials/_footer.html.erb (0.0ms)
+Completed 200 OK in 233ms (Views: 216.3ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/assets/icono-1eaa33e8bf741e1324113692654421a0aa672ae3cdd867f8ca916017b3df1c55.png" for 186.107.32.157 at 2017-10-03 15:48:27 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/repuestos/index?page=2" for 186.107.32.157 at 2017-10-03 15:48:28 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RepuestosController#index as JS
+  Parameters: {"page"=>"2"}
+  [1m[35mRepuesto Load (0.7ms)[0m  SELECT  `repuestos`.* FROM `repuestos` LIMIT 2 OFFSET 2
+  [1m[36mTipoRepuesto Load (0.3ms)[0m  [1mSELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 2 LIMIT 1[0m
+  Rendered repuestos/_repuestos.html.erb (6.1ms)
+  Rendered repuestos/index.js.erb (11.0ms)
+Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/repuestos/index?page=1" for 186.107.32.157 at 2017-10-03 15:48:30 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RepuestosController#index as JS
+  Parameters: {"page"=>"1"}
+  [1m[35mRepuesto Load (0.6ms)[0m  SELECT  `repuestos`.* FROM `repuestos` LIMIT 2 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `repuestos`[0m
+  [1m[35mTipoRepuesto Load (0.2ms)[0m  SELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 1 LIMIT 1
+  [1m[36mTipoRepuesto Load (0.2ms)[0m  [1mSELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 2 LIMIT 1[0m
+  Rendered repuestos/_repuestos.html.erb (6.3ms)
+  Rendered repuestos/index.js.erb (10.0ms)
+Completed 200 OK in 19ms (Views: 15.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/repuestos" for 186.107.32.157 at 2017-10-03 15:49:18 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RepuestosController#index as HTML
+  [1m[35mRepuesto Load (0.6ms)[0m  SELECT  `repuestos`.* FROM `repuestos` LIMIT 2 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `repuestos`[0m
+  [1m[35mTipoRepuesto Load (0.3ms)[0m  SELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 1 LIMIT 1
+  [1m[36mTipoRepuesto Load (0.2ms)[0m  [1mSELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 2 LIMIT 1[0m
+  Rendered repuestos/_repuestos.html.erb (6.0ms)
+  Rendered repuestos/index.html.erb within layouts/application (10.6ms)
+  Rendered partials/_barbar.html.erb (2.3ms)
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  [1m[36mPlanificacion Load (0.3ms)[0m  [1mSELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35mMaquina Load (0.3ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1
+  [1m[36mRepuesto Load (0.2ms)[0m  [1mSELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35mMaquina Load (0.3ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  Rendered partials/_topbar.html.erb (11.2ms)
+  Rendered partials/_footer.html.erb (0.0ms)
+Completed 200 OK in 204ms (Views: 198.6ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/assets/icono-1eaa33e8bf741e1324113692654421a0aa672ae3cdd867f8ca916017b3df1c55.png" for 186.107.32.157 at 2017-10-03 15:49:19 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/repuestos?utf8=%E2%9C%93&q%5Bnombre_cont%5D=re&commit=Buscar" for 186.107.32.157 at 2017-10-03 15:49:23 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RepuestosController#index as JS
+  Parameters: {"utf8"=>"✓", "q"=>{"nombre_cont"=>"re"}, "commit"=>"Buscar"}
+  [1m[36mRepuesto Load (0.6ms)[0m  [1mSELECT  `repuestos`.* FROM `repuestos` WHERE (`repuestos`.`nombre` LIKE '%re%') LIMIT 2 OFFSET 0[0m
+  [1m[35mTipoRepuesto Load (0.2ms)[0m  SELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 2 LIMIT 1
+  Rendered repuestos/_repuestos.html.erb (3.1ms)
+  Rendered repuestos/index.js.erb (6.5ms)
+Completed 200 OK in 14ms (Views: 10.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/repuestos?utf8=%E2%9C%93&q%5Bnombre_cont%5D=&commit=Buscar" for 186.107.32.157 at 2017-10-03 15:49:25 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RepuestosController#index as JS
+  Parameters: {"utf8"=>"✓", "q"=>{"nombre_cont"=>""}, "commit"=>"Buscar"}
+  [1m[36mRepuesto Load (0.6ms)[0m  [1mSELECT  `repuestos`.* FROM `repuestos` LIMIT 2 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `repuestos`
+  [1m[36mTipoRepuesto Load (0.2ms)[0m  [1mSELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 1 LIMIT 1[0m
+  [1m[35mTipoRepuesto Load (0.2ms)[0m  SELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 2 LIMIT 1
+  Rendered repuestos/_repuestos.html.erb (5.7ms)
+  Rendered repuestos/index.js.erb (8.3ms)
+Completed 200 OK in 16ms (Views: 12.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/repuestos" for 186.107.32.157 at 2017-10-03 15:49:45 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RepuestosController#index as HTML
+  [1m[36mRepuesto Load (0.9ms)[0m  [1mSELECT  `repuestos`.* FROM `repuestos` LIMIT 2 OFFSET 0[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `repuestos`
+  [1m[36mTipoRepuesto Load (0.5ms)[0m  [1mSELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 1 LIMIT 1[0m
+  [1m[35mTipoRepuesto Load (0.4ms)[0m  SELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 2 LIMIT 1
+  Rendered repuestos/_repuestos.html.erb (9.9ms)
+  Rendered repuestos/index.html.erb within layouts/application (17.9ms)
+  Rendered partials/_barbar.html.erb (3.0ms)
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  [1m[35mPlanificacion Load (0.5ms)[0m  SELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36mMaquina Load (0.5ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1[0m
+  [1m[35mRepuesto Load (0.4ms)[0m  SELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)
+  [1m[36mMaquina Load (0.4ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.4ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.4ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  Rendered partials/_topbar.html.erb (16.8ms)
+  Rendered partials/_footer.html.erb (0.1ms)
+Completed 200 OK in 293ms (Views: 283.3ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/assets/icono-1eaa33e8bf741e1324113692654421a0aa672ae3cdd867f8ca916017b3df1c55.png" for 186.107.32.157 at 2017-10-03 15:49:47 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/repuestos?utf8=%E2%9C%93&q%5Bnombre_cont%5D=&q%5Bcodigo_cont%5D=bl&commit=Buscar" for 186.107.32.157 at 2017-10-03 15:49:50 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RepuestosController#index as JS
+  Parameters: {"utf8"=>"✓", "q"=>{"nombre_cont"=>"", "codigo_cont"=>"bl"}, "commit"=>"Buscar"}
+  [1m[35mRepuesto Load (0.5ms)[0m  SELECT  `repuestos`.* FROM `repuestos` WHERE (`repuestos`.`codigo` LIKE '%bl%') LIMIT 2 OFFSET 0
+  [1m[36mTipoRepuesto Load (0.2ms)[0m  [1mSELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 1 LIMIT 1[0m
+  Rendered repuestos/_repuestos.html.erb (3.0ms)
+  Rendered repuestos/index.js.erb (6.3ms)
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/repuestos?utf8=%E2%9C%93&q%5Bnombre_cont%5D=&q%5Bcodigo_cont%5D=b&commit=Buscar" for 186.107.32.157 at 2017-10-03 15:49:51 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RepuestosController#index as JS
+  Parameters: {"utf8"=>"✓", "q"=>{"nombre_cont"=>"", "codigo_cont"=>"b"}, "commit"=>"Buscar"}
+  [1m[35mRepuesto Load (0.8ms)[0m  SELECT  `repuestos`.* FROM `repuestos` WHERE (`repuestos`.`codigo` LIKE '%b%') LIMIT 2 OFFSET 0
+  [1m[36mTipoRepuesto Load (0.3ms)[0m  [1mSELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 1 LIMIT 1[0m
+  Rendered repuestos/_repuestos.html.erb (4.0ms)
+  Rendered repuestos/index.js.erb (7.6ms)
+Completed 200 OK in 15ms (Views: 11.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/repuestos?utf8=%E2%9C%93&q%5Bnombre_cont%5D=&q%5Bcodigo_cont%5D=&commit=Buscar" for 186.107.32.157 at 2017-10-03 15:49:52 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RepuestosController#index as JS
+  Parameters: {"utf8"=>"✓", "q"=>{"nombre_cont"=>"", "codigo_cont"=>""}, "commit"=>"Buscar"}
+  [1m[35mRepuesto Load (0.9ms)[0m  SELECT  `repuestos`.* FROM `repuestos` LIMIT 2 OFFSET 0
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `repuestos`[0m
+  [1m[35mTipoRepuesto Load (0.5ms)[0m  SELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 1 LIMIT 1
+  [1m[36mTipoRepuesto Load (0.5ms)[0m  [1mSELECT  `tipo_repuestos`.* FROM `tipo_repuestos` WHERE `tipo_repuestos`.`id` = 2 LIMIT 1[0m
+  Rendered repuestos/_repuestos.html.erb (13.0ms)
+  Rendered repuestos/index.js.erb (19.3ms)
+Completed 200 OK in 31ms (Views: 26.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/operadors" for 186.107.32.157 at 2017-10-03 15:51:08 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OperadorsController#index as HTML
+  [1m[35mOperador Load (0.5ms)[0m  SELECT  `operadors`.* FROM `operadors` LIMIT 4 OFFSET 0
+  Rendered operadors/_operadors.html.erb (21.4ms)
+  Rendered operadors/index.html.erb within layouts/application (26.6ms)
+  Rendered partials/_barbar.html.erb (1.5ms)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  [1m[35mPlanificacion Load (0.2ms)[0m  SELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1[0m
+  [1m[35mRepuesto Load (0.2ms)[0m  SELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  Rendered partials/_topbar.html.erb (8.7ms)
+  Rendered partials/_footer.html.erb (0.0ms)
+Completed 200 OK in 189ms (Views: 179.3ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/reports" for 186.107.32.157 at 2017-10-03 15:51:26 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReportsController#index as HTML
+  [1m[35mReport Load (0.6ms)[0m  SELECT `reports`.* FROM `reports`
+  Rendered reports/index.html.erb within layouts/application (17.5ms)
+  Rendered partials/_barbar.html.erb (1.8ms)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  [1m[35mPlanificacion Load (0.3ms)[0m  SELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36mMaquina Load (0.3ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1[0m
+  [1m[35mRepuesto Load (0.2ms)[0m  SELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  Rendered partials/_topbar.html.erb (8.9ms)
+  Rendered partials/_footer.html.erb (0.0ms)
+Completed 200 OK in 181ms (Views: 172.7ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/reports" for 186.107.32.157 at 2017-10-03 15:56:26 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReportsController#index as HTML
+  [1m[35mReport Load (0.5ms)[0m  SELECT  `reports`.* FROM `reports` LIMIT 5 OFFSET 0
+  Rendered reports/_reports.html.erb (14.8ms)
+  Rendered reports/index.html.erb within layouts/application (16.3ms)
+  Rendered partials/_barbar.html.erb (2.2ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  [1m[35mPlanificacion Load (0.3ms)[0m  SELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36mMaquina Load (0.4ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1[0m
+  [1m[35mRepuesto Load (0.5ms)[0m  SELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)
+  [1m[36mMaquina Load (0.3ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  Rendered partials/_topbar.html.erb (62.5ms)
+  Rendered partials/_footer.html.erb (0.1ms)
+Completed 200 OK in 234ms (Views: 221.4ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/assets/icono-1eaa33e8bf741e1324113692654421a0aa672ae3cdd867f8ca916017b3df1c55.png" for 186.107.32.157 at 2017-10-03 15:56:28 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/reports" for 186.107.32.157 at 2017-10-03 15:57:08 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReportsController#index as HTML
+  [1m[35mReport Load (0.8ms)[0m  SELECT  `reports`.* FROM `reports` LIMIT 5 OFFSET 0
+  Rendered reports/_reports.html.erb (6.3ms)
+  Rendered reports/index.html.erb within layouts/application (7.8ms)
+  Rendered partials/_barbar.html.erb (3.0ms)
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  [1m[35mPlanificacion Load (0.4ms)[0m  SELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36mMaquina Load (0.5ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1[0m
+  [1m[35mRepuesto Load (0.3ms)[0m  SELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)
+  [1m[36mMaquina Load (0.4ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.4ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.4ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  Rendered partials/_topbar.html.erb (16.5ms)
+  Rendered partials/_footer.html.erb (0.1ms)
+Completed 200 OK in 299ms (Views: 292.1ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/reports" for 186.107.32.157 at 2017-10-03 15:58:07 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReportsController#index as HTML
+  Rendered reports/index.html.erb within layouts/application (1.4ms)
+  Rendered partials/_barbar.html.erb (1.8ms)
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  [1m[36mPlanificacion Load (0.2ms)[0m  [1mSELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1
+  [1m[36mRepuesto Load (0.2ms)[0m  [1mSELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  Rendered partials/_topbar.html.erb (8.8ms)
+  Rendered partials/_footer.html.erb (0.0ms)
+Completed 200 OK in 349ms (Views: 344.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/reports" for 186.107.32.157 at 2017-10-03 15:58:40 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReportsController#index as HTML
+  [1m[36mReport Load (0.5ms)[0m  [1mSELECT  `reports`.* FROM `reports` LIMIT 5 OFFSET 0[0m
+  Rendered reports/_reports.html.erb (4.0ms)
+  Rendered reports/index.html.erb within layouts/application (5.3ms)
+  Rendered partials/_barbar.html.erb (1.7ms)
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  [1m[36mPlanificacion Load (0.2ms)[0m  [1mSELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1
+  [1m[36mRepuesto Load (0.2ms)[0m  [1mSELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  Rendered partials/_topbar.html.erb (9.2ms)
+  Rendered partials/_footer.html.erb (0.0ms)
+Completed 200 OK in 161ms (Views: 156.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/reports" for 186.107.32.157 at 2017-10-03 15:58:57 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReportsController#index as HTML
+  [1m[36mReport Load (0.7ms)[0m  [1mSELECT  `reports`.* FROM `reports` LIMIT 3 OFFSET 0[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `reports`
+  Rendered reports/_reports.html.erb (20.3ms)
+  Rendered reports/index.html.erb within layouts/application (21.3ms)
+  Rendered partials/_barbar.html.erb (1.7ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  [1m[35mPlanificacion Load (0.2ms)[0m  SELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36mMaquina Load (0.4ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1[0m
+  [1m[35mRepuesto Load (0.6ms)[0m  SELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)
+  [1m[36mMaquina Load (0.3ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  Rendered partials/_topbar.html.erb (56.1ms)
+  Rendered partials/_footer.html.erb (0.1ms)
+Completed 200 OK in 225ms (Views: 211.8ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/reports/index?page=2" for 186.107.32.157 at 2017-10-03 15:59:00 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReportsController#index as JS
+  Parameters: {"page"=>"2"}
+  [1m[35mReport Load (0.6ms)[0m  SELECT  `reports`.* FROM `reports` LIMIT 3 OFFSET 3
+  Rendered reports/_reports.html.erb (4.3ms)
+  Rendered reports/index.js.erb (7.8ms)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/reports/index?page=1" for 186.107.32.157 at 2017-10-03 15:59:02 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReportsController#index as JS
+  Parameters: {"page"=>"1"}
+  [1m[36mReport Load (0.6ms)[0m  [1mSELECT  `reports`.* FROM `reports` LIMIT 3 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `reports`
+  Rendered reports/_reports.html.erb (5.6ms)
+  Rendered reports/index.js.erb (8.4ms)
+Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/reports" for 186.107.32.157 at 2017-10-03 16:00:02 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReportsController#index as HTML
+  Rendered reports/index.html.erb within layouts/application (15.1ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 1.3ms)
+
+ActionView::Template::Error (undefined method `codigo_cont' for Ransack::Search<class: Report, base: Grouping <combinator: and>>:Ransack::Search):
+    10: 		<%= f.label "Nombre" %>
+    11: 		<%= f.text_field :nombre_cont %>
+    12: 		<%= f.label "Codigo" %>
+    13: 		<%= f.text_field :codigo_cont %>
+    14: 		<%= f.submit :value=>"Buscar" %>
+    15: 	<% end %>
+    16: 	<div id="reports">
+  app/views/reports/index.html.erb:13:in `block in _app_views_reports_index_html_erb___2648416408191257841_70280577860640'
+  app/views/reports/index.html.erb:9:in `_app_views_reports_index_html_erb___2648416408191257841_70280577860640'
+
+
+  Rendered /usr/share/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.9ms)
+  Rendered /usr/share/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /usr/share/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /usr/share/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (33.5ms)
+
+
+Started GET "/reports" for 186.107.32.157 at 2017-10-03 16:00:13 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReportsController#index as HTML
+  [1m[36mReport Load (0.5ms)[0m  [1mSELECT  `reports`.* FROM `reports` LIMIT 5 OFFSET 0[0m
+  Rendered reports/_reports.html.erb (14.3ms)
+  Rendered reports/index.html.erb within layouts/application (18.0ms)
+  Rendered partials/_barbar.html.erb (1.7ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  [1m[36mPlanificacion Load (0.3ms)[0m  [1mSELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35mMaquina Load (0.3ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1
+  [1m[36mRepuesto Load (0.5ms)[0m  [1mSELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35mMaquina Load (0.3ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  Rendered partials/_topbar.html.erb (55.2ms)
+  Rendered partials/_footer.html.erb (0.0ms)
+Completed 200 OK in 225ms (Views: 217.2ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/reports?utf8=%E2%9C%93&q%5Bnombre_cont%5D=1222&commit=Buscar" for 186.107.32.157 at 2017-10-03 16:00:19 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReportsController#index as JS
+  Parameters: {"utf8"=>"✓", "q"=>{"nombre_cont"=>"1222"}, "commit"=>"Buscar"}
+  [1m[36mReport Load (1.4ms)[0m  [1mSELECT  `reports`.* FROM `reports` WHERE (`reports`.`nombre` LIKE '%1222%') LIMIT 5 OFFSET 0[0m
+  Rendered reports/_reports.html.erb (3.4ms)
+  Rendered reports/index.js.erb (6.4ms)
+Completed 200 OK in 12ms (Views: 9.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/reports?utf8=%E2%9C%93&q%5Bnombre_cont%5D=&commit=Buscar" for 186.107.32.157 at 2017-10-03 16:00:21 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReportsController#index as JS
+  Parameters: {"utf8"=>"✓", "q"=>{"nombre_cont"=>""}, "commit"=>"Buscar"}
+  [1m[35mReport Load (0.6ms)[0m  SELECT  `reports`.* FROM `reports` LIMIT 5 OFFSET 0
+  Rendered reports/_reports.html.erb (5.7ms)
+  Rendered reports/index.js.erb (10.0ms)
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/reports" for 186.107.32.157 at 2017-10-03 16:02:34 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReportsController#index as HTML
+  [1m[36mReport Load (0.6ms)[0m  [1mSELECT  `reports`.* FROM `reports` LIMIT 5 OFFSET 0[0m
+  [1m[35mOperador Load (0.4ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 5 LIMIT 1
+  [1m[36mOperador Load (0.6ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  Rendered reports/_reports.html.erb (26.7ms)
+  Rendered reports/index.html.erb within layouts/application (29.7ms)
+  Rendered partials/_barbar.html.erb (2.0ms)
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  [1m[36mPlanificacion Load (0.2ms)[0m  [1mSELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35mMaquina Load (0.3ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1
+  [1m[36mRepuesto Load (0.2ms)[0m  [1mSELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35mMaquina Load (0.3ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.3ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.3ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  Rendered partials/_topbar.html.erb (11.3ms)
+  Rendered partials/_footer.html.erb (0.0ms)
+Completed 200 OK in 236ms (Views: 228.3ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/reports" for 186.107.32.157 at 2017-10-03 16:03:04 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReportsController#index as HTML
+  [1m[36mReport Load (0.6ms)[0m  [1mSELECT  `reports`.* FROM `reports` LIMIT 5 OFFSET 0[0m
+  [1m[35mOperador Load (0.3ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 5 LIMIT 1[0m  [["id", 5]]
+  Rendered reports/_reports.html.erb (17.4ms)
+  Rendered reports/index.html.erb within layouts/application (20.3ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.9ms)
+
+ActionView::Template::Error (undefined method `apellidoP' for #<Operador:0x007fd6f1bed1e0>
+Did you mean?  apellido_p
+               apellido_p?
+               apellido_p=
+               apellido_m
+               apellido_p_was
+               apellido_m=
+               apellido_m?):
+    23: 					<td><%= report.horas %></td>
+    24: 					<td><%= report.numero %></td>
+    25: 					<td><%= report.arriendo_id %></td>
+    26: 					<td><%= Operador.find(report.operador_id).nombre %> <%= Operador.find(report.operador_id).apellidoP %> </td>
+    27: 					<td><%= report.detalle %></td>
+    28: 					<td><%= report.horometro_inicial %></td>
+    29: 					<td><%= report.horometro_final %></td>
+  app/views/reports/_reports.html.erb:26:in `block in _app_views_reports__reports_html_erb___329307275774078598_70280579611800'
+  app/views/reports/_reports.html.erb:18:in `_app_views_reports__reports_html_erb___329307275774078598_70280579611800'
+  app/views/reports/index.html.erb:15:in `_app_views_reports_index_html_erb___2648416408191257841_70280586610560'
+
+
+  Rendered /usr/share/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.0ms)
+  Rendered /usr/share/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /usr/share/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/share/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.9ms)
+
+
+Started GET "/reports" for 186.107.32.157 at 2017-10-03 16:03:22 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReportsController#index as HTML
+  [1m[35mReport Load (0.5ms)[0m  SELECT  `reports`.* FROM `reports` LIMIT 5 OFFSET 0
+  [1m[36mOperador Load (0.3ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 5 LIMIT 1  [["id", 5]]
+  [1m[36mOperador Load (0.2ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  Rendered reports/_reports.html.erb (9.9ms)
+  Rendered reports/index.html.erb within layouts/application (13.2ms)
+  Rendered partials/_barbar.html.erb (1.6ms)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  [1m[35mPlanificacion Load (0.2ms)[0m  SELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1[0m
+  [1m[35mRepuesto Load (0.2ms)[0m  SELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  Rendered partials/_topbar.html.erb (8.8ms)
+  Rendered partials/_footer.html.erb (0.1ms)
+Completed 200 OK in 183ms (Views: 177.9ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/reports" for 186.107.32.157 at 2017-10-03 16:04:18 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReportsController#index as HTML
+  [1m[35mReport Load (0.6ms)[0m  SELECT  `reports`.* FROM `reports` LIMIT 5 OFFSET 0
+  [1m[36mOperador Load (0.3ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 5 LIMIT 1  [["id", 5]]
+  [1m[36mOperador Load (0.2ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  Rendered reports/_reports.html.erb (8.0ms)
+  Rendered reports/index.html.erb within layouts/application (12.1ms)
+  Rendered partials/_barbar.html.erb (1.7ms)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  [1m[35mPlanificacion Load (0.2ms)[0m  SELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1[0m
+  [1m[35mRepuesto Load (0.2ms)[0m  SELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  Rendered partials/_topbar.html.erb (9.1ms)
+  Rendered partials/_footer.html.erb (0.0ms)
+Completed 200 OK in 201ms (Views: 195.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/icono-1eaa33e8bf741e1324113692654421a0aa672ae3cdd867f8ca916017b3df1c55.png" for 186.107.32.157 at 2017-10-03 16:04:20 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/reports" for 186.107.32.157 at 2017-10-03 16:04:30 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReportsController#index as HTML
+  [1m[35mReport Load (0.6ms)[0m  SELECT  `reports`.* FROM `reports` LIMIT 5 OFFSET 0
+  [1m[36mOperador Load (0.4ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 5 LIMIT 1  [["id", 5]]
+  [1m[36mOperador Load (0.2ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  Rendered reports/_reports.html.erb (9.4ms)
+  Rendered reports/index.html.erb within layouts/application (14.9ms)
+  Rendered partials/_barbar.html.erb (1.9ms)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  [1m[35mPlanificacion Load (0.2ms)[0m  SELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1[0m
+  [1m[35mRepuesto Load (0.2ms)[0m  SELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  Rendered partials/_topbar.html.erb (9.6ms)
+  Rendered partials/_footer.html.erb (0.0ms)
+Completed 200 OK in 182ms (Views: 175.9ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/assets/icono-1eaa33e8bf741e1324113692654421a0aa672ae3cdd867f8ca916017b3df1c55.png" for 186.107.32.157 at 2017-10-03 16:04:31 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/reports" for 186.107.32.157 at 2017-10-03 16:05:04 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReportsController#index as HTML
+  [1m[35mReport Load (0.5ms)[0m  SELECT  `reports`.* FROM `reports` LIMIT 5 OFFSET 0
+  [1m[36mOperador Load (0.4ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 5 LIMIT 1  [["id", 5]]
+  [1m[36mOperador Load (0.2ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  Rendered reports/_reports.html.erb (7.7ms)
+  Rendered reports/index.html.erb within layouts/application (11.4ms)
+  Rendered partials/_barbar.html.erb (3.0ms)
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  [1m[35mPlanificacion Load (0.4ms)[0m  SELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36mMaquina Load (0.4ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1[0m
+  [1m[35mRepuesto Load (0.3ms)[0m  SELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)
+  [1m[36mMaquina Load (0.4ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.4ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.5ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  Rendered partials/_topbar.html.erb (16.1ms)
+  Rendered partials/_footer.html.erb (0.1ms)
+Completed 200 OK in 259ms (Views: 252.1ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/assets/icono-1eaa33e8bf741e1324113692654421a0aa672ae3cdd867f8ca916017b3df1c55.png" for 186.107.32.157 at 2017-10-03 16:05:05 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/reports" for 186.107.32.157 at 2017-10-03 16:05:54 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReportsController#index as HTML
+  [1m[35mReport Load (0.6ms)[0m  SELECT  `reports`.* FROM `reports` LIMIT 5 OFFSET 0
+  [1m[36mOperador Load (0.3ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 5 LIMIT 1  [["id", 5]]
+  [1m[36mOperador Load (0.2ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  Rendered reports/_reports.html.erb (7.3ms)
+  Rendered reports/index.html.erb within layouts/application (14.9ms)
+  Rendered partials/_barbar.html.erb (1.6ms)
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  [1m[35mPlanificacion Load (0.2ms)[0m  SELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1[0m
+  [1m[35mRepuesto Load (0.2ms)[0m  SELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.3ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  Rendered partials/_topbar.html.erb (9.2ms)
+  Rendered partials/_footer.html.erb (0.0ms)
+Completed 200 OK in 180ms (Views: 174.9ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/assets/icono-1eaa33e8bf741e1324113692654421a0aa672ae3cdd867f8ca916017b3df1c55.png" for 186.107.32.157 at 2017-10-03 16:05:55 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/reports?utf8=%E2%9C%93&q%5Bnombre_cont%5D=&q%5Bfecha_gteq%5D=2017-09-01&q%5Bfecha_lteq%5D=&commit=Buscar" for 186.107.32.157 at 2017-10-03 16:06:12 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReportsController#index as JS
+  Parameters: {"utf8"=>"✓", "q"=>{"nombre_cont"=>"", "fecha_gteq"=>"2017-09-01", "fecha_lteq"=>""}, "commit"=>"Buscar"}
+  [1m[35mReport Load (0.6ms)[0m  SELECT  `reports`.* FROM `reports` WHERE (`reports`.`fecha` >= '2017-09-01') LIMIT 5 OFFSET 0
+  [1m[36mOperador Load (0.3ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 5 LIMIT 1  [["id", 5]]
+  [1m[36mOperador Load (0.2ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  Rendered reports/_reports.html.erb (10.0ms)
+  Rendered reports/index.js.erb (13.7ms)
+Completed 200 OK in 21ms (Views: 17.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/reports?utf8=%E2%9C%93&q%5Bnombre_cont%5D=&q%5Bfecha_gteq%5D=2017-09-01&q%5Bfecha_lteq%5D=2017-10-18&commit=Buscar" for 186.107.32.157 at 2017-10-03 16:06:19 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReportsController#index as JS
+  Parameters: {"utf8"=>"✓", "q"=>{"nombre_cont"=>"", "fecha_gteq"=>"2017-09-01", "fecha_lteq"=>"2017-10-18"}, "commit"=>"Buscar"}
+  [1m[36mReport Load (0.6ms)[0m  [1mSELECT  `reports`.* FROM `reports` WHERE (`reports`.`fecha` >= '2017-09-01' AND `reports`.`fecha` <= '2017-10-18') LIMIT 5 OFFSET 0[0m
+  [1m[35mOperador Load (0.3ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 5 LIMIT 1[0m  [["id", 5]]
+  [1m[35mOperador Load (0.2ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  Rendered reports/_reports.html.erb (8.4ms)
+  Rendered reports/index.js.erb (11.0ms)
+Completed 200 OK in 18ms (Views: 14.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/reports?utf8=%E2%9C%93&q%5Bnombre_cont%5D=&q%5Bfecha_gteq%5D=2017-09-01&q%5Bfecha_lteq%5D=2017-10-18&commit=Buscar" for 186.107.32.157 at 2017-10-03 16:06:21 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReportsController#index as JS
+  Parameters: {"utf8"=>"✓", "q"=>{"nombre_cont"=>"", "fecha_gteq"=>"2017-09-01", "fecha_lteq"=>"2017-10-18"}, "commit"=>"Buscar"}
+  [1m[35mReport Load (0.5ms)[0m  SELECT  `reports`.* FROM `reports` WHERE (`reports`.`fecha` >= '2017-09-01' AND `reports`.`fecha` <= '2017-10-18') LIMIT 5 OFFSET 0
+  [1m[36mOperador Load (0.3ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 5 LIMIT 1  [["id", 5]]
+  [1m[36mOperador Load (0.2ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  Rendered reports/_reports.html.erb (7.4ms)
+  Rendered reports/index.js.erb (10.0ms)
+Completed 200 OK in 17ms (Views: 13.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/reports?utf8=%E2%9C%93&q%5Bnombre_cont%5D=&q%5Bfecha_gteq%5D=2017-09-01&q%5Bfecha_lteq%5D=2017-09-19&commit=Buscar" for 186.107.32.157 at 2017-10-03 16:06:42 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReportsController#index as JS
+  Parameters: {"utf8"=>"✓", "q"=>{"nombre_cont"=>"", "fecha_gteq"=>"2017-09-01", "fecha_lteq"=>"2017-09-19"}, "commit"=>"Buscar"}
+  [1m[36mReport Load (0.7ms)[0m  [1mSELECT  `reports`.* FROM `reports` WHERE (`reports`.`fecha` >= '2017-09-01' AND `reports`.`fecha` <= '2017-09-19') LIMIT 5 OFFSET 0[0m
+  [1m[35mOperador Load (0.6ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 5 LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 5 LIMIT 1[0m  [["id", 5]]
+  [1m[35mOperador Load (0.3ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  Rendered reports/_reports.html.erb (7.9ms)
+  Rendered reports/index.js.erb (12.5ms)
+Completed 200 OK in 24ms (Views: 18.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/reports?utf8=%E2%9C%93&q%5Bnombre_cont%5D=&q%5Bfecha_gteq%5D=2017-09-01&q%5Bfecha_lteq%5D=&commit=Buscar" for 186.107.32.157 at 2017-10-03 16:06:47 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReportsController#index as JS
+  Parameters: {"utf8"=>"✓", "q"=>{"nombre_cont"=>"", "fecha_gteq"=>"2017-09-01", "fecha_lteq"=>""}, "commit"=>"Buscar"}
+  [1m[35mReport Load (1.1ms)[0m  SELECT  `reports`.* FROM `reports` WHERE (`reports`.`fecha` >= '2017-09-01') LIMIT 5 OFFSET 0
+  [1m[36mOperador Load (0.7ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 5 LIMIT 1  [["id", 5]]
+  [1m[36mOperador Load (0.7ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  Rendered reports/_reports.html.erb (23.9ms)
+  Rendered reports/index.js.erb (32.3ms)
+Completed 200 OK in 50ms (Views: 42.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/reports?utf8=%E2%9C%93&q%5Bnombre_cont%5D=&q%5Bfecha_gteq%5D=&q%5Bfecha_lteq%5D=&commit=Buscar" for 186.107.32.157 at 2017-10-03 16:06:50 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReportsController#index as JS
+  Parameters: {"utf8"=>"✓", "q"=>{"nombre_cont"=>"", "fecha_gteq"=>"", "fecha_lteq"=>""}, "commit"=>"Buscar"}
+  [1m[36mReport Load (0.6ms)[0m  [1mSELECT  `reports`.* FROM `reports` LIMIT 5 OFFSET 0[0m
+  [1m[35mOperador Load (0.3ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 5 LIMIT 1[0m  [["id", 5]]
+  [1m[35mOperador Load (0.2ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  Rendered reports/_reports.html.erb (8.2ms)
+  Rendered reports/index.js.erb (11.2ms)
+Completed 200 OK in 17ms (Views: 14.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/reports" for 186.107.32.157 at 2017-10-03 16:07:16 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReportsController#index as HTML
+  [1m[35mReport Load (0.6ms)[0m  SELECT  `reports`.* FROM `reports` LIMIT 5 OFFSET 0
+  [1m[36mOperador Load (0.5ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 5 LIMIT 1  [["id", 5]]
+  [1m[36mOperador Load (0.2ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  Rendered reports/_reports.html.erb (7.1ms)
+  Rendered reports/index.html.erb within layouts/application (12.7ms)
+  Rendered partials/_barbar.html.erb (1.5ms)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  [1m[35mPlanificacion Load (0.2ms)[0m  SELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1[0m
+  [1m[35mRepuesto Load (0.2ms)[0m  SELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  Rendered partials/_topbar.html.erb (9.8ms)
+  Rendered partials/_footer.html.erb (0.1ms)
+Completed 200 OK in 205ms (Views: 199.4ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/icono-1eaa33e8bf741e1324113692654421a0aa672ae3cdd867f8ca916017b3df1c55.png" for 186.107.32.157 at 2017-10-03 16:07:17 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/operadors" for 186.107.32.157 at 2017-10-03 16:08:13 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OperadorsController#index as HTML
+  [1m[35mOperador Load (0.9ms)[0m  SELECT  `operadors`.* FROM `operadors` LIMIT 4 OFFSET 0
+  Rendered operadors/_operadors.html.erb (4.3ms)
+  Rendered operadors/index.html.erb within layouts/application (8.1ms)
+  Rendered partials/_barbar.html.erb (4.0ms)
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  [1m[35mPlanificacion Load (0.6ms)[0m  SELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36mMaquina Load (0.5ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1[0m
+  [1m[35mRepuesto Load (0.4ms)[0m  SELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)
+  [1m[36mMaquina Load (0.5ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.5ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.5ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )[0m
+  Rendered partials/_topbar.html.erb (20.6ms)
+  Rendered partials/_footer.html.erb (0.1ms)
+Completed 200 OK in 364ms (Views: 354.3ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/operadors/4" for 186.107.32.157 at 2017-10-03 16:08:15 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OperadorsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mOperador Load (1.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `infractions` INNER JOIN operadors ON operador_id = operadors.id AND operadors.id = 4[0m
+  [1m[35mInfraction Load (0.2ms)[0m  SELECT `infractions`.* FROM `infractions` INNER JOIN operadors ON operador_id = operadors.id AND operadors.id = 4
+  Rendered operadors/_multas.html.erb (5.4ms)
+  [1m[36mReport Load (0.7ms)[0m  [1mSELECT  `reports`.* FROM `reports` INNER JOIN operadors ON operador_id = operadors.id AND operadors.id = 4 LIMIT 4 OFFSET 0[0m
+  [1m[35mArriendo Load (0.3ms)[0m  SELECT  `arriendos`.* FROM `arriendos` WHERE `arriendos`.`id` = 14 LIMIT 1
+  [1m[36mMaquina Load (0.5ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `arriendos`.* FROM `arriendos` WHERE `arriendos`.`id` = 14 LIMIT 1  [["id", 14]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `arriendos`.* FROM `arriendos` WHERE `arriendos`.`id` = 14 LIMIT 1  [["id", 14]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `arriendos`.* FROM `arriendos` WHERE `arriendos`.`id` = 14 LIMIT 1  [["id", 14]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `arriendos`.* FROM `arriendos` WHERE `arriendos`.`id` = 14 LIMIT 1  [["id", 14]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `arriendos`.* FROM `arriendos` WHERE `arriendos`.`id` = 14 LIMIT 1  [["id", 14]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered operadors/_reports.html.erb (23.3ms)
+  Rendered operadors/show.html.erb within layouts/application (42.8ms)
+  Rendered partials/_barbar.html.erb (1.6ms)
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  [1m[36mPlanificacion Load (0.2ms)[0m  [1mSELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1
+  [1m[36mRepuesto Load (0.2ms)[0m  [1mSELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  Rendered partials/_topbar.html.erb (10.2ms)
+  Rendered partials/_footer.html.erb (0.0ms)
+Completed 200 OK in 232ms (Views: 215.6ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/assets/SINFOTO-5a8ebe1a194558a29e3329199603c6f3def4efbb7334e97764f3d16ab41a0cc8.png" for 186.107.32.157 at 2017-10-03 16:08:15 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/reports" for 186.107.32.157 at 2017-10-03 16:10:03 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReportsController#index as HTML
+  [1m[36mReport Load (0.6ms)[0m  [1mSELECT  `reports`.* FROM `reports` LIMIT 5 OFFSET 0[0m
+  [1m[35mOperador Load (0.3ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 5 LIMIT 1[0m  [["id", 5]]
+  [1m[35mArriendo Load (0.2ms)[0m  SELECT  `arriendos`.* FROM `arriendos` WHERE `arriendos`.`id` = 14 LIMIT 1
+  [1m[36mMaquina Load (0.3ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 1 LIMIT 1[0m
+  [1m[35mOperador Load (0.2ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `arriendos`.* FROM `arriendos` WHERE `arriendos`.`id` = 14 LIMIT 1  [["id", 14]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `arriendos`.* FROM `arriendos` WHERE `arriendos`.`id` = 14 LIMIT 1  [["id", 14]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `arriendos`.* FROM `arriendos` WHERE `arriendos`.`id` = 14 LIMIT 1  [["id", 14]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered reports/_reports.html.erb (11.3ms)
+  Rendered reports/index.html.erb within layouts/application (15.1ms)
+  Rendered partials/_barbar.html.erb (1.6ms)
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  [1m[36mPlanificacion Load (0.2ms)[0m  [1mSELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1
+  [1m[36mRepuesto Load (0.2ms)[0m  [1mSELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.3ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  Rendered partials/_topbar.html.erb (9.5ms)
+  Rendered partials/_footer.html.erb (0.0ms)
+Completed 200 OK in 170ms (Views: 164.1ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/assets/icono-1eaa33e8bf741e1324113692654421a0aa672ae3cdd867f8ca916017b3df1c55.png" for 186.107.32.157 at 2017-10-03 16:10:04 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/arriendos" for 186.107.32.157 at 2017-10-03 16:10:20 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArriendosController#index as HTML
+  [1m[36mArriendo Load (0.6ms)[0m  [1mSELECT  `arriendos`.* FROM `arriendos` LIMIT 4 OFFSET 0[0m
+  [1m[35mCliente Load (0.3ms)[0m  SELECT  `clientes`.* FROM `clientes` WHERE `clientes`.`id` = 10 LIMIT 1
+  [1m[36mMaquina Load (0.7ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 1 LIMIT 1[0m
+  Rendered arriendos/_arriendos.html.erb (20.2ms)
+  Rendered arriendos/index.html.erb within layouts/application (26.7ms)
+  Rendered partials/_barbar.html.erb (2.2ms)
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  [1m[36mPlanificacion Load (0.2ms)[0m  [1mSELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1
+  [1m[36mRepuesto Load (0.2ms)[0m  [1mSELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  Rendered partials/_topbar.html.erb (9.7ms)
+  Rendered partials/_footer.html.erb (0.0ms)
+Completed 200 OK in 206ms (Views: 198.5ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/arriendos/14" for 186.107.32.157 at 2017-10-03 16:10:24 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArriendosController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mArriendo Load (0.7ms)[0m  [1mSELECT  `arriendos`.* FROM `arriendos` WHERE `arriendos`.`id` = 14 LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM `reports` INNER JOIN arriendos ON arriendo_id = arriendos.id AND arriendos.id = 14
+  [1m[36m (0.4ms)[0m  [1mSELECT  SUM(`reports`.`horas`) FROM `reports` INNER JOIN arriendos ON arriendo_id = arriendos.id AND arriendos.id = 14 LIMIT 4 OFFSET 0[0m
+  [1m[35mReport Load (0.7ms)[0m  SELECT  `reports`.* FROM `reports` INNER JOIN arriendos ON arriendo_id = arriendos.id AND arriendos.id = 14 LIMIT 4 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM `reports` INNER JOIN arriendos ON arriendo_id = arriendos.id AND arriendos.id = 14[0m
+  Rendered arriendos/_reports.html.erb (9.2ms)
+  [1m[35mCliente Load (0.4ms)[0m  SELECT  `clientes`.* FROM `clientes` WHERE `clientes`.`id` = 10 LIMIT 1
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 1 LIMIT 1[0m
+  Rendered arriendos/show.html.erb within layouts/application (26.3ms)
+  Rendered partials/_barbar.html.erb (2.1ms)
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  [1m[36mPlanificacion Load (0.2ms)[0m  [1mSELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35mMaquina Load (0.3ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1
+  [1m[36mRepuesto Load (0.2ms)[0m  [1mSELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35mMaquina Load (0.3ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.3ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  Rendered partials/_topbar.html.erb (10.6ms)
+  Rendered partials/_footer.html.erb (0.1ms)
+Completed 200 OK in 234ms (Views: 224.5ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/reports/new?id=14" for 186.107.32.157 at 2017-10-03 16:10:42 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReportsController#new as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mArriendo Load (0.5ms)[0m  [1mSELECT  `arriendos`.* FROM `arriendos` WHERE `arriendos`.`id` = 14 LIMIT 1[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 1 LIMIT 1
+  [1m[36mOperador Load (0.5ms)[0m  [1mSELECT `operadors`.* FROM `operadors`[0m
+  Rendered reports/new.html.erb within layouts/application (14.0ms)
+  Rendered partials/_barbar.html.erb (2.2ms)
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  [1m[36mPlanificacion Load (0.4ms)[0m  [1mSELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35mMaquina Load (0.5ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1
+  [1m[36mRepuesto Load (0.5ms)[0m  [1mSELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35mMaquina Load (0.5ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.5ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.6ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  Rendered partials/_topbar.html.erb (17.2ms)
+  Rendered partials/_footer.html.erb (0.1ms)
+Completed 200 OK in 259ms (Views: 250.7ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/reports" for 186.107.32.157 at 2017-10-03 16:10:56 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReportsController#index as HTML
+  [1m[36mReport Load (0.6ms)[0m  [1mSELECT  `reports`.* FROM `reports` LIMIT 5 OFFSET 0[0m
+  [1m[35mOperador Load (0.3ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 5 LIMIT 1[0m  [["id", 5]]
+  [1m[35mArriendo Load (0.2ms)[0m  SELECT  `arriendos`.* FROM `arriendos` WHERE `arriendos`.`id` = 14 LIMIT 1
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 1 LIMIT 1[0m
+  [1m[35mOperador Load (0.2ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `arriendos`.* FROM `arriendos` WHERE `arriendos`.`id` = 14 LIMIT 1  [["id", 14]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `arriendos`.* FROM `arriendos` WHERE `arriendos`.`id` = 14 LIMIT 1  [["id", 14]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `operadors`.* FROM `operadors` WHERE `operadors`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `arriendos`.* FROM `arriendos` WHERE `arriendos`.`id` = 14 LIMIT 1  [["id", 14]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered reports/_reports.html.erb (12.1ms)
+  Rendered reports/index.html.erb within layouts/application (17.7ms)
+  Rendered partials/_barbar.html.erb (2.2ms)
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  [1m[36mPlanificacion Load (0.3ms)[0m  [1mSELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-10-03' and estado = 'Abierta')[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1
+  [1m[36mRepuesto Load (0.3ms)[0m  [1mSELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35mMaquina Load (0.3ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-10-03') <= 10 )
+  [1m[36mMaquina Load (0.3ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-10-03') <= 10 )[0m
+  [1m[35mMaquina Load (0.3ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-10-03') <= 10 )
+  Rendered partials/_topbar.html.erb (12.5ms)
+  Rendered partials/_footer.html.erb (0.0ms)
+Completed 200 OK in 248ms (Views: 241.0ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/assets/icono-1eaa33e8bf741e1324113692654421a0aa672ae3cdd867f8ca916017b3df1c55.png" for 186.107.32.157 at 2017-10-03 16:10:57 -0300
+Cannot render console from 186.107.32.157! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255

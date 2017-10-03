@@ -1,44 +1,20 @@
 <div class="content-table">
-
+	<legend><h2>Reports Diarios Arridendo</h2></legend>
 	<br><br>
 	<% if !flash[:notice].blank? %>
      <div class = "alert alert-info">
         <%= flash[:notice] %>
      </div>
   <% end %>
-	<div class="table-responsive">
-		<table class="table table-striped table-hover table-bordered">
-			<thead>
-				<th>Nombre</th>
-				<th>Fecha</th>
-				<th>Horas</th>
-				<th>Numero</th>
-				<th>ArriendoID</th>
-				<th>Detalle</th>
-				<th>Horometro Inicial</th>
-				<th>Horometro Final</th>
-			</thead>
-			
-			<tbody>
-				<% @report.each do |report| %>
-				<tr>
-				
-					<td><%= report.nombre %></td>
-					<td><%= report.fecha %></td>
-					<td><%= report.horas %></td>
-					<td><%= report.numero %></td>
-					<td><%= report.arriendo_id %></td>
-					<td><%= report.detalle %></td>
-					<td><%= report.horometro_inicial %></td>
-					<td><%= report.horometro_final %></td>
-					<td><%= link_to "Mostrar", report_path(report), class: "btn btn-info" %></td>
-					<td><%= button_to "Eliminar", report, data: {confirm: "Desea Eliminar '#{report.nombre}'?"}, method: :delete, class: "btn btn-danger" %></td>
-					<td><%= link_to "Editar", edit_report_path(report), class: "btn btn-success" %></td>
-					
-				</tr>
-				<% end %>
-			</tbody>
-		</table>
+  <%= search_form_for @search, :remote=>"true", url: reports_path, :method => :get do |f| %>
+		<%= f.label "Nombre" %>
+		<%= f.text_field :nombre_cont %>
+		<%= f.label :"Intervalo Fecha" %>
+		<%= f.date_field :fecha_gteq %>
+		- <%= f.date_field :fecha_lteq %>
+		<%= f.submit :value=>"Buscar" %>
+	<% end %>
+	<div id="reports">
+		<%= render "reports" %>
 	</div>
-
 </div>
