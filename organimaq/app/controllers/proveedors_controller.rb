@@ -11,6 +11,7 @@ class ProveedorsController < ApplicationController
 
   def edit
 	@proveedor = Proveedor.find(params[:id])
+	respond_modal_with @proveedor
   end
 
   def new

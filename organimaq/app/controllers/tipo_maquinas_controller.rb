@@ -17,6 +17,7 @@ class TipoMaquinasController < ApplicationController
 
   def edit
   	@tipo_maquina = TipoMaquina.find(params[:id])
+	respond_modal_with @tipo_maquina
   end
 
   def index

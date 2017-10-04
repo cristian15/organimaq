@@ -21,7 +21,7 @@
 					<td><%= proveedor.giro %></td>
 					<td><%= link_to "Mostrar", proveedor_path(proveedor), class: "btn btn-info" %></td>
 					<td><%= button_to "Eliminar", proveedor, data: {confirm: "Desea Eliminar '#{proveedor.nombre}'?"}, method: :delete, class: "btn btn-danger" %></td>
-					<td><%= link_to "Editar", edit_proveedor_path(proveedor), class: "btn btn-success" %></td>
+					<td><%= link_to "Editar", edit_proveedor_path(proveedor), data:{modal:true}, class: "btn btn-success" %></td>
 					
 				</tr>
 				<% end %>

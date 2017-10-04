@@ -1,5 +1,6 @@
 <div class="content-table">
-  <%= link_to "Agregar +", tipo_mecanicos_new_path, data: { modal: true }, class: "btn btn-primary" %>
+	<legend><h2>Tipos de Mecanico </h2></legend>
+ <%= link_to "Agregar +", tipo_mecanicos_new_path, data: { modal: true }, class: "btn btn-primary" %>
   <br><br>
 
   <% if !flash[:notice].blank? %>
@@ -19,7 +20,7 @@
         <tr>
           <td><%= tipo_mecanico.nombre %></td>
           <td><%= button_to "Eliminar", tipo_mecanico, method: :delete, class: "btn btn-danger",  data: {confirm: "Desea Eliminar '#{tipo_mecanico.nombre}'?"} %></td>
-          <td><%= link_to "Editar", edit_tipo_mecanico_path(tipo_mecanico), class: "btn btn-success" %></td>
+          <td><%= link_to "Editar", edit_tipo_mecanico_path(tipo_mecanico), data:{modal:true}, class: "btn btn-success" %></td>
 
         </tr>
         <% end %>

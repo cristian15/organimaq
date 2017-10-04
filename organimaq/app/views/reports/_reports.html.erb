@@ -12,13 +12,14 @@
 					<th>Detalle</th>
 					<th>Horometro Inicial</th>
 					<th>Horometro Final</th>
+					<th>KM Inicial</th>
+					<th>KM Final</th>
 				</tr>
 			</thead>
 			
 			<tbody>
 				<% @report.each do |report| %>
-				<tr>
-				
+				<tr>				
 					<td><%= report.nombre %></td>
 					<td><%= report.fecha %></td>
 					<td><%= report.horas %></td>
@@ -29,10 +30,11 @@
 					<td><%= report.detalle %></td>
 					<td><%= report.horometro_inicial %></td>
 					<td><%= report.horometro_final %></td>
+					<td><%= report.km_inicio %></td>
+					<td><%= report.km_final %></td>
 					<td><%= link_to "Mostrar", report_path(report), class: "btn btn-info" %></td>
 					<td><%= button_to "Eliminar", report, data: {confirm: "Desea Eliminar '#{report.nombre}'?"}, method: :delete, class: "btn btn-danger" %></td>
-					<td><%= link_to "Editar", edit_report_path(report), class: "btn btn-success" %></td>
-					
+					<td><%= link_to "Editar", edit_report_path(report), class: "btn btn-success" %></td>					
 				</tr>
 				<% end %>
 			</tbody>

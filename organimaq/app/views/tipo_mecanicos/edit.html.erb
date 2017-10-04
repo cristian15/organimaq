@@ -1,4 +1,4 @@
-<div class="contentForm">
+
 <legend>Editar tipo de Mecanico</legend>
 
   <%= bootstrap_form_for (@tipo_mecanico)  do |f| %>
@@ -10,9 +10,8 @@
     <%= f.text_field :nombre %>
 
     
-      <%= f.primary 'Editar' %> <%= link_to 'Volver', tipo_mecanicos_path, class: "btn btn-warning" %>
+      <%= f.primary 'Editar' %>
    </div>
    
 
   <% end %>
-  </div>

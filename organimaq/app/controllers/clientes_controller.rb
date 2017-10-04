@@ -1,6 +1,5 @@
 class ClientesController < ApplicationController
 
-	before_action :clear_search_index, :only => [:index]
 	respond_to :html, :json
   def new
 	@cliente = Cliente.new
@@ -14,6 +13,7 @@ class ClientesController < ApplicationController
 
   def edit
 	@cliente = Cliente.find(params[:id])
+	respond_modal_with @cliente
   end
 
   def show
@@ -47,7 +47,7 @@ class ClientesController < ApplicationController
 		@cliente = Cliente.find(params[:id])
 
 		if @cliente.update(cliente_params)
-			redirect_to clientes_path(), notice: "Cliente #{@cliente.nombre} ha sido Actualizada."
+			redirect_to clientes_path(), notice: "Cliente #{@cliente.nombre} ha sido Actualizado."
 		else
 			render 'edit'
 		end

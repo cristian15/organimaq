@@ -17,6 +17,7 @@ class TipoMecanicosController < ApplicationController
 
   def edit
   	@tipo_mecanico = TipoMecanico.find(params[:id])
+	respond_modal_with @tipo_mecanico
   end
 
   def index
@@ -30,7 +31,7 @@ class TipoMecanicosController < ApplicationController
   def create
 		@tipo_mecanico = TipoMecanico.new(tipo_mecanico_params)
 		if @tipo_mecanico.save
-			redirect_to tipo_mecanicos_path(), notice: "Tipo Mecanico '#{@tipo_mecanico.nombre}' ha sido Agregado."
+			redirect_to new_mecanico_path(), notice: "Tipo Mecanico '#{@tipo_mecanico.nombre}' ha sido Agregado."
 
 		else
 			render 'new'

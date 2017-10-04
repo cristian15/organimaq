@@ -1,4 +1,6 @@
+
 <div class="content-table">
+	<legend><h2>Tipos de Maquinas </h2></legend>
   <%= link_to "Agregar +", tipo_maquinas_new_path,data:{modal:true}, class: "btn btn-primary" %>
   <br><br>
 
@@ -19,7 +21,7 @@
         <tr>
           <td><%= tipo_maquina.nombre %></td>
           <td><%= button_to "Eliminar", tipo_maquina, method: :delete, class: "btn btn-danger",  data: {confirm: "Desea Eliminar '#{tipo_maquina.nombre}'?"} %></td>
-          <td><%= link_to "Editar", edit_tipo_maquina_path(tipo_maquina), class: "btn btn-success" %></td>
+          <td><%= link_to "Editar", edit_tipo_maquina_path(tipo_maquina), data:{modal:true}, class: "btn btn-success" %></td>
 
         </tr>
         <% end %>

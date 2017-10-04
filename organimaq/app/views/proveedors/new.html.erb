@@ -1,13 +1,13 @@
 
-	<div class="contentForm">
-	<%= link_to 'Volver', clientes_path, class: "btn btn-warning" %><br>
+	
+	
 	<legend>Ingresar Proveedor</legend>
 
 		<%= bootstrap_form_for (@proveedor)  do |f| %>
 		<div class="form-group">
 			<div class="form-inline"><div class="form-group">	
 			<%= f.number_field :rut, :maxlength => 8, label: "Rut  :", :required => true %>
-			<%= f.text_field :dv, :maxlength => 1, label: "- " %>
+			<%= f.text_field :dv, :maxlength => 1, label: " - " %>
 			</div></div>
 			<%= f.text_field :nombre, label: "Proveedor", :required => true %>
 			<%= f.text_field :direccion %>
@@ -21,7 +21,6 @@
 		
 		<% end %>
 		
-	</div>
   <script type="text/javascript">
 
  $("#proveedor_rut").on('change',

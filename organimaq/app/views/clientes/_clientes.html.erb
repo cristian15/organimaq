@@ -23,7 +23,7 @@
 					<td><%= cliente.giro %></td>
 					<td><%= link_to "Mostrar", cliente_path(cliente), class: "btn btn-info" %></td>
 					<td><%= button_to "Eliminar", cliente, data: {confirm: "Desea Eliminar '#{cliente.nombre}'?"}, method: :delete, class: "btn btn-danger" %></td>
-					<td><%= link_to "Editar", edit_cliente_path(cliente), class: "btn btn-success" %></td>
+					<td><%= link_to "Editar", edit_cliente_path(cliente), data:{modal: true}, class: "btn btn-success" %></td>
 					
 				</tr>
 				<% end %>

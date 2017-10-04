@@ -1,10 +1,14 @@
-<div class="contentForm">
+
 <legend>Editar Cliente</legend>
 
 	<%= bootstrap_form_for (@cliente)  do |f| %>
 	<div class="form-group">	
-		<%= f.number_field :rut_cliente, :maxlength => 8, label: "Rut", :required => true %>
-		<%= f.text_field :dv %>
+		<div class="form-inline">
+			<div class="form-group">	
+				<%= f.number_field :rut_cliente, :maxlength => 8, label: "Rut  :", :required => true %>
+				<%= f.text_field :dv, :maxlength => 1, label: " - " %>
+			</div>
+		</div>
 		<%= f.text_field :nombre, label: "Cliente", :required => true %>
 		<%= f.text_field :direccion %>
 		<%= f.text_field :nombre_contacto, label: "Nombre Contacto" %>
@@ -18,8 +22,6 @@
 	
 	<% end %>
 	
-</div>
-
 <script>
 $("#cliente_rut_cliente").on('change',
   function(){
