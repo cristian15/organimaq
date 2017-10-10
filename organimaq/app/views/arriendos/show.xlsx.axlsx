@@ -1,0 +1,11 @@
+
+wb = xlsx_package.workbook
+
+wb.add_worksheet(name: "Report") do |sheet|
+  negrita = sheet.styles.add_style :bold => true
+  sheet.add_row ["Nombre", "Numero", "Fecha", "Horas","Operador","Horometro Inicial", "Horometro Final", "Detalle"], :height =>35, :style => [negrita]  ## Titulos
+ 
+  @reports.each do |rp|
+    sheet.add_row [rp.nombre, rp.numero, rp.fecha, rp.horas,Operador.find(rp.operador_id).nombre+" "+Operador.find(rp.operador_id).apellido_p, rp.horometro_inicial, rp.horometro_final, rp.detalle]
+  end
+end

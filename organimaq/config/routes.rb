@@ -170,7 +170,6 @@ Rails.application.routes.draw do
   match '/contactos',     to: 'contactos#new',             via: 'get'
 
   resources "contactos", only: [:new, :create]
-
   
 
   resources :maquinas 

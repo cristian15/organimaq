@@ -4,6 +4,14 @@ class MaquinasController < ApplicationController
 	def index
 		@search = Maquina.ransack(params[:q])
 		@maquina = @search.result.paginate(page: params[:page], per_page:4)
+		
+		@maquinas = Maquina.ransack(params[:q]).result
+		respond_to do |format|
+		  format.html 
+		  format.js 
+		  format.xlsx 
+		  
+		end
 	
 	end
 	def show

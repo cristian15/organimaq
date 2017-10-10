@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170926043619) do
+ActiveRecord::Schema.define(version: 20171005173352) do
 
   create_table "arriendos", force: :cascade do |t|
     t.date     "fecha_arriendo"
@@ -27,6 +27,9 @@ ActiveRecord::Schema.define(version: 20170926043619) do
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
   end
+
+  add_index "arriendos", ["cliente_id"], name: "fk_rails_b8ea13e587", using: :btree
+  add_index "arriendos", ["maquina_id"], name: "fk_rails_671a5abe3a", using: :btree
 
   create_table "carga_combustibles", force: :cascade do |t|
     t.integer  "maquina_id",            limit: 4
@@ -109,6 +112,8 @@ ActiveRecord::Schema.define(version: 20170926043619) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
+
+  add_index "infractions", ["operador_id"], name: "fk_rails_1c4036c42d", using: :btree
 
   create_table "maquinas", force: :cascade do |t|
     t.string   "codigo",            limit: 255
@@ -317,11 +322,14 @@ ActiveRecord::Schema.define(version: 20170926043619) do
     t.datetime "updated_at",             null: false
   end
 
+  add_foreign_key "arriendos", "clientes"
+  add_foreign_key "arriendos", "maquinas"
   add_foreign_key "carga_combustibles", "fuente_combustibles"
   add_foreign_key "carga_combustibles", "maquinas"
   add_foreign_key "facturas", "maquinas"
   add_foreign_key "facturas", "proveedors"
   add_foreign_key "facturas", "tipo_facturas"
+  add_foreign_key "infractions", "operadors"
   add_foreign_key "maquinas", "estado_maquinas"
   add_foreign_key "maquinas", "tipo_maquinas"
   add_foreign_key "mecanicos", "tipo_mecanicos"

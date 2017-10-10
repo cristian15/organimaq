@@ -15,12 +15,28 @@ class ArriendosController < ApplicationController
 	
 	@search = Report.joins('INNER JOIN arriendos ON arriendo_id = arriendos.id AND arriendos.id =', params[:id]).ransack(params[:q])
 	@report = @search.result.paginate(page: params[:page], per_page:4)
+	
+	@reports = Report.joins('INNER JOIN arriendos ON arriendo_id = arriendos.id AND arriendos.id =', params[:id]).ransack(params[:q]).result
+	
+	respond_to do |format|
+      format.html 
+	  format.js 
+      format.xlsx 
+	  
+    end
+	
   end
+  
+  
 
   def edit
 	@arriendo = Arriendo.find(params[:id])
 	@report = Report.joins('INNER JOIN arriendos ON arriendo_id = arriendos.id AND arriendos.id =', params[:id])
   end
+  
+  
+
+  
   
   def destroy
   end

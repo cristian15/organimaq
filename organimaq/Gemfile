@@ -64,10 +64,9 @@ gem 'responders', '~> 2.0'
 # moment.js
 gem 'momentjs-rails', github: 'cristian15/momentjs-rails'
 
-
-# Dashboard
-#gem 'dashing-rails'
-#gem 'puma'
+# EXCEL 
+gem 'acts_as_xlsx'
+gem 'axlsx_rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

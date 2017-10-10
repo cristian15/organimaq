@@ -1,4 +1,5 @@
 class Maquina < ActiveRecord::Base
+	acts_as_xlsx
 	has_one :tipo_maquinas
 	has_one :estado_maquinas
 	belongs_to :planificacions
