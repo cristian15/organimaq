@@ -2,6 +2,9 @@
 class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
+  
+  helper_method :current_user
+  
 
   def respond_modal_with(*args, &blk)
     options = args.extract_options!
@@ -31,4 +34,8 @@ class ApplicationController < ActionController::Base
   	def set_time_zone
   		Time.zone = current_user.time_zone
   	end
+	
+	def current_user
+	  @current_user ||= User.find(session[:user_id]) if session[:user_id]
+	end
 end

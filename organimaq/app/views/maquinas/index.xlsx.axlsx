@@ -1,10 +1,30 @@
 
 wb = xlsx_package.workbook
 wb.add_worksheet(name: "Report") do |sheet|
-  negrita = sheet.styles.add_style :bold => true
-  sheet.add_row ["Codigo", "Maquina", "Tipo", "Estado","Patente","Chasis","Marca", "Año", "Horometro Actual", "Kilometraje Actual", "Valor Hora", "Valor Dia"], :height =>35, :style => [negrita]  ## Titulos
+  
+  title = sheet.styles.add_style(:bg_color => "FF4286f4",
+                           :fg_color=>"#FF000000",
+                           :border=>Axlsx::STYLE_THIN_BORDER,
+                           :alignment=>{:horizontal => :center},
+						   :b=>true)
+  sheet.add_row ["Codigo", "Maquina", "Tipo", "Estado","Patente","Chasis","Marca", "Año", "Horometro Actual", "Kilometraje Actual", "Valor Hora", "Valor Dia"], :height =>35, :style=>title  ## Titulos
  
-  @maquinas.each do |mq|
-    sheet.add_row [mq.codigo, mq.nombre, TipoMaquina.find(mq.tipo_maquina_id).nombre,EstadoMaquina.find(mq.estado_maquina_id).nombre , mq.patente, mq.chasis, mq.marca, mq.anio, mq.horometro_actual, mq.km_actual, mq.valor_hora, mq.valor_dia ]
+ 
+ celdas = sheet.styles.add_style(
+                           :border=>Axlsx::STYLE_THIN_BORDER,
+                           :alignment=>{:horizontal => :center})
+						   
+						   
+moneda = sheet.styles.add_style(:format_code=>"$#,##0;[Red]$-#,##0",
+							:border=>Axlsx::STYLE_THIN_BORDER,
+							:alignment=>{:horizontal => :center})
+							
+kms = sheet.styles.add_style(:format_code=>"#,##0;[Red]-#,##0",
+							:border=>Axlsx::STYLE_THIN_BORDER,
+							:alignment=>{:horizontal => :center})
+							
+@maquinas.each do |mq|
+	sheet.add_row [mq.codigo, mq.nombre, TipoMaquina.find(mq.tipo_maquina_id).nombre, EstadoMaquina.find(mq.estado_maquina_id).nombre , mq.patente, mq.chasis, mq.marca, mq.anio, mq.horometro_actual, mq.km_actual, mq.valor_hora, mq.valor_dia ], :style=>[celdas,celdas, celdas, celdas, celdas, celdas, celdas, celdas, kms, kms, moneda, moneda]
+	
   end
 end

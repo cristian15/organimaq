@@ -68,6 +68,9 @@ gem 'momentjs-rails', github: 'cristian15/momentjs-rails'
 gem 'acts_as_xlsx'
 gem 'axlsx_rails'
 
+# Encriptacion contraseñas
+gem "bcrypt-ruby", :require => "bcrypt"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

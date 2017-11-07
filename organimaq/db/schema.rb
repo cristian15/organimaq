@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171005173352) do
+ActiveRecord::Schema.define(version: 20171103162923) do
 
   create_table "arriendos", force: :cascade do |t|
     t.date     "fecha_arriendo"
@@ -322,6 +322,25 @@ ActiveRecord::Schema.define(version: 20171005173352) do
     t.datetime "updated_at",             null: false
   end
 
+  create_table "tipo_users", force: :cascade do |t|
+    t.string   "nombre",     limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "usuario",       limit: 255
+    t.string   "password_hash", limit: 255
+    t.string   "password_salt", limit: 255
+    t.string   "nombre",        limit: 255
+    t.string   "email",         limit: 255
+    t.integer  "tipo_user_id",  limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "users", ["tipo_user_id"], name: "fk_rails_90b370a27b", using: :btree
+
   add_foreign_key "arriendos", "clientes"
   add_foreign_key "arriendos", "maquinas"
   add_foreign_key "carga_combustibles", "fuente_combustibles"
@@ -344,6 +363,7 @@ ActiveRecord::Schema.define(version: 20171005173352) do
   add_foreign_key "repuestos", "tipo_repuestos"
   add_foreign_key "repuestos_planificacions", "planificacions"
   add_foreign_key "repuestos_planificacions", "repuestos"
+  add_foreign_key "users", "tipo_users"
   # no candidate create_trigger statement could be found, creating an adapter-specific one
   execute(<<-TRIGGERSQL)
 CREATE TRIGGER horas_mecanico_planificacion_after_insert_row_tr AFTER INSERT ON `mecanicos_planificacions`

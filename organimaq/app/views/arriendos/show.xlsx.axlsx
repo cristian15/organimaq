@@ -2,10 +2,21 @@
 wb = xlsx_package.workbook
 
 wb.add_worksheet(name: "Report") do |sheet|
-  negrita = sheet.styles.add_style :bold => true
-  sheet.add_row ["Nombre", "Numero", "Fecha", "Horas","Operador","Horometro Inicial", "Horometro Final", "Detalle"], :height =>35, :style => [negrita]  ## Titulos
+
+	sheet.add_row ["Reports Arriendo de Maquina:", Maquina.find(@arriendo.maquina_id).nombre], :sz=>20, :b=>true
+	sheet.add_row [""]
+	title = sheet.styles.add_style(:bg_color => "FF4286f4",
+                           :fg_color=>"#FF000000",
+                           :border=>Axlsx::STYLE_THIN_BORDER,
+                           :alignment=>{:horizontal => :center})
+  
+  sheet.add_row ["Nombre", "Numero", "Fecha", "Horas","Operador","Horometro Inicial", "Horometro Final", "Detalle"], :height =>35, :style => title, :b=>true  ## Titulos
  
+ 
+ celdas = sheet.styles.add_style(
+                           :border=>Axlsx::STYLE_THIN_BORDER,
+                           :alignment=>{:horizontal => :center})
   @reports.each do |rp|
-    sheet.add_row [rp.nombre, rp.numero, rp.fecha, rp.horas,Operador.find(rp.operador_id).nombre+" "+Operador.find(rp.operador_id).apellido_p, rp.horometro_inicial, rp.horometro_final, rp.detalle]
+    sheet.add_row [rp.nombre, rp.numero, rp.fecha, rp.horas,Operador.find(rp.operador_id).nombre+" "+Operador.find(rp.operador_id).apellido_p, rp.horometro_inicial, rp.horometro_final, rp.detalle], :style=>celdas
   end
 end

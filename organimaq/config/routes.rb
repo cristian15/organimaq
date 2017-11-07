@@ -154,6 +154,12 @@ Rails.application.routes.draw do
   get 'estado_maquinas/edit'
 
   get 'estado_maquinas/new'
+  
+  get "log_out" => "sessions#destroy", :as => "log_out"
+  
+  get "log_in" => "sessions#new", :as => "log_in"
+  
+  get "sign_up" => "users#new", :as => "sign_up"
 
   #get 'contacto' => "contacto#index"    # Contancto
 
@@ -172,6 +178,10 @@ Rails.application.routes.draw do
   resources "contactos", only: [:new, :create]
   
 
+  resources :users
+  
+  resources :sessions
+  
   resources :maquinas 
 
   resources :tipo_maquinas
