@@ -1,40 +1,52 @@
 <button id="show"><i class="fa fa-bars"></i></button>
 
 <nav class="maquibar" id="nava">
-
+	
+	
 	<ul>
 		<%= image_tag("organimaq_min.png") %>
-		<li><i class="fa fa-home"></i><%= link_to " Inicio",root_path %></li>
-		<li id="dropmaq">
-		<i class="fa fa-truck"></i><a> Maquinaria</a>
-		<ul class="dropped" id="maq" style="display: none">
-			  <li><i class="fa fa-address-book"></i><%= link_to " Maquinas", maquinas_path %></a></li>
-              
-              <li><i class="fa fa-cubes"></i><%= link_to " Tipos de Maquinaria", tipo_maquinas_path %></a></li>
+		
+		<% if current_user %>
+			<li><b><%= current_user.usuario %> </b>( <%= TipoUser.find(current_user.tipo_user_id).nombre %> )</li>
+			
+			
+			<li><i class="fa fa-home"></i><%= link_to " Inicio",root_path %></li>
+			<li id="dropmaq">
+			<i class="fa fa-truck"></i><a> Maquinaria</a>
+			<ul class="dropped" id="maq" style="display: none">
+				  <li><i class="fa fa-address-book"></i><%= link_to " Maquinas", maquinas_path %></a></li>
+				  
+				  <li><i class="fa fa-cubes"></i><%= link_to " Tipos de Maquinaria", tipo_maquinas_path %></a></li>
 
-              <li><i class="fa fa-check"></i><%= link_to " Estados de Maquinaria", estado_maquinas_path %></a></li>
+				  <li><i class="fa fa-check"></i><%= link_to " Estados de Maquinaria", estado_maquinas_path %></a></li>
 
-              <li><i class="fa fa-gear"></i><%= link_to " Repuestos", repuestos_path %></a></li>
-		</ul>
-		</li>
-		<li><i class="fa fa-user-circle-o"></i><%= link_to " Clientes",clientes_path %></li>
-		<li><i class="fa fa-address-card"></i><%= link_to " Proveedores",proveedors_path %></li>
-		<li><i class="fa fa-dashboard"></i><%= link_to " Dashboard",dashboards_path %></li>
-		<li><i class="fa fa-handshake-o"></i><%= link_to " Arriendos",arriendos_path %></li>
-		<li><i class="fa fa-male"></i><%= link_to " Operadores",operadors_path %></li>
-		<li><i class="fa fa-calendar"></i><%= link_to " Planificaciones", planificacions_path %></li>
-		<li id="dropmech">
-		<i class="fa fa-wrench"></i><a> Mecanicos</a>
-			<ul class="dropped" id="mech" style="display: none">
-			<li><i class="fa fa-address-book"></i><%= link_to " Mecanicos", mecanicos_path %></a></li>
-			<li><i class="fa fa-cubes"></i><%= link_to " Tipos de Mecanicos", tipo_mecanicos_path %></a></li>
+				  <li><i class="fa fa-gear"></i><%= link_to " Repuestos", repuestos_path %></a></li>
 			</ul>
-		</li>
-		<li><i class="fa fa-calculator"></i> <%= link_to " Facturas de Compras", facturas_path %></li>
-		<li><i class="fa fa-edit"></i><%= link_to " Reports Arriendos", reports_path %></li>
+			</li>
+			<li><i class="fa fa-user-circle-o"></i><%= link_to " Clientes",clientes_path %></li>
+			<li><i class="fa fa-address-card"></i><%= link_to " Proveedores",proveedors_path %></li>
+			<li><i class="fa fa-dashboard"></i><%= link_to " Dashboard",dashboards_path %></li>
+			<li><i class="fa fa-handshake-o"></i><%= link_to " Arriendos",arriendos_path %></li>
+			<li><i class="fa fa-male"></i><%= link_to " Operadores",operadors_path %></li>
+			<li><i class="fa fa-calendar"></i><%= link_to " Planificaciones", planificacions_path %></li>
+			<li id="dropmech">
+			<i class="fa fa-wrench"></i><a> Mecanicos</a>
+				<ul class="dropped" id="mech" style="display: none">
+				<li><i class="fa fa-address-book"></i><%= link_to " Mecanicos", mecanicos_path %></a></li>
+				<li><i class="fa fa-cubes"></i><%= link_to " Tipos de Mecanicos", tipo_mecanicos_path %></a></li>
+				</ul>
+			</li>
+			<li><i class="fa fa-calculator"></i> <%= link_to " Facturas de Compras", facturas_path %></li>
+			<li><i class="fa fa-edit"></i><%= link_to " Reports Arriendos", reports_path %></li>
+			
+			
+			<li><i class="fa fa-envelope-o"></i><%= link_to " Contacto",contactos_path %></li>
 		
-		
-		<li><i class="fa fa-envelope-o"></i><%= link_to " Contacto",contactos_path %></li>
+			<li><i class="fa fa-sign-out" aria-hidden="true"></i><%= link_to "Cerrar Sesion", log_out_path %> </li>
+		<% else %>			
+			<li> <i class="fa fa-sign-in" aria-hidden="true"></i> <%= link_to "Iniciar Sesion", log_in_path %> </li>
+			<li><i class="fa fa-user-plus" aria-hidden="true"></i> <%= link_to "Registrar", sign_up_path %> </li>
+		<% end %>
 		
 		
 		<li class="separate"><i class="fa fa-info-circle"></i> Ayuda</a></li>
