@@ -13,12 +13,12 @@
       </div>
       <div class="modal-body">
 			<%= form_tag sessions_path, remote: true do |f| %>
-		  
+			
 			Usuario: <%= text_field_tag :usuario, params[:usuario], placeholder: "Usuario" %><br />
 	
 			Password: <%= password_field_tag :password%>
 			
-		  <p class="button"><%= submit_tag "Iniciar Sesion" %></p>
+		  <p class="button"><%= submit_tag "Iniciar" %></p>
 		<% end %>
       </div>
 	  
