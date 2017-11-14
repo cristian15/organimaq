@@ -14,9 +14,9 @@
       <div class="modal-body">
 			<%= form_tag sessions_path, remote: true do |f| %>
 		  
-			<%= text_field_tag :usuario, params[:usuario], placeholder: "Usuario" %><br />
+			Usuario: <%= text_field_tag :usuario, params[:usuario], placeholder: "Usuario" %><br />
 	
-			<%= password_field_tag :password%>
+			Password: <%= password_field_tag :password%>
 			
 		  <p class="button"><%= submit_tag "Iniciar Sesion" %></p>
 		<% end %>

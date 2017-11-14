@@ -25685,3 +25685,73 @@ Processing by UsersController#new as HTML
   Rendered partials/_login.html.erb (0.0ms)
   Rendered partials/_footer.html.erb (0.0ms)
 Completed 200 OK in 234ms (Views: 228.9ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/proveedors" for 186.107.154.154 at 2017-11-14 13:20:35 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ProveedorsController#index as HTML
+  [1m[35mProveedor Load (0.6ms)[0m  SELECT  `proveedors`.* FROM `proveedors` LIMIT 2 OFFSET 0
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `proveedors`[0m
+  Rendered proveedors/_proveedors.html.erb (20.6ms)
+  Rendered proveedors/index.html.erb within layouts/application (55.6ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mTipoUser Load (0.5ms)[0m  [1mSELECT  `tipo_users`.* FROM `tipo_users` WHERE `tipo_users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `tipo_users`.* FROM `tipo_users` WHERE `tipo_users`.`id` = 2 LIMIT 1  [["id", 2]]
+  Rendered partials/_barbar.html.erb (63.3ms)
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-11-14' and estado = 'Abierta')[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-11-14') <= 10 )[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-11-14') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-11-14') <= 10 )[0m
+  [1m[35mPlanificacion Load (0.3ms)[0m  SELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-11-14' and estado = 'Abierta')
+  [1m[36mMaquina Load (0.6ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1[0m
+  [1m[35mMaquina Load (0.9ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 1 LIMIT 1
+  [1m[36mMaquina Load (0.5ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 3 LIMIT 1[0m
+  [1m[35mRepuesto Load (0.3ms)[0m  SELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)
+  [1m[36mMaquina Load (0.4ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-11-14') <= 10 )[0m
+  [1m[35mMaquina Load (0.3ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-11-14') <= 10 )
+  [1m[36mMaquina Load (0.4ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-11-14') <= 10 )[0m
+  Rendered partials/_topbar.html.erb (175.0ms)
+  Rendered partials/_login.html.erb (0.7ms)
+  Rendered partials/_footer.html.erb (0.5ms)
+Completed 200 OK in 1021ms (Views: 983.3ms | ActiveRecord: 19.5ms)
+
+
+Started GET "/log_out" for 186.107.154.154 at 2017-11-14 13:21:06 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+Redirected to http://www.maquit.cl:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 186.107.154.154 at 2017-11-14 13:21:06 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+  Rendered partials/_barbar.html.erb (1.1ms)
+  Rendered partials/_login.html.erb (0.0ms)
+  Rendered partials/_footer.html.erb (0.0ms)
+Completed 200 OK in 159ms (Views: 157.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log_in" for 186.107.154.154 at 2017-11-14 13:21:10 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as JS
+  Rendered sessions/_login.html.erb (1.6ms)
+  Rendered sessions/new.js.erb (6.8ms)
+Completed 200 OK in 23ms (Views: 22.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 186.107.154.154 at 2017-11-14 13:21:25 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  Rendered partials/_barbar.html.erb (1.1ms)
+  Rendered partials/_login.html.erb (0.0ms)
+  Rendered partials/_footer.html.erb (0.0ms)
+Completed 200 OK in 162ms (Views: 160.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/icono-1eaa33e8bf741e1324113692654421a0aa672ae3cdd867f8ca916017b3df1c55.png" for 186.107.154.154 at 2017-11-14 13:21:25 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
