@@ -1,19 +1,22 @@
+<% if current_user %>
+	<% if TipoUser.find(current_user.tipo_user_id).nombre == 'Administrador' %>
+		<div class="contentForm">
+		<legend>Ingresar Usuario</legend>
 
-<div class="contentForm">
-<legend>Ingresar Usuario</legend>
+		  <%= bootstrap_form_for (@user)  do |f| %>
+		  <div class="form-group">
+			
+			  <%= f.text_field :usuario %>
+			  <%= f.text_field :nombre %>
+			  <%= f.password_field :password %>
+			  <%= f.password_field :password_confirmation %>
+			  <%= f.email_field :email %>
+			  <%= f.collection_select :tipo_user_id, TipoUser.all, :id, :nombre %>
+			  
+			  <%= f.primary 'Guardar' %>
+		   </div>
 
-  <%= bootstrap_form_for (@user)  do |f| %>
-  <div class="form-group">
-    
-	  <%= f.text_field :usuario %>
-	  <%= f.text_field :nombre %>
-	  <%= f.password_field :password %>
-	  <%= f.password_field :password_confirmation %>
-	  <%= f.email_field :email %>
-	  <%= f.collection_select :tipo_user_id, TipoUser.all, :id, :nombre %>
-	  
-      <%= f.primary 'Guardar' %>
-   </div>
-
-  <% end %>
-  </div>
+		  <% end %>
+		  </div>
+	<% end %>
+<% end %>

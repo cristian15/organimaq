@@ -41,6 +41,6 @@
 			</tbody>
 		</table>
 		
-		<%= link_to "Añadir Carga de Combustible", carga_combustibles_new_path(id: @maquina.id), data: { modal: true, title: "HOLA" }, class: "btn btn-primary" %><br><br>
+		<%= link_to "Añadir Carga de Combustible", carga_combustibles_new_path(id: @maquina.id), data: { modal: true}, class: "btn btn-primary" %><br><br>
 		
 		<%= paginate @carga,  :param_name => "page_cargas" %>

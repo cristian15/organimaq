@@ -1,8 +1,6 @@
 <button id="show"><i class="fa fa-bars"></i></button>
 
 <nav class="maquibar" id="nava">
-	
-	
 	<ul>
 		<%= image_tag("organimaq_min.png") %>
 		
@@ -39,18 +37,30 @@
 			<li><i class="fa fa-calculator"></i> <%= link_to " Facturas de Compras", facturas_path %></li>
 			<li><i class="fa fa-edit"></i><%= link_to " Reports Arriendos", reports_path %></li>
 			
-			
+			<% if TipoUser.find(current_user.tipo_user_id).nombre == 'Administrador' %>
+				<li><i class="fa fa-user-plus" aria-hidden="true"></i> <%= link_to "Registrar Nuevo Usuario", sign_up_path %> </li>
+			<% end %>
 			<li><i class="fa fa-envelope-o"></i><%= link_to " Contacto",contactos_path %></li>
+			
 		
 			<li><i class="fa fa-sign-out" aria-hidden="true"></i><%= link_to "Cerrar Sesion", log_out_path %> </li>
-		<% else %>			
-			<li> <i class="fa fa-sign-in" aria-hidden="true"></i> <%= link_to "Iniciar Sesion", log_in_path %> </li>
-			<li><i class="fa fa-user-plus" aria-hidden="true"></i> <%= link_to "Registrar", sign_up_path %> </li>
-		<% end %>
+			
+			
+		<% else %>	
+			<li><i class="fa fa-sign-in" aria-hidden="true"></i><%= link_to "Iniciar Sesion", log_in_path, remote: true %> </li>
+			
 		
+		<% end %>
 		
 		<li class="separate"><i class="fa fa-info-circle"></i> Ayuda</a></li>
 		<li id="close"><i class="fa fa-close"></i> cerrar</a></li>
 	</ul>
 
 </nav>
+
+
+
+
+
+
+
