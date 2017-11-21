@@ -25755,3 +25755,1345 @@ Completed 200 OK in 162ms (Views: 160.7ms | ActiveRecord: 0.0ms)
 
 Started GET "/assets/icono-1eaa33e8bf741e1324113692654421a0aa672ae3cdd867f8ca916017b3df1c55.png" for 186.107.154.154 at 2017-11-14 13:21:25 -0300
 Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/" for 186.107.154.154 at 2017-11-14 13:35:28 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.3ms)
+  Rendered partials/_barbar.html.erb (3.8ms)
+  Rendered partials/_login.html.erb (0.3ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 653ms (Views: 642.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/icono-1eaa33e8bf741e1324113692654421a0aa672ae3cdd867f8ca916017b3df1c55.png" for 186.107.154.154 at 2017-11-14 13:35:30 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/log_in" for 186.107.154.154 at 2017-11-14 13:35:39 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as JS
+  Rendered sessions/_login.html.erb (7.3ms)
+  Rendered sessions/new.js.erb (11.5ms)
+Completed 200 OK in 21ms (Views: 20.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 186.107.154.154 at 2017-11-14 13:35:45 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as JS
+  Parameters: {"utf8"=>"✓", "usuario"=>"cbeltran", "password"=>"[FILTERED]", "commit"=>"Iniciar"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`usuario` = 'cbeltran' LIMIT 1
+Redirected to http://www.maquit.cl:3000/
+Completed 200 OK in 113ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 186.107.154.154 at 2017-11-14 13:35:45 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mTipoUser Load (0.3ms)[0m  SELECT  `tipo_users`.* FROM `tipo_users` WHERE `tipo_users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `tipo_users`.* FROM `tipo_users` WHERE `tipo_users`.`id` = 2 LIMIT 1[0m  [["id", 2]]
+  Rendered partials/_barbar.html.erb (12.8ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-11-14' and estado = 'Abierta')
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-11-14') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-11-14') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-11-14') <= 10 )
+  [1m[36mPlanificacion Load (0.3ms)[0m  [1mSELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-11-14' and estado = 'Abierta')[0m
+  [1m[35mMaquina Load (0.4ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1
+  [1m[36mMaquina Load (0.7ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 1 LIMIT 1[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 3 LIMIT 1
+  [1m[36mRepuesto Load (0.2ms)[0m  [1mSELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35mMaquina Load (0.3ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-11-14') <= 10 )
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-11-14') <= 10 )[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-11-14') <= 10 )
+  Rendered partials/_topbar.html.erb (79.6ms)
+  Rendered partials/_login.html.erb (0.0ms)
+  Rendered partials/_footer.html.erb (0.0ms)
+Completed 200 OK in 298ms (Views: 287.4ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/" for 186.107.154.154 at 2017-11-14 13:36:03 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  Rendered partials/_barbar.html.erb (2.0ms)
+  Rendered partials/_login.html.erb (0.0ms)
+  Rendered partials/_footer.html.erb (0.1ms)
+Completed 200 OK in 331ms (Views: 329.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/arriendos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/carga_combustibles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/clientes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/contacto.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/dashboards.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/estado_maquinas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/estanque_fijos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/factura.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fuente_combustibles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/infractions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/main.self-d23bd567c06ce6fc919775bed453064c27c344ea9998f6e37f834d7a9614278f.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/maquinas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/mecanicos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/mecanicos_planificacions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/multas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/operadors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/orden_trabajos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/planificacions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/planificaion_facturas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/proveedors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/report.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/repuestos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/repuestos_planificacions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/tipo_facturas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/tipo_maquinas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/tipo_mecanicos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/tipo_repuestos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-7db21ecd5d105e9317635f8503583f012aba76c15a02b9e241a19cd91d6a33ee.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/simple_calendar.self-fd0ded5b29f2de899643178da714054663610d56ba0d2019b4bf6da53a6d3a55.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/font-awesome.self-407fb3615be540a148636cc5d171903af160c86d0eaf12321feadbd280e334c3.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:04 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap_sb_admin_base_v2.self-b4ded31730e4e1b72ea218a91811d0f2395d1a647d5289f695df1f838a29d4c9.css?body=1" for 186.107.154.154 at 2017-11-14 13:36:05 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:05 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:05 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:05 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/modals.self-d2c41f701ba5ed12a30cd18b7ff1ef524098db0f7e0563f7d860946835b58a5e.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:05 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap.self-b38817c3e3a3049abb1fc08dd6ae448b23330f8453226efdb074710209474f75.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:05 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/flot/excanvas.min.self-39a325f42722afab6a881d53103be4a76f999942a97f97d0fe15478af19519cd.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:05 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/flot/jquery.flot.self-c14ce1ecd2ce4c63225ea890baab32a8844dc3a9934549b5e9eb1161587a5ec6.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:05 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/flot/jquery.flot.pie.self-8be6563386a9e5a0257c552307e93734d4649757266413b50b11bdcc170ce86c.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:05 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/flot/jquery.flot.resize.self-75fb517c67caae33f5aea9880c10df2e4ddf7445480fbac96822be335943732b.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:05 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/flot/jquery.flot.time.self-d60994112d7402b1e199546f7b366bc2041b8544e32958099988299e25338894.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:06 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/flot/jquery.flot.tooltip.min.self-3345c66f1cdbff3552b69da0179c86e8efd5184c9fd13fef0b0fb91186e946ea.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:06 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery/jquery.dataTables.min.self-67e5a542fa1b796f9c9dd66ef14d525d7ab93ebe0dbbba94feafe5326de5e303.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:06 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/bootstrap.min.self-504d59678f10d79a661b6cecdce5b8c1d5bfd98e860614584c0a40399552d61f.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:06 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/dataTables.bootstrap.min.self-0cc74308cee62d36e05289fd12ce427717644593891ee3c8af1889482bd1623f.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:06 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/metis_menu/metisMenu.min.self-0db38256c73148671fb4a78e415b3cc67983c7ee20fdb697fcf4505c673c567d.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:06 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/morris/morris.min.self-4af92d7906a27d9873d17376c88128564082ab7acc6e7055d61bd398db3c0276.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:06 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/raphael/raphael-min.self-941b13323aa7867e65545caa1f27a7cb2e1b6a7346826fb2701e600a7f9fe885.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:06 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sb-admin-2/sb-admin-2.self-d13000f5aac8081ed88b30a7a68c5e0a1cd2f6966087d86f3bb623e9183073be.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:06 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap_sb_admin_base_v2.self-8f656e10010f13d661c333ec222afca6f567507f4f767f26a381330465690cd0.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:06 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/moment.self-3b0be8a0e264afb5d84851d4322bc6fc4c641344c37ea6ee637c1256cc24903e.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:06 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/arriendos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:06 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/carga_combustibles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:06 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/clientes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:06 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/contacto.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:06 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/dashboards.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:06 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/estado_maquinas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:06 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/estanque_fijos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:06 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/factura.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:06 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fuente_combustibles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:07 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/infractions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:07 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/maquinas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:07 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/mecanicos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:07 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/mecanicos_planificacions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:07 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/multas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:07 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/operadors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:07 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/orden_trabajos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:07 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/planificacions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:07 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/planificaion_facturas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:07 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/proveedors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:07 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/report.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:07 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/repuestos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:07 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/repuestos_planificacions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:07 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:07 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/tipo_facturas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:07 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/tipo_maquinas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:07 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/tipo_mecanicos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:07 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/tipo_repuestos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:07 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/user.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:07 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:07 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-a61b363853b3c59b48b5162734a163a7b2f30fc02e8ab61f7ca418578edec66f.js?body=1" for 186.107.154.154 at 2017-11-14 13:36:07 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/organimaq_min-2180057bf1852148e24281dd2c08ef84c0a2b4e1b831c36d63c7bce57ec8e103.png" for 186.107.154.154 at 2017-11-14 13:36:07 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fontawesome-webfont-2adefcbc041e7d18fcf2d417879dc5a09997aa64d675b7a3c4b6ce33da13f3fe.woff2" for 186.107.154.154 at 2017-11-14 13:36:07 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/log_in" for 186.107.154.154 at 2017-11-14 13:36:11 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as JS
+  Rendered sessions/_login.html.erb (0.8ms)
+  Rendered sessions/new.js.erb (4.4ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 186.107.154.154 at 2017-11-14 13:36:16 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as JS
+  Parameters: {"utf8"=>"✓", "usuario"=>"abeltran", "password"=>"[FILTERED]", "commit"=>"Iniciar"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`usuario` = 'abeltran' LIMIT 1[0m
+Redirected to http://www.maquit.cl:3000/
+Completed 200 OK in 77ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 186.107.154.154 at 2017-11-14 13:36:16 -0300
+Cannot render console from 186.107.154.154! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mTipoUser Load (0.3ms)[0m  [1mSELECT  `tipo_users`.* FROM `tipo_users` WHERE `tipo_users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `tipo_users`.* FROM `tipo_users` WHERE `tipo_users`.`id` = 1 LIMIT 1  [["id", 1]]
+  Rendered partials/_barbar.html.erb (7.0ms)
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-11-14' and estado = 'Abierta')[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-11-14') <= 10 )[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-11-14') <= 10 )
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-11-14') <= 10 )[0m
+  [1m[35mPlanificacion Load (0.4ms)[0m  SELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-11-14' and estado = 'Abierta')
+  [1m[36mMaquina Load (0.3ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1[0m
+  [1m[35mMaquina Load (0.3ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 1 LIMIT 1
+  [1m[36mMaquina Load (0.3ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 3 LIMIT 1[0m
+  [1m[35mRepuesto Load (0.3ms)[0m  SELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)
+  [1m[36mMaquina Load (0.3ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-11-14') <= 10 )[0m
+  [1m[35mMaquina Load (0.3ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-11-14') <= 10 )
+  [1m[36mMaquina Load (0.4ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-11-14') <= 10 )[0m
+  Rendered partials/_topbar.html.erb (16.7ms)
+  Rendered partials/_login.html.erb (0.1ms)
+  Rendered partials/_footer.html.erb (0.1ms)
+Completed 200 OK in 202ms (Views: 195.7ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/" for 164.77.114.254 at 2017-11-14 15:02:53 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.5ms)
+  Rendered partials/_barbar.html.erb (4.6ms)
+  Rendered partials/_login.html.erb (0.5ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 612ms (Views: 602.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/arriendos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:55 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/carga_combustibles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:55 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/clientes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:55 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/contacto.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:56 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/dashboards.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:56 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/estanque_fijos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:56 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fuente_combustibles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:56 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/factura.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:56 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/estado_maquinas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:56 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/infractions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:56 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/mecanicos_planificacions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:56 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/multas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:56 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/mecanicos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:56 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/maquinas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:56 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/operadors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:56 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/orden_trabajos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:56 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/planificacions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:56 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/planificaion_facturas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:56 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/proveedors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:56 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/report.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:56 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/repuestos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:56 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/repuestos_planificacions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:57 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:57 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/tipo_facturas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:57 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/tipo_maquinas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:57 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/tipo_mecanicos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:57 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/tipo_repuestos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:57 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:57 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:57 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-7db21ecd5d105e9317635f8503583f012aba76c15a02b9e241a19cd91d6a33ee.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:57 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:57 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/simple_calendar.self-fd0ded5b29f2de899643178da714054663610d56ba0d2019b4bf6da53a6d3a55.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:57 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/main.self-d23bd567c06ce6fc919775bed453064c27c344ea9998f6e37f834d7a9614278f.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:57 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/font-awesome.self-407fb3615be540a148636cc5d171903af160c86d0eaf12321feadbd280e334c3.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:57 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap_sb_admin_base_v2.self-b4ded31730e4e1b72ea218a91811d0f2395d1a647d5289f695df1f838a29d4c9.css?body=1" for 164.77.114.254 at 2017-11-14 15:02:57 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:57 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:57 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:57 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/modals.self-d2c41f701ba5ed12a30cd18b7ff1ef524098db0f7e0563f7d860946835b58a5e.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:57 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap.self-b38817c3e3a3049abb1fc08dd6ae448b23330f8453226efdb074710209474f75.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:57 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/flot/excanvas.min.self-39a325f42722afab6a881d53103be4a76f999942a97f97d0fe15478af19519cd.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:57 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/flot/jquery.flot.self-c14ce1ecd2ce4c63225ea890baab32a8844dc3a9934549b5e9eb1161587a5ec6.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:57 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/flot/jquery.flot.pie.self-8be6563386a9e5a0257c552307e93734d4649757266413b50b11bdcc170ce86c.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:57 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/flot/jquery.flot.time.self-d60994112d7402b1e199546f7b366bc2041b8544e32958099988299e25338894.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:58 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/flot/jquery.flot.tooltip.min.self-3345c66f1cdbff3552b69da0179c86e8efd5184c9fd13fef0b0fb91186e946ea.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:58 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/flot/jquery.flot.resize.self-75fb517c67caae33f5aea9880c10df2e4ddf7445480fbac96822be335943732b.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:58 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/bootstrap.min.self-504d59678f10d79a661b6cecdce5b8c1d5bfd98e860614584c0a40399552d61f.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:58 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/dataTables.bootstrap.min.self-0cc74308cee62d36e05289fd12ce427717644593891ee3c8af1889482bd1623f.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:58 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/metis_menu/metisMenu.min.self-0db38256c73148671fb4a78e415b3cc67983c7ee20fdb697fcf4505c673c567d.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:58 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/morris/morris.min.self-4af92d7906a27d9873d17376c88128564082ab7acc6e7055d61bd398db3c0276.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:58 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery/jquery.dataTables.min.self-67e5a542fa1b796f9c9dd66ef14d525d7ab93ebe0dbbba94feafe5326de5e303.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:58 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/moment.self-3b0be8a0e264afb5d84851d4322bc6fc4c641344c37ea6ee637c1256cc24903e.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:59 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/arriendos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:59 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sb-admin-2/sb-admin-2.self-d13000f5aac8081ed88b30a7a68c5e0a1cd2f6966087d86f3bb623e9183073be.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:59 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/carga_combustibles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:59 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap_sb_admin_base_v2.self-8f656e10010f13d661c333ec222afca6f567507f4f767f26a381330465690cd0.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:59 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/raphael/raphael-min.self-941b13323aa7867e65545caa1f27a7cb2e1b6a7346826fb2701e600a7f9fe885.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:59 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/clientes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:59 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/contacto.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:59 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/dashboards.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:59 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/estado_maquinas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:59 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/estanque_fijos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:59 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/factura.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:59 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fuente_combustibles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:59 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/infractions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:59 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/maquinas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:59 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/mecanicos_planificacions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:59 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/multas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:59 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/mecanicos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:59 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/operadors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:59 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/orden_trabajos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:59 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/planificacions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:59 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/planificaion_facturas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:59 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/proveedors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:59 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/report.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:59 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/repuestos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:59 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/repuestos_planificacions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:59 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:59 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/tipo_facturas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 164.77.114.254 at 2017-11-14 15:02:59 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/tipo_maquinas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 164.77.114.254 at 2017-11-14 15:03:00 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/tipo_mecanicos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 164.77.114.254 at 2017-11-14 15:03:00 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/tipo_repuestos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 164.77.114.254 at 2017-11-14 15:03:00 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/user.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 164.77.114.254 at 2017-11-14 15:03:00 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 164.77.114.254 at 2017-11-14 15:03:00 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-a61b363853b3c59b48b5162734a163a7b2f30fc02e8ab61f7ca418578edec66f.js?body=1" for 164.77.114.254 at 2017-11-14 15:03:00 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/organimaq_min-2180057bf1852148e24281dd2c08ef84c0a2b4e1b831c36d63c7bce57ec8e103.png" for 164.77.114.254 at 2017-11-14 15:03:00 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fontawesome-webfont-2adefcbc041e7d18fcf2d417879dc5a09997aa64d675b7a3c4b6ce33da13f3fe.woff2" for 164.77.114.254 at 2017-11-14 15:03:00 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/icono-1eaa33e8bf741e1324113692654421a0aa672ae3cdd867f8ca916017b3df1c55.png" for 164.77.114.254 at 2017-11-14 15:03:01 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/log_in" for 164.77.114.254 at 2017-11-14 15:03:13 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as JS
+  Rendered sessions/_login.html.erb (2.1ms)
+  Rendered sessions/new.js.erb (9.3ms)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 164.77.114.254 at 2017-11-14 15:03:28 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as JS
+  Parameters: {"utf8"=>"✓", "usuario"=>"cbeltran", "password"=>"[FILTERED]", "commit"=>"Iniciar"}
+  [1m[35mUser Load (1.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`usuario` = 'cbeltran' LIMIT 1
+Redirected to http://maquit.cl:3000/
+Completed 200 OK in 157ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/" for 164.77.114.254 at 2017-11-14 15:03:28 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mTipoUser Load (0.3ms)[0m  SELECT  `tipo_users`.* FROM `tipo_users` WHERE `tipo_users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `tipo_users`.* FROM `tipo_users` WHERE `tipo_users`.`id` = 2 LIMIT 1[0m  [["id", 2]]
+  Rendered partials/_barbar.html.erb (14.1ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-11-14' and estado = 'Abierta')
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-11-14') <= 10 )
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-11-14') <= 10 )[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-11-14') <= 10 )
+  [1m[36mPlanificacion Load (0.4ms)[0m  [1mSELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-11-14' and estado = 'Abierta')[0m
+  [1m[35mMaquina Load (0.5ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1
+  [1m[36mMaquina Load (0.7ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 1 LIMIT 1[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 3 LIMIT 1
+  [1m[36mRepuesto Load (0.2ms)[0m  [1mSELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35mMaquina Load (0.3ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-11-14') <= 10 )
+  [1m[36mMaquina Load (0.3ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-11-14') <= 10 )[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-11-14') <= 10 )
+  Rendered partials/_topbar.html.erb (90.7ms)
+  Rendered partials/_login.html.erb (0.0ms)
+  Rendered partials/_footer.html.erb (0.0ms)
+Completed 200 OK in 295ms (Views: 283.1ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/planificacions" for 164.77.114.254 at 2017-11-14 15:03:42 -0300
+Cannot render console from 164.77.114.254! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlanificacionsController#index as HTML
+  [1m[36mPlanificacion Load (0.7ms)[0m  [1mSELECT `planificacions`.* FROM `planificacions`[0m
+  [1m[35mMaquina Load (0.7ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 3 LIMIT 1
+  Rendered /usr/share/rvm/gems/ruby-2.3.0/bundler/gems/simple_calendar-231755c0510c/app/views/simple_calendar/_month_calendar.html.erb (60.2ms)
+  Rendered planificacions/index.html.erb within layouts/application (77.3ms)
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mTipoUser Load (0.4ms)[0m  SELECT  `tipo_users`.* FROM `tipo_users` WHERE `tipo_users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `tipo_users`.* FROM `tipo_users` WHERE `tipo_users`.`id` = 2 LIMIT 1[0m  [["id", 2]]
+  Rendered partials/_barbar.html.erb (8.3ms)
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-11-14' and estado = 'Abierta')
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-11-14') <= 10 )
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-11-14') <= 10 )[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-11-14') <= 10 )
+  [1m[36mPlanificacion Load (0.4ms)[0m  [1mSELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-11-14' and estado = 'Abierta')[0m
+  [1m[35mMaquina Load (0.6ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1
+  [1m[36mMaquina Load (0.4ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 3 LIMIT 1  [["id", 3]]
+  [1m[36mRepuesto Load (0.5ms)[0m  [1mSELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35mMaquina Load (0.4ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-11-14') <= 10 )
+  [1m[36mMaquina Load (0.4ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-11-14') <= 10 )[0m
+  [1m[35mMaquina Load (0.5ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-11-14') <= 10 )
+  Rendered partials/_topbar.html.erb (21.5ms)
+  Rendered partials/_login.html.erb (0.1ms)
+  Rendered partials/_footer.html.erb (0.1ms)
+Completed 200 OK in 466ms (Views: 456.0ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/" for 186.67.120.116 at 2017-11-21 09:44:12 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.3ms)
+  Rendered partials/_barbar.html.erb (4.2ms)
+  Rendered partials/_login.html.erb (0.9ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 589ms (Views: 580.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/arriendos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:13 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/clientes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:13 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/carga_combustibles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:13 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/contacto.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:13 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/dashboards.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:13 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/estado_maquinas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:13 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/estanque_fijos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:13 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/factura.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:13 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fuente_combustibles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:13 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/infractions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:13 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/main.self-d23bd567c06ce6fc919775bed453064c27c344ea9998f6e37f834d7a9614278f.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:13 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/maquinas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:13 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/mecanicos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:13 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/mecanicos_planificacions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:13 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/multas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:13 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/operadors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:13 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/orden_trabajos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:13 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/planificacions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:13 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/planificaion_facturas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:13 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/proveedors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:13 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/repuestos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:13 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/report.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:13 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/repuestos_planificacions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:13 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:13 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/tipo_facturas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:13 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/tipo_maquinas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:13 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/tipo_mecanicos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:13 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/tipo_repuestos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:13 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:13 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:13 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-7db21ecd5d105e9317635f8503583f012aba76c15a02b9e241a19cd91d6a33ee.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:13 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:14 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/simple_calendar.self-fd0ded5b29f2de899643178da714054663610d56ba0d2019b4bf6da53a6d3a55.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:14 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/font-awesome.self-407fb3615be540a148636cc5d171903af160c86d0eaf12321feadbd280e334c3.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:14 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap_sb_admin_base_v2.self-b4ded31730e4e1b72ea218a91811d0f2395d1a647d5289f695df1f838a29d4c9.css?body=1" for 186.67.120.116 at 2017-11-21 09:44:14 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:14 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:14 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/modals.self-d2c41f701ba5ed12a30cd18b7ff1ef524098db0f7e0563f7d860946835b58a5e.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:14 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap.self-b38817c3e3a3049abb1fc08dd6ae448b23330f8453226efdb074710209474f75.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:14 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:14 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/flot/excanvas.min.self-39a325f42722afab6a881d53103be4a76f999942a97f97d0fe15478af19519cd.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:14 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/flot/jquery.flot.self-c14ce1ecd2ce4c63225ea890baab32a8844dc3a9934549b5e9eb1161587a5ec6.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:14 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/flot/jquery.flot.pie.self-8be6563386a9e5a0257c552307e93734d4649757266413b50b11bdcc170ce86c.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:14 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/flot/jquery.flot.resize.self-75fb517c67caae33f5aea9880c10df2e4ddf7445480fbac96822be335943732b.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:14 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/flot/jquery.flot.time.self-d60994112d7402b1e199546f7b366bc2041b8544e32958099988299e25338894.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:15 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/flot/jquery.flot.tooltip.min.self-3345c66f1cdbff3552b69da0179c86e8efd5184c9fd13fef0b0fb91186e946ea.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:15 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery/jquery.dataTables.min.self-67e5a542fa1b796f9c9dd66ef14d525d7ab93ebe0dbbba94feafe5326de5e303.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:15 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/bootstrap.min.self-504d59678f10d79a661b6cecdce5b8c1d5bfd98e860614584c0a40399552d61f.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:15 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/dataTables.bootstrap.min.self-0cc74308cee62d36e05289fd12ce427717644593891ee3c8af1889482bd1623f.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:15 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/metis_menu/metisMenu.min.self-0db38256c73148671fb4a78e415b3cc67983c7ee20fdb697fcf4505c673c567d.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:15 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sb-admin-2/sb-admin-2.self-d13000f5aac8081ed88b30a7a68c5e0a1cd2f6966087d86f3bb623e9183073be.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:15 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/morris/morris.min.self-4af92d7906a27d9873d17376c88128564082ab7acc6e7055d61bd398db3c0276.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:15 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/raphael/raphael-min.self-941b13323aa7867e65545caa1f27a7cb2e1b6a7346826fb2701e600a7f9fe885.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:15 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap_sb_admin_base_v2.self-8f656e10010f13d661c333ec222afca6f567507f4f767f26a381330465690cd0.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:15 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/moment.self-3b0be8a0e264afb5d84851d4322bc6fc4c641344c37ea6ee637c1256cc24903e.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:15 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/arriendos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:15 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/carga_combustibles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:15 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/clientes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:15 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/contacto.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:15 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/dashboards.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:15 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/estado_maquinas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:15 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/estanque_fijos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:15 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/factura.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:15 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/infractions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:15 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fuente_combustibles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:15 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/maquinas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:15 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/mecanicos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:15 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/mecanicos_planificacions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:15 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/multas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:15 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/operadors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:16 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/orden_trabajos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:16 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/planificacions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:16 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/planificaion_facturas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:16 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/proveedors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:16 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/report.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:16 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/repuestos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:16 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/repuestos_planificacions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:16 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/tipo_facturas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:16 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/tipo_maquinas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:16 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/tipo_mecanicos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:16 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/tipo_repuestos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:16 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/user.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:16 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:16 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-a61b363853b3c59b48b5162734a163a7b2f30fc02e8ab61f7ca418578edec66f.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:16 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 186.67.120.116 at 2017-11-21 09:44:16 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/organimaq_min-2180057bf1852148e24281dd2c08ef84c0a2b4e1b831c36d63c7bce57ec8e103.png" for 186.67.120.116 at 2017-11-21 09:44:16 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fontawesome-webfont-2adefcbc041e7d18fcf2d417879dc5a09997aa64d675b7a3c4b6ce33da13f3fe.woff2" for 186.67.120.116 at 2017-11-21 09:44:16 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/icono-1eaa33e8bf741e1324113692654421a0aa672ae3cdd867f8ca916017b3df1c55.png" for 186.67.120.116 at 2017-11-21 09:44:16 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/log_in" for 186.67.120.116 at 2017-11-21 09:44:27 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as JS
+  Rendered sessions/_login.html.erb (2.0ms)
+  Rendered sessions/new.js.erb (7.3ms)
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 186.67.120.116 at 2017-11-21 09:44:36 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as JS
+  Parameters: {"utf8"=>"✓", "usuario"=>"cbeltran", "password"=>"[FILTERED]", "commit"=>"Iniciar"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`usuario` = 'cbeltran' LIMIT 1
+Redirected to http://maquit.cl/
+Completed 200 OK in 103ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/" for 186.67.120.116 at 2017-11-21 09:44:36 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mTipoUser Load (0.2ms)[0m  SELECT  `tipo_users`.* FROM `tipo_users` WHERE `tipo_users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `tipo_users`.* FROM `tipo_users` WHERE `tipo_users`.`id` = 2 LIMIT 1[0m  [["id", 2]]
+  Rendered partials/_barbar.html.erb (13.3ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-11-21' and estado = 'Abierta')
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-11-21') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-11-21') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-11-21') <= 10 )
+  [1m[36mPlanificacion Load (0.3ms)[0m  [1mSELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-11-21' and estado = 'Abierta')[0m
+  [1m[35mMaquina Load (0.4ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1
+  [1m[36mMaquina Load (0.8ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 1 LIMIT 1[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 3 LIMIT 1
+  [1m[36mRepuesto Load (0.3ms)[0m  [1mSELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35mMaquina Load (0.3ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-11-21') <= 10 )
+  [1m[36mMaquina Load (0.4ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-11-21') <= 10 )[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-11-21') <= 10 )
+  Rendered partials/_topbar.html.erb (91.0ms)
+  Rendered partials/_login.html.erb (0.1ms)
+  Rendered partials/_footer.html.erb (0.0ms)
+Completed 200 OK in 301ms (Views: 290.1ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/dashboards" for 186.67.120.116 at 2017-11-21 09:44:53 -0300
+Cannot render console from 186.67.120.116! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DashboardsController#index as HTML
+  [1m[36mEstadoMaquina Load (0.5ms)[0m  [1mSELECT `estado_maquinas`.* FROM `estado_maquinas`[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (estado_maquina_id=1)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (estado_maquina_id=2)[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (estado_maquina_id=3)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (estado_maquina_id=4)[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (estado_maquina_id=5)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `planificacions` WHERE (estado='Cerrada')[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `planificacions` WHERE (estado='Abierta')
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM `maquinas`[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM `planificacions`
+  Rendered dashboards/index.html.erb within layouts/application (6.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mTipoUser Load (0.2ms)[0m  SELECT  `tipo_users`.* FROM `tipo_users` WHERE `tipo_users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `tipo_users`.* FROM `tipo_users` WHERE `tipo_users`.`id` = 2 LIMIT 1[0m  [["id", 2]]
+  Rendered partials/_barbar.html.erb (4.7ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `planificacions` WHERE (fecha <= '2017-11-21' and estado = 'Abierta')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-11-21') <= 10 )
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-11-21') <= 10 )[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-11-21') <= 10 )
+  [1m[36mPlanificacion Load (0.3ms)[0m  [1mSELECT `planificacions`.* FROM `planificacions` WHERE (fecha <= '2017-11-21' and estado = 'Abierta')[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 5 LIMIT 1
+  [1m[36mMaquina Load (3.5ms)[0m  [1mSELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 1 LIMIT 1[0m
+  [1m[35mMaquina Load (0.3ms)[0m  SELECT  `maquinas`.* FROM `maquinas` WHERE `maquinas`.`id` = 3 LIMIT 1
+  [1m[36mRepuesto Load (0.2ms)[0m  [1mSELECT `repuestos`.* FROM `repuestos` WHERE (stock < 3)[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_permiso,'2017-11-21') <= 10 )
+  [1m[36mMaquina Load (0.2ms)[0m  [1mSELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_seguro,'2017-11-21') <= 10 )[0m
+  [1m[35mMaquina Load (0.2ms)[0m  SELECT `maquinas`.* FROM `maquinas` WHERE (DATEDIFF(fecha_revision,'2017-11-21') <= 10 )
+  Rendered partials/_topbar.html.erb (14.8ms)
+  Rendered partials/_login.html.erb (0.0ms)
+  Rendered partials/_footer.html.erb (0.0ms)
+Completed 200 OK in 245ms (Views: 219.3ms | ActiveRecord: 12.3ms)
